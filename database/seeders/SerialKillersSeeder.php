@@ -21,12 +21,12 @@ class SerialKillersSeeder extends Seeder
                 'age' => 42,
                 'country' => 'USA',
                 'victims' => json_encode([
-                    'killed' => json_encode([
+                    'killed' => [
                         'claimed' => 30,
                         'confirmed' => 20,
-                    ]),
+                    ],
                     'wounded' => 0,
-                ])
+                ]),
             ],
 
             // 2nd case
@@ -36,12 +36,12 @@ class SerialKillersSeeder extends Seeder
                 'age' => 'N/A',
                 'country' => 'USA',
                 'victims' => json_encode([
-                    'killed' => json_encode([
+                    'killed' => [
                         'claimed' => 37,
                         'confirmed' => 5,
-                    ]),
+                    ],
                     'wounded' => 2,
-                ])
+                ]),
             ],
 
             // 3rd case
@@ -51,12 +51,12 @@ class SerialKillersSeeder extends Seeder
                 'age' => 'N/A',
                 'country' => 'UK',
                 'victims' => json_encode([
-                    'killed' => json_encode([
+                    'killed' => [
                         'claimed' => 5,
                         'confirmed' => 0,
-                    ]),
+                    ],
                     'wounded' => 0,
-                ])
+                ]),
             ],
 
             // 4th case
@@ -66,12 +66,12 @@ class SerialKillersSeeder extends Seeder
                 'age' => 52,
                 'country' => 'USA',
                 'victims' => json_encode([
-                    'killed' => json_encode([
+                    'killed' => [
                         'claimed' => '45+',
                         'confirmed' => 33,
-                    ]),
+                    ],
                     'wounded' => 1,
-                ])
+                ]),
             ],
 
             // 5th case
@@ -81,12 +81,12 @@ class SerialKillersSeeder extends Seeder
                 'age' => 34,
                 'country' => 'USA',
                 'victims' => json_encode([
-                    'killed' => json_encode([
+                    'killed' => [
                         'claimed' => 17,
                         'confirmed' => 17,
-                    ]),
+                    ],
                     'wounded' => 1,
-                ])
+                ]),
             ],
         ]);
     }

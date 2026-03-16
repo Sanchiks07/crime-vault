@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnsolvedCasesController;
+use App\Http\Controllers\SerialKillersController;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/cases', [CasesController::class, 'index'])->name('cases.index');
+Route::get('/cases/unsolved-cases', [UnsolvedCasesController::class, 'index'])->name('cases.unsolved.index');
+Route::get('/cases/serial-killers', [SerialKillersController::class, 'index'])->name('cases.killers.index');
 
 Route::get('/psychology', [PsychologyController::class, 'index'])->name('psychology.index');
 

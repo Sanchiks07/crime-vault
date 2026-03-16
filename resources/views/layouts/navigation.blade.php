@@ -27,13 +27,10 @@
                         </button>
 
                         <div x-show="open" x-transition class="absolute w-48 bg-white border rounded shadow-lg z-50">
-                            <x-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')" class="block px-4 py-2">
+                            <x-nav-link :href="route('cases.unsolved.index')" :active="request()->routeIs('cases.unsolved.index')" class="block px-4 py-2">
                                 Unsolved Cases
                             </x-nav-link>
-                            <x-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')" class="block px-4 py-2">
-                                Mass Killings
-                            </x-nav-link>
-                            <x-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')" class="block px-4 py-2">
+                            <x-nav-link :href="route('cases.killers.index')" :active="request()->routeIs('cases.killers.index')" class="block px-4 py-2">
                                 Serial Killers
                             </x-nav-link>
                         </div>
@@ -137,13 +134,10 @@
                 </label>
 
                 <div class="hidden pl-4 space-y-1 peer-checked:block">
-                    <x-responsive-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')">
+                    <x-responsive-nav-link :href="route('cases.unsolved.index')" :active="request()->routeIs('cases.unsolved.index')">
                         Unsolved Cases
                     </x-responsive-nav-link>
-                    <x-responsive-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')">
-                        Mass Killings
-                    </x-responsive-nav-link>
-                    <x-responsive-nav-link :href="route('cases.index')" :active="request()->routeIs('cases.index')">
+                    <x-responsive-nav-link :href="route('cases.killers.index')" :active="request()->routeIs('cases.killers.index')">
                         Serial Killers
                     </x-responsive-nav-link>
                 </div>
