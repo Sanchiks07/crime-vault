@@ -41,9 +41,6 @@
                     <x-nav-link :href="route('resources.index')" :active="request()->routeIs('resources.index')">
                         Resources
                     </x-nav-link>
-                    <x-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
-                        About
-                    </x-nav-link>
                 </div>
             </div>
 
@@ -147,9 +144,6 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('resources.index')" :active="request()->routeIs('resources.index')">
                 Resources
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('about.index')" :active="request()->routeIs('about.index')">
-                About
             </x-responsive-nav-link>
         </div>
 
