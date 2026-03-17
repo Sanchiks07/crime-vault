@@ -10,7 +10,8 @@ class UnsolvedCase extends Model
         'name',
         'country',
         'count',
-        'suspects'
+        'suspects',
+        'image'
     ];
     
     protected $casts = [

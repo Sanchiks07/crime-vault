@@ -25,7 +25,8 @@ class UnsolvedCasesSeeder extends Seeder
                 'suspects' => json_encode([
                     'name_1' => 'N/A',
                     'age_1' => 0,
-                ])
+                ]),
+                'image' => 'black-dahlia.jpg'
             ],
 
             // 2nd case
@@ -53,7 +54,8 @@ class UnsolvedCasesSeeder extends Seeder
                 'suspects' => json_encode([
                     'name_1' => 'N/A',
                     'age_1' => 0,
-                ])
+                ]),
+                'image' => 'villisca-axe-murders.jpg'
             ],
 
             // 3rd case
@@ -72,6 +74,7 @@ class UnsolvedCasesSeeder extends Seeder
                     'name_1' => 'Gene Leroy Hart',
                     'age_1' => 35,
                 ]),
+                'image' => 'girl-scout-murders.jpg'
             ],
 
             // 4th case
@@ -91,7 +94,8 @@ class UnsolvedCasesSeeder extends Seeder
                 'suspects' => json_encode([
                     'name_1' => 'N/A',
                     'age_1' => 0,
-                ])
+                ]),
+                'image' => 'keddie-cabin-murders.jpg'
             ],
 
             // 5th case
@@ -105,7 +109,8 @@ class UnsolvedCasesSeeder extends Seeder
                 'suspects' => json_encode([
                     'name_1' => 'N/A',
                     'age_1' => 'N/A',
-                ])
+                ]),
+                'image' => 'boy-in-the-box.jpg'
             ],
         ]);
     }

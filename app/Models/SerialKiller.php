@@ -12,6 +12,7 @@ class SerialKiller extends Model
         'age',
         'country',
         'victims',
+        'image'
     ];
     
     protected $casts = [

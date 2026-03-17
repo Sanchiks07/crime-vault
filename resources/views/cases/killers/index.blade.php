@@ -7,7 +7,7 @@
                         @forelse ($serial_killers as $serial_killer)
                             <a href="{{ route('cases.killers.show', $serial_killer) }}" class="block group">
                                 <div class="border rounded-lg p-4 shadow-sm bg-white group-hover:shadow-lg transition">
-                                    <img src="/images/default-image.png" alt="{{ $serial_killer->nickname }}" class="h-50 w-full object-cover rounded-md mb-4">
+                                    <img src="{{ $serial_killer->image ? asset('images/' . $serial_killer->image) : asset('images/default-image.png') }}" alt="{{ $serial_killer->nickname }}" class="h-50 w-full object-cover rounded-md mb-4" />
                                     <h2 class="text-xl font-semibold">{{ $serial_killer->nickname }}</h2>
                                     <p class="text-sm text-gray-600">Real name: {{ $serial_killer->name }}</p>
                                     <p class="text-sm text-gray-600">Age: {{ $serial_killer->age }}</p>

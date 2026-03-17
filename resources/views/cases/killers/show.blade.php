@@ -8,7 +8,7 @@
 
                         <div class="flex flex-col md:flex-row gap-6 mt-5">
                             <div class="flex-shrink-0 w-full md:w-64">
-                                <img src="/images/default-image.png" alt="{{ $serial_killer->nickname }}" class="h-48 md:h-64 w-full object-cover rounded-md">
+                                <img src="{{ $serial_killer->image ? asset('images/' . $serial_killer->image) : asset('images/default-image.png') }}" alt="{{ $serial_killer->nickname }}" class="h-48 md:h-64 w-full object-cover rounded-md" />
                             </div>
 
                             <div class="flex-1 flex flex-col justify-center">

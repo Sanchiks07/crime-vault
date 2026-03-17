@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('country');
             $table->json('count');
             $table->json('suspects');
+            $table->string('image');
             $table->timestamps();
         });
     }

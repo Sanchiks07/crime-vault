@@ -27,11 +27,12 @@ class SerialKillersSeeder extends Seeder
                     ],
                     'wounded' => 0,
                 ]),
+                'image' => 'ted-bundy.jpg'
             ],
 
             // 2nd case
             [
-                'name' => 'Unknown',
+                'name' => 'N/A',
                 'nickname' => 'Zodiac Killer',
                 'age' => 'N/A',
                 'country' => 'USA',
@@ -42,11 +43,12 @@ class SerialKillersSeeder extends Seeder
                     ],
                     'wounded' => 2,
                 ]),
+                'image' => 'zodiac-killer.jpg'
             ],
 
             // 3rd case
             [
-                'name' => 'Unknown',
+                'name' => 'N/A',
                 'nickname' => 'Jack the Ripper',
                 'age' => 'N/A',
                 'country' => 'UK',
@@ -57,6 +59,7 @@ class SerialKillersSeeder extends Seeder
                     ],
                     'wounded' => 0,
                 ]),
+                'image' => ''
             ],
 
             // 4th case
@@ -72,12 +75,13 @@ class SerialKillersSeeder extends Seeder
                     ],
                     'wounded' => 1,
                 ]),
+                'image' => 'john-wayne-gacy.jpg'
             ],
 
             // 5th case
             [
                 'name' => 'Jeffrey Dahmer',
-                'nickname' => 'The Milwaukee Cannibal / The Milwaukee Monster',
+                'nickname' => 'The Milwaukee Cannibal / Monster',
                 'age' => 34,
                 'country' => 'USA',
                 'victims' => json_encode([
@@ -85,8 +89,9 @@ class SerialKillersSeeder extends Seeder
                         'claimed' => 17,
                         'confirmed' => 17,
                     ],
-                    'wounded' => 1,
+                    'wounded' => 0,
                 ]),
+                'image' => 'jeffrey-dahmer.jpg'
             ],
         ]);
     }
