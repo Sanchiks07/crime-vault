@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Victim;
 
 class SerialKiller extends Model
 {
@@ -11,11 +12,15 @@ class SerialKiller extends Model
         'nickname',
         'age',
         'country',
-        'victims',
+        'victim_count',
         'image'
     ];
     
     protected $casts = [
-        'victims' => 'array',
+        'victim_count' => 'array',
     ];
+
+    public function victimRecord() {
+        return $this->hasOne(Victim::class, 'killer_id');
+    }
 }

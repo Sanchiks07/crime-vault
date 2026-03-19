@@ -7,8 +7,8 @@
                         <a href="{{ route('cases.unsolved.index') }}" class="text-sm text-blue-600 hover:underline">← Back to all unsolved cases</a>
 
                         <div class="flex flex-col md:flex-row gap-6 mt-5">
-                            <div class="flex-shrink-0 w-full md:w-64">
-                                <img src="/images/default-image.png" alt="{{ $unsolved_case->name }}" class="h-48 md:h-64 w-full object-cover rounded-md">
+                            <div class="flex-shrink-0 w-full rounded-lg md:w-64">
+                                <img src="{{ $unsolved_case->image ? asset('images/' . $unsolved_case->image) : asset('images/default-image.png') }}" alt="{{ $unsolved_case->name }}" class="h-48 md:h-64 w-full object-cover rounded-md">
                             </div>
 
                             <div class="flex-1 flex flex-col justify-center">
@@ -52,27 +52,29 @@
                                 <div class="space-y-4">
                                     <div>
                                         <h2 class="text-lg font-semibold">Victims</h2>
+
                                         @if (count($victimEntries) > 0)
-                                            <ul class="list-disc list-inside text-sm text-gray-700">
+                                            <ul class="list-disc pl-5 space-y-1">
                                                 @foreach ($victimEntries as $entry)
-                                                    <li>{{ $entry['name'] ?? 'Unknown' }} (age {{ $entry['age'] ?? 'N/A' }})</li>
+                                                    <li>{{ $entry['name'] ?? 'N/A' }} (Age: {{ $entry['age'] ?? 'N/A' }})</li>
                                                 @endforeach
                                             </ul>
                                         @else
-                                            <p class="text-sm text-gray-600">No victim information available.</p>
+                                            <p class="text-sm text-gray-600">No data</p>
                                         @endif
                                     </div>
 
                                     <div>
                                         <h2 class="text-lg font-semibold">Suspects</h2>
+
                                         @if (count($suspectEntries) > 0)
-                                            <ul class="list-disc list-inside text-sm text-gray-700">
+                                            <ul class="list-disc pl-5 space-y-1">
                                                 @foreach ($suspectEntries as $entry)
-                                                    <li>{{ $entry['name'] ?? 'Unknown' }} (age {{ $entry['age'] ?? 'N/A' }})</li>
+                                                    <li>{{ $entry['name'] ?? 'N/A' }} (Age: {{ $entry['age'] ?? 'N/A' }})</li>
                                                 @endforeach
                                             </ul>
                                         @else
-                                            <p class="text-sm text-gray-600">No suspect information available.</p>
+                                            <p class="text-sm text-gray-600">No data</p>
                                         @endif
                                     </div>
                                 </div>

@@ -17,19 +17,78 @@
                                 <p class="text-sm text-gray-600">Age: {{ $serial_killer->age }}</p>
                                 <p class="text-sm text-gray-600 mb-4">Country: {{ $serial_killer->country }}</p>
 
-                                @php
-                                    $victims = $serial_killer->victims;
+                               @php
+                                    $victimData = $serial_killer->victimRecord->count ?? null;
 
-                                    if (is_string($victims)) {
-                                        $victims = json_decode($victims, true);
+                                    if (is_string($victimData)) {
+                                        $victimData = json_decode($victimData, true);
                                     }
+
+                                    function formatVictims($group) {
+                                        if (!$group) return [];
+
+                                        $victims = [];
+
+                                        foreach ($group as $key => $value) {
+                                            if (str_starts_with($key, 'name_')) {
+                                                $index = (int) str_replace('name_', '', $key);
+                                                $victims[$index]['name'] = $value;
+                                            }
+
+                                            if (str_starts_with($key, 'age_')) {
+                                                $index = (int) str_replace('age_', '', $key);
+                                                $victims[$index]['age'] = $value;
+                                            }
+                                        }
+
+                                        ksort($victims);
+
+                                        return $victims;
+                                    }
+
+                                    $killedVictims = formatVictims($victimData['killed'] ?? []);
+                                    $woundedVictims = formatVictims($victimData['wounded'] ?? []);
                                 @endphp
 
+                                <!-- victim count overall -->
                                 <div class="space-y-2">
                                     <h2 class="text-lg font-semibold">Victim counts</h2>
-                                    <p>Victims (claimed): {{ $victims['killed']['claimed'] ?? 'N/A' }}</p>
-                                    <p>Victims (confirmed): {{ $victims['killed']['confirmed'] ?? 'N/A' }}</p>
-                                    <p>Wounded: {{ $victims['wounded'] ?? 'N/A' }}</p>
+                                    <p>Claimed: {{ $serial_killer->victim_count['killed']['claimed'] ?? 'N/A' }}</p>
+                                    <p>Confirmed: {{ $serial_killer->victim_count['killed']['confirmed'] ?? 'N/A' }}</p>
+                                    <p>Wounded: {{ $serial_killer->victim_count['wounded'] ?? 'N/A' }}</p>
+                                </div>
+
+                                <!-- victim's names and ages -->
+                                <div class="mt-6">
+                                    <h2 class="text-lg font-semibold mb-2">Killed Victims</h2>
+
+                                    @if(count($killedVictims))
+                                        <ul class="list-disc pl-5 space-y-1">
+                                            @foreach ($killedVictims as $victim)
+                                                <li>
+                                                    {{ $victim['name'] ?? 'N/A' }} (Age: {{ $victim['age'] ?? 'N/A' }})
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <p>No data</p>
+                                    @endif
+                                </div>
+
+                                <div class="mt-6">
+                                    <h2 class="text-lg font-semibold mb-2">Wounded Victims</h2>
+                                    
+                                    @if(count($woundedVictims))
+                                        <ul class="list-disc pl-5 space-y-1">
+                                            @foreach ($woundedVictims as $victim)
+                                                <li>
+                                                    {{ $victim['name'] ?? 'Unknown' }} (Age: {{ $victim['age'] ?? 'N/A' }})
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <p>No data</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

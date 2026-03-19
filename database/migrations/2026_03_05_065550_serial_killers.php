@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nickname');
             $table->string('age');
             $table->string('country');
-            $table->json('victims');
+            $table->json('victim_count');
             $table->string('image')->nullable();
             $table->timestamps();
         });

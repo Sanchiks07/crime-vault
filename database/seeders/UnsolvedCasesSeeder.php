@@ -23,8 +23,14 @@ class UnsolvedCasesSeeder extends Seeder
                     'age_1' => 22,
                 ]),
                 'suspects' => json_encode([
-                    'name_1' => 'N/A',
-                    'age_1' => 0,
+                    'name_1' => 'George Hodel',
+                    'age_1' => 41,
+                    'name_2' => 'Leslie Dillon',
+                    'age_2' => 27,
+                    'name_3' => 'Mark Hansen',
+                    'age_3' => 60,
+                    'name_4' => 'Robert Manley',
+                    'age_4' => 25,
                 ]),
                 'image' => 'black-dahlia.jpg'
             ],
@@ -52,8 +58,16 @@ class UnsolvedCasesSeeder extends Seeder
                     'age_8' => 43,
                 ]),
                 'suspects' => json_encode([
-                    'name_1' => 'N/A',
-                    'age_1' => 0,
+                    'name_1' => 'William Mansfield',
+                    'age_1' => 52,
+                    'name_2' => 'Frank F. Jones',
+                    'age_2' => 57,
+                    'name_3' => 'William "Blackie" Mansfield',
+                    'age_3' => 23,
+                    'name_4' => 'Henry Moore',
+                    'age_4' => 35,
+                    'name_5' => 'Reverend George Kelly',
+                    'age_5' => 36,
                 ]),
                 'image' => 'villisca-axe-murders.jpg'
             ],
@@ -72,7 +86,7 @@ class UnsolvedCasesSeeder extends Seeder
                 ]),
                 'suspects' => json_encode([
                     'name_1' => 'Gene Leroy Hart',
-                    'age_1' => 35,
+                    'age_1' => 33,
                 ]),
                 'image' => 'girl-scout-murders.jpg'
             ],
@@ -92,8 +106,10 @@ class UnsolvedCasesSeeder extends Seeder
                     'age_4' => 36,
                 ]),
                 'suspects' => json_encode([
-                    'name_1' => 'N/A',
-                    'age_1' => 0,
+                    'name_1' => 'Martin Smartt',
+                    'age_1' => 44,
+                    'name_2' => 'John',
+                    'age_2' => 36,
                 ]),
                 'image' => 'keddie-cabin-murders.jpg'
             ],

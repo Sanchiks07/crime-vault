@@ -20,7 +20,7 @@ class SerialKillersSeeder extends Seeder
                 'nickname' => 'Ted Bundy',
                 'age' => 42,
                 'country' => 'USA',
-                'victims' => json_encode([
+                'victim_count' => json_encode([
                     'killed' => [
                         'claimed' => 30,
                         'confirmed' => 20,
@@ -36,7 +36,7 @@ class SerialKillersSeeder extends Seeder
                 'nickname' => 'Zodiac Killer',
                 'age' => 'N/A',
                 'country' => 'USA',
-                'victims' => json_encode([
+                'victim_count' => json_encode([
                     'killed' => [
                         'claimed' => 37,
                         'confirmed' => 5,
@@ -52,7 +52,7 @@ class SerialKillersSeeder extends Seeder
                 'nickname' => 'Jack the Ripper',
                 'age' => 'N/A',
                 'country' => 'UK',
-                'victims' => json_encode([
+                'victim_count' => json_encode([
                     'killed' => [
                         'claimed' => 5,
                         'confirmed' => 0,
@@ -68,12 +68,12 @@ class SerialKillersSeeder extends Seeder
                 'nickname' => 'The Killer Clown',
                 'age' => 52,
                 'country' => 'USA',
-                'victims' => json_encode([
+                'victim_count' => json_encode([
                     'killed' => [
                         'claimed' => '45+',
                         'confirmed' => 33,
                     ],
-                    'wounded' => 1,
+                    'wounded' => 0,
                 ]),
                 'image' => 'john-wayne-gacy.jpg'
             ],
@@ -84,7 +84,7 @@ class SerialKillersSeeder extends Seeder
                 'nickname' => 'The Milwaukee Cannibal / Monster',
                 'age' => 34,
                 'country' => 'USA',
-                'victims' => json_encode([
+                'victim_count' => json_encode([
                     'killed' => [
                         'claimed' => 17,
                         'confirmed' => 17,
