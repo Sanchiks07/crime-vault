@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --bg: #1d1616;
+    --surface: #2c1d1d;
+    --primary: #8e1616;
+    --accent: #d84040;
+    --text: #eeeeee;
+}
+
+[data-theme="light"] {
+    --bg: #eeeeee;
+    --surface: #f7f7f7;
+    --primary: #d84040;
+    --accent: #8e1616;
+    --text: #1d1616;
+}
