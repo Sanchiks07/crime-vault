@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('age');
             $table->string('country');
             $table->json('victim_count');
+            $table->longtext('description');
             $table->string('image')->nullable();
             $table->timestamps();
         });

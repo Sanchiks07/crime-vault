@@ -11,6 +11,7 @@ class UnsolvedCase extends Model
         'country',
         'count',
         'suspects',
+        'description',
         'image'
     ];
     

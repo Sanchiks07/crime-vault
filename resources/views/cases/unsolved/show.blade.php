@@ -1,85 +1,108 @@
 <x-guest-layout>
-    <div class="py-12">
+    <div class="py-12 bg-gray-50 min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <div class="max-w-3xl mx-auto">
-                        <a href="{{ route('cases.unsolved.index') }}" class="text-sm text-blue-600 hover:underline">← Back to all unsolved cases</a>
+            <a href="{{ route('cases.unsolved.index') }}" class="text-sm text-blue-600 hover:underline">
+                ← Back to all unsolved cases
+            </a>
 
-                        <div class="flex flex-col md:flex-row gap-6 mt-5">
-                            <div class="flex-shrink-0 w-full rounded-lg md:w-64">
-                                <img src="{{ $unsolved_case->image ? asset('images/' . $unsolved_case->image) : asset('images/default-image.png') }}" alt="{{ $unsolved_case->name }}" class="h-48 md:h-64 w-full object-cover rounded-md">
-                            </div>
+            <div class="mt-4 bg-white shadow-lg rounded-xl overflow-hidden">
+                <!-- Header -->
+                <div class="p-6 border-b border-gray-200">
+                    <h1 class="text-3xl font-bold text-gray-900">{{ $unsolved_case->name }}</h1>
+                    <p class="text-sm text-gray-500 mt-1">{{ $unsolved_case->country }}</p>
+                </div>
 
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h1 class="text-2xl font-bold mb-2">{{ $unsolved_case->name }}</h1>
+                <!-- Main Content -->
+                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Image -->
+                    <div>
+                        <img src="{{ $unsolved_case->image ? asset('images/' . $unsolved_case->image) : asset('images/default-image.png') }}" alt="{{ $unsolved_case->name }}" class="w-full h-72 object-cover rounded-lg shadow" />
+                    </div>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-                                    <p class="text-sm text-gray-600">Country: {{ $unsolved_case->country }}</p>
+                    <!-- Description + Stats -->
+                    <div class="md:col-span-2 space-y-6">
+                        <!-- Description -->
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 mb-2">Description</h2>
+                            <p class="text-gray-700 leading-relaxed whitespace-pre-line">{{ $unsolved_case->description ?? 'No description available.' }}</p>
+                        </div>
+
+                        @php
+                            $victims = is_string($unsolved_case->count)
+                                ? json_decode($unsolved_case->count, true)
+                                : $unsolved_case->count;
+
+                            $suspects = is_string($unsolved_case->suspects)
+                                ? json_decode($unsolved_case->suspects, true)
+                                : $unsolved_case->suspects;
+
+                            $victims = $victims ?? [];
+                            $suspects = $suspects ?? [];
+                        @endphp
+
+                        <!-- Victim Overview -->
+                        <div class="bg-gray-50 p-4 rounded-lg border">
+                            <h2 class="text-lg font-semibold mb-3">Victim Overview</h2>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="text-gray-500">Total Victims</p>
+                                    <p class="font-semibold">{{ is_array($victims) ? count($victims) : 'N/A' }}</p>
                                 </div>
 
-                                @php
-                                    $count = $unsolved_case->count;
-                                    $suspects = $unsolved_case->suspects;
-
-                                    if (is_string($count)) {
-                                        $count = json_decode($count, true);
-                                    }
-
-                                    if (is_string($suspects)) {
-                                        $suspects = json_decode($suspects, true);
-                                    }
-
-                                    $victimEntries = [];
-                                    foreach ($count as $key => $value) {
-                                        if (preg_match('/^(name|age)_(\d+)$/', $key, $matches)) {
-                                            $index = $matches[2];
-                                            $type = $matches[1];
-                                            $victimEntries[$index][$type] = $value;
-                                        }
-                                    }
-
-                                    $suspectEntries = [];
-                                    foreach ($suspects as $key => $value) {
-                                        if (preg_match('/^(name|age)_(\d+)$/', $key, $matches)) {
-                                            $index = $matches[2];
-                                            $type = $matches[1];
-                                            $suspectEntries[$index][$type] = $value;
-                                        }
-                                    }
-                                @endphp
-
-                                <div class="space-y-4">
-                                    <div>
-                                        <h2 class="text-lg font-semibold">Victims</h2>
-
-                                        @if (count($victimEntries) > 0)
-                                            <ul class="list-disc pl-5 space-y-1">
-                                                @foreach ($victimEntries as $entry)
-                                                    <li>{{ $entry['name'] ?? 'N/A' }} (Age: {{ $entry['age'] ?? 'N/A' }})</li>
-                                                @endforeach
-                                            </ul>
-                                        @else
-                                            <p class="text-sm text-gray-600">No data</p>
-                                        @endif
-                                    </div>
-
-                                    <div>
-                                        <h2 class="text-lg font-semibold">Suspects</h2>
-
-                                        @if (count($suspectEntries) > 0)
-                                            <ul class="list-disc pl-5 space-y-1">
-                                                @foreach ($suspectEntries as $entry)
-                                                    <li>{{ $entry['name'] ?? 'N/A' }} (Age: {{ $entry['age'] ?? 'N/A' }})</li>
-                                                @endforeach
-                                            </ul>
-                                        @else
-                                            <p class="text-sm text-gray-600">No data</p>
-                                        @endif
-                                    </div>
+                                <div>
+                                    <p class="text-gray-500">Suspects Listed</p>
+                                    <p class="font-semibold">{{ is_array($suspects) ? count($suspects) : 'N/A' }}</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Victims + Suspects Section -->
+                <div class="p-6 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Victims -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-3">Victims</h2>
+
+                        @if(!empty($victims))
+                            <ul class="space-y-2">
+                                @foreach($victims as $victim)
+                                    <li class="p-3 bg-red-50 rounded border border-red-100">
+                                        <span class="font-medium text-gray-900">
+                                            {{ $victim['name'] ?? 'Unknown' }}
+                                        </span>
+                                        <span class="text-gray-600">
+                                            (Age: {{ $victim['age'] ?? 'N/A' }})
+                                        </span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p class="text-gray-500">No data available.</p>
+                        @endif
+                    </div>
+
+                    <!-- Suspects -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-3">Suspects</h2>
+
+                        @if(!empty($suspects))
+                            <ul class="space-y-2">
+                                @foreach($suspects as $suspect)
+                                    <li class="p-3 bg-yellow-50 rounded border border-yellow-100">
+                                        <span class="font-medium text-gray-900">
+                                            {{ $suspect['name'] ?? 'Unknown' }}
+                                        </span>
+                                        <span class="text-gray-600">
+                                            (Age: {{ $suspect['age'] ?? 'N/A' }})
+                                        </span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p class="text-gray-500">No data available.</p>
+                        @endif
                     </div>
                 </div>
             </div>

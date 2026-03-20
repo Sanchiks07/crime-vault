@@ -13,6 +13,7 @@ class SerialKiller extends Model
         'age',
         'country',
         'victim_count',
+        'description',
         'image'
     ];
     
