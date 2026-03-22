@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UnsolvedCasesController;
 use App\Http\Controllers\SerialKillersController;
+use App\Http\Controllers\VictimsController;
 use App\Http\Controllers\PsychologyController;
 use App\Http\Controllers\ResourcesController;
 
@@ -15,6 +16,8 @@ Route::get('/cases/unsolved-cases/{unsolved_case}', [UnsolvedCasesController::cl
 
 Route::get('/cases/serial-killers', [SerialKillersController::class, 'index'])->name('cases.killers.index');
 Route::get('/cases/serial-killers/{serial_killer}', [SerialKillersController::class, 'show'])->name('cases.killers.show');
+
+Route::get('/cases/victims', [VictimsController::class, 'index'])->name('victims.index');
 
 Route::get('/psychology', [PsychologyController::class, 'index'])->name('psychology.index');
 

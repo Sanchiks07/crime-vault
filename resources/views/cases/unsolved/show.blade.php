@@ -1,15 +1,15 @@
 <x-guest-layout>
-    <div class="py-12 bg-gray-50 min-h-screen">
+    <div class="py-12 bg-bg min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('cases.unsolved.index') }}" class="text-sm text-blue-600 hover:underline">
+            <a href="{{ route('cases.unsolved.index') }}" class="text-sm text-accent hover:underline">
                 ← Back to all unsolved cases
             </a>
 
-            <div class="mt-4 bg-white shadow-lg rounded-xl overflow-hidden">
+            <div class="mt-4 bg-surface shadow-lg rounded-xl overflow-hidden border border-primary">
                 <!-- Header -->
-                <div class="p-6 border-b border-gray-200">
-                    <h1 class="text-3xl font-bold text-gray-900">{{ $unsolved_case->name }}</h1>
-                    <p class="text-sm text-gray-500 mt-1">{{ $unsolved_case->country }}</p>
+                <div class="p-6 border-b border-primary">
+                    <h1 class="text-3xl font-bold text-text">{{ $unsolved_case->name }}</h1>
+                    <p class="text-sm text-text/70 mt-1">{{ $unsolved_case->country }}</p>
                 </div>
 
                 <!-- Main Content -->
@@ -23,8 +23,8 @@
                     <div class="md:col-span-2 space-y-6">
                         <!-- Description -->
                         <div>
-                            <h2 class="text-lg font-semibold text-gray-900 mb-2">Description</h2>
-                            <p class="text-gray-700 leading-relaxed whitespace-pre-line">{{ $unsolved_case->description ?? 'No description available.' }}</p>
+                            <h2 class="text-lg font-semibold text-text mb-5">Description</h2>
+                            <p class="text-text/80 leading-relaxed whitespace-pre-line">{{ $unsolved_case->description ?? 'No description available.' }}</p>
                         </div>
 
                         @php
@@ -41,18 +41,18 @@
                         @endphp
 
                         <!-- Victim Overview -->
-                        <div class="bg-gray-50 p-4 rounded-lg border">
-                            <h2 class="text-lg font-semibold mb-3">Victim Overview</h2>
+                        <div class="bg-bg p-4 rounded-lg border border-primary">
+                            <h2 class="text-lg font-semibold mb-3 text-text">Victim Overview</h2>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                                 <div>
-                                    <p class="text-gray-500">Total Victims</p>
-                                    <p class="font-semibold">{{ is_array($victims) ? count($victims) : 'N/A' }}</p>
+                                    <p class="text-text/60">Total Victims</p>
+                                    <p class="font-semibold text-text">{{ is_array($victims) ? count($victims) : 'N/A' }}</p>
                                 </div>
 
                                 <div>
-                                    <p class="text-gray-500">Suspects Listed</p>
-                                    <p class="font-semibold">{{ is_array($suspects) ? count($suspects) : 'N/A' }}</p>
+                                    <p class="text-text/60">Suspects Listed</p>
+                                    <p class="font-semibold text-text">{{ is_array($suspects) ? count($suspects) : 'N/A' }}</p>
                                 </div>
                             </div>
                         </div>
@@ -60,48 +60,48 @@
                 </div>
 
                 <!-- Victims + Suspects Section -->
-                <div class="p-6 border-t border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 border-t border-primary grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Victims -->
                     <div>
-                        <h2 class="text-lg font-semibold mb-3">Victims</h2>
+                        <h2 class="text-lg font-semibold mb-3 text-text">Victims</h2>
 
                         @if(!empty($victims))
                             <ul class="space-y-2">
                                 @foreach($victims as $victim)
-                                    <li class="p-3 bg-red-50 rounded border border-red-100">
-                                        <span class="font-medium text-gray-900">
+                                    <li class="p-3 bg-victimKilled/10 rounded border border-victimKilled">
+                                        <span class="font-medium text-text">
                                             {{ $victim['name'] ?? 'Unknown' }}
                                         </span>
-                                        <span class="text-gray-600">
+                                        <span class="text-text/70">
                                             (Age: {{ $victim['age'] ?? 'N/A' }})
                                         </span>
                                     </li>
                                 @endforeach
                             </ul>
                         @else
-                            <p class="text-gray-500">No data available.</p>
+                            <p class="text-text/60">No data available.</p>
                         @endif
                     </div>
 
                     <!-- Suspects -->
                     <div>
-                        <h2 class="text-lg font-semibold mb-3">Suspects</h2>
+                        <h2 class="text-lg font-semibold mb-3 text-text">Suspects</h2>
 
                         @if(!empty($suspects))
                             <ul class="space-y-2">
                                 @foreach($suspects as $suspect)
-                                    <li class="p-3 bg-yellow-50 rounded border border-yellow-100">
-                                        <span class="font-medium text-gray-900">
+                                    <li class="p-3 bg-suspectWounded/10 rounded border border-suspectWounded">
+                                        <span class="font-medium text-text">
                                             {{ $suspect['name'] ?? 'Unknown' }}
                                         </span>
-                                        <span class="text-gray-600">
+                                        <span class="text-text/70">
                                             (Age: {{ $suspect['age'] ?? 'N/A' }})
                                         </span>
                                     </li>
                                 @endforeach
                             </ul>
                         @else
-                            <p class="text-gray-500">No data available.</p>
+                            <p class="text-text/60">No data available.</p>
                         @endif
                     </div>
                 </div>

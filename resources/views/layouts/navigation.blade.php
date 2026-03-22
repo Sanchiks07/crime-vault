@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-bg border-b border-primary">
+<nav x-data="{ open: false }" class="bg-bg border-b border-primary text-text">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -23,23 +23,25 @@
                             $casesActive = request()->routeIs('cases.*');
                         @endphp
 
-                        <button  @mouseover="open = true" class="inline-flex items-center text-sm font-medium h-full {{ $casesActive ? 'text-text border-b-2 border-accent' : 'text-white/60' }} hover:text-accent">
+                        <button  @mouseover="open = true" class="inline-flex items-center text-sm font-medium h-full {{ $casesActive ? 'text-text border-b-2 border-accent' : 'text-text/60' }} hover:text-accent">
                             Cases
                             <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
 
-                        <div x-show="open" x-transition class="absolute w-48 bg-[#1D1616] border border-[#8E1616] rounded shadow-lg z-50">
+                        <div x-show="open" x-transition class="absolute w-48 bg-bg border border-primary rounded shadow-lg z-50">
                             <x-nav-link :href="route('cases.unsolved.index')" :active="request()->routeIs('cases.unsolved.index')" class="block px-4 py-2">
                                 Unsolved Cases
                             </x-nav-link>
-
                             <x-nav-link :href="route('cases.killers.index')" :active="request()->routeIs('cases.killers.index')" class="block px-4 py-2">
                                 Serial Killers
                             </x-nav-link>
                         </div>
                     </div>
+                    <x-nav-link :href="route('victims.index')" :active="request()->routeIs('victims.index')">
+                        Victims
+                    </x-nav-link>
                     <x-nav-link :href="route('psychology.index')" :active="request()->routeIs('psychology.index')">
                         Psychology
                     </x-nav-link>

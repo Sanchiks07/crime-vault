@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SerialKillersSeeder::class,
             VictimsSeeder::class,
-            UnsolvedCasesSeeder::class
+            UnsolvedCasesSeeder::class,
+            ResourcesSeeder::class
         ]);
     }
 }

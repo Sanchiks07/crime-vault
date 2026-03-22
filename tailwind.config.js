@@ -16,11 +16,13 @@ export default {
             },
 
             colors: {
-                bg: "var(--bg)",
-                surface: "var(--surface)",
-                primary: "var(--primary)",
-                accent: "var(--accent)",
-                text: "var(--text)",
+                bg: "rgb(var(--bg) / <alpha-value>)",
+                surface: "rgb(var(--surface) / <alpha-value>)",
+                primary: "rgb(var(--primary) / <alpha-value>)",
+                accent: "rgb(var(--accent) / <alpha-value>)",
+                text: "rgb(var(--text) / <alpha-value>)",
+                victimKilled: "rgb(var(--victimKilled) / <alpha-value>)",
+                suspectWounded: "rgb(var(--suspectWounded) / <alpha-value>)",
             }
         },
     },
