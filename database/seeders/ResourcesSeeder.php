@@ -23,7 +23,7 @@ class ResourcesSeeder extends Seeder
 
             [
                 'resource_type' => 'websites',
-                'title' => 'FBIE Vault',
+                'title' => 'FBI Vault',
                 'url' => 'https://vault.fbi.gov/',
                 'description' => 'Official source for any investigation case files.'
             ],

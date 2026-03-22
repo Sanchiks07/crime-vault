@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="py-12 bg-bg">
+    <div class="py-12 bg-bg min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-surface overflow-hidden shadow-sm sm:rounded-lg border border-primary">
                 <div class="p-6 text-text">
