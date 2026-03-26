@@ -148,6 +148,9 @@
                     </x-responsive-nav-link>
                 </div>
             </div>
+            <x-responsive-nav-link :href="route('victims.index')" :active="request()->routeIs('victims.index')">
+                Victims
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('psychology.index')" :active="request()->routeIs('psychology.index')">
                 Psychology
             </x-responsive-nav-link>

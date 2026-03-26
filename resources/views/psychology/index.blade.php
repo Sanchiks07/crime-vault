@@ -10,9 +10,6 @@
             <!-- Header -->
             <div class="mb-8 text-center">
                 <h1 class="text-4xl font-bold mb-2">Psychology</h1>
-                <p class="text-text/70 text-lg max-w-3xl mx-auto">
-                    Work in progress. Some pages are waiting for the right information to arrive.
-                </p>
             </div>
 
             <!-- Work-in-Progress Card -->
