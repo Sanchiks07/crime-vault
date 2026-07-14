@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 :root {
@@ -20,16 +20,17 @@ body {
 
     --victimKilled: #ff5c5c;
     --suspectWounded: #ffc457;
+}
 
-    /* light mode */
-    --bgLight: #eeeeee;
-    --surfaceLight: #f7f7f7;
-    --primaryLight: #d84040;
-    --accentLight: #8e1616;
-    --textLight: #1d1616;
+[data-theme="light"] {
+    --bg: #eeeeee;
+    --surface: #f7f7f7;
+    --primary: #d84040;
+    --accent: #8e1616;
+    --text: #1d1616;
 
-    --victimKilledLight: #c83232;
-    --suspectWoundedLight: #b48c28;
+    --victimKilled: #c83232;
+    --suspectWounded: #b48c28;
 }
 
 /* ---------- NAVIGATION ---------- */
