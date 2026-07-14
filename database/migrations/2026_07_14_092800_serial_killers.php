@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('serial_killers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('nickname');
+            $table->json('ages');
+            $table->string('country');
+            $table->json('victim_count');
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('serial_killers');
+    }
+};

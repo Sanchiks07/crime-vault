@@ -1,0 +1,1194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+:root {
+    /* dark mode */
+    --bg: #1d1616;
+    --surface: #3c2828;
+    --primary: #8e1616;
+    --accent: #d84040;
+    --text: #eeeeee;
+
+    --victimKilled: #ff5c5c;
+    --suspectWounded: #ffc457;
+
+    /* light mode */
+    --bgLight: #eeeeee;
+    --surfaceLight: #f7f7f7;
+    --primaryLight: #d84040;
+    --accentLight: #8e1616;
+    --textLight: #1d1616;
+
+    --victimKilledLight: #c83232;
+    --suspectWoundedLight: #b48c28;
+}
+
+/* ---------- NAVIGATION ---------- */
+.navbar {
+    background: var(--bg);
+    border-bottom: 1px solid rgba(142,22,22,.3);
+    color: var(--text);
+    height: 70px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.home-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    transition: .25s;
+}
+
+.home-link:hover {
+    color: var(--accent);
+}
+
+.navbar-menu {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    padding: 1.45rem 0;
+    border-bottom: 3px solid transparent;
+    transition: .25s;
+}
+
+.navbar-links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.navbar-links a.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+}
+
+.navbar-end, .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-end span {
+    color: rgba(255,255,255,.7);
+}
+
+/* buttons */
+.btn-profile, .btn-logout, .btn-theme {
+    padding: .55rem 1rem;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid rgba(142,22,22,.4);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn-profile:hover, .btn-logout:hover, .btn-theme:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ---------- LOGIN & REGISTER ---------- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text);
+    background: var(--bg);
+}
+
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* left image */
+.auth-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
+    background:
+        linear-gradient(rgba(15,15,15,.75), rgba(15,15,15,.85)),
+        url("/images/auth-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left,
+        rgba(142,22,22,.35),
+        transparent 55%);
+    pointer-events: none;
+}
+
+.auth-image a, .auth-back a {
+    position: relative;
+    z-index: 2;
+    color: var(--text);
+    text-decoration: none;
+    padding: .65rem 1.2rem;
+    background: rgba(0,0,0,.45);
+    border: 1px solid rgba(142,22,22,.4);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    transition: .25s;
+}
+
+.auth-image a:hover, .auth-back a:hover {
+    background: rgba(142,22,22,.35);
+    border-color: var(--accent);
+}
+
+.auth-back {
+    margin-bottom: 2.5rem;
+}
+
+/* forms */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.auth-form h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: .75rem;
+}
+
+.auth-form p {
+    color: rgba(255,255,255,.65);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.auth-form p a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.auth-form p a:hover {
+    text-decoration: underline;
+}
+
+/* inputs */
+.auth-form input {
+    width: 100%;
+    padding: .9rem 1rem;
+    margin-bottom: 1.25rem;
+    background: rgba(255,255,255,.05);
+    color: var(--text);
+    border: 1px solid rgba(142,22,22,.35);
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.auth-form input::placeholder {
+    color: rgba(255,255,255,.35);
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(216,64,64,.18);
+}
+
+/* submit button */
+.auth-form button {
+    margin-top: .5rem;
+    padding: .9rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: var(--text);
+    font-size: .95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.auth-form button:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(142,22,22,.35);
+}
+
+/* ---------- SHARED PAGE LAYOUT ---------- */
+.page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 4rem 0;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.page-container {
+    position: relative;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+/* ---------- SHARED BACKGROUND GLOW ---------- */
+.background-glow {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .2;
+}
+
+.glow-left {
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    top: -100px;
+    left: -100px;
+}
+
+.glow-right {
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    bottom: -120px;
+    right: -80px;
+}
+
+/* ---------- SHARED PAGE HEADER ---------- */
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.page-header p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,.7);
+}
+
+/* ---------- HOME BLADE ---------- */
+.home-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+/* hero */
+.home-hero {
+    padding: 2.5rem;
+    text-align: center;
+    background: rgba(33, 33, 33, .8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.4);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    transition: .3s;
+}
+
+.home-hero:hover {
+    box-shadow: 0 0 40px rgba(142,22,22,.3);
+}
+
+.home-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 1rem;
+}
+
+.home-hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,.7);
+}
+
+/* about */
+.home-about {
+    padding: 1.75rem;
+    background: rgba(33,33,33,.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    transition: .25s;
+}
+
+.home-about:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+
+.home-about h2 {
+    font-size: 1.6rem;
+    margin-bottom: .75rem;
+}
+
+.home-about p {
+    color: rgba(255,255,255,.7);
+    line-height: 1.8;
+}
+
+/* explore */
+.home-explore h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.home-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+    background: rgba(33,33,33,.7);
+    border: 1px solid rgba(142,22,22,.2);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.home-card:hover {
+    border-color: rgba(216,64,64,.5);
+}
+
+.home-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    opacity: 0;
+    transition: .3s;
+}
+
+.home-card:hover .home-card-overlay {
+    opacity: .2;
+}
+
+.home-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.home-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: .5rem;
+}
+
+.home-card p {
+    font-size: .9rem;
+    color: rgba(255,255,255,.6);
+}
+
+.home-card-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width .3s;
+}
+
+.home-card:hover .home-card-line {
+    width: 100%;
+}
+
+/* purpose + featured */
+.home-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.home-purpose-card, .home-featured-card {
+    padding: 1.5rem;
+    background: rgba(33,33,33,.8);
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.home-purpose-card {
+    border: 1px solid rgba(142,22,22,.3);
+}
+
+.home-featured-card {
+    border: 1px solid rgba(216,64,64,.3);
+}
+
+.home-purpose-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.home-featured-card:hover {
+    box-shadow: 0 0 25px rgba(216,64,64,.2);
+}
+
+.home-purpose-card h2, .home-featured-card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.home-purpose-card p {
+    color: rgba(255,255,255,.7);
+    line-height: 1.8;
+}
+
+/* featured case */
+.home-featured-content {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.home-featured-content h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.home-featured-type {
+    font-size: .875rem;
+    color: rgba(255,255,255,.5);
+}
+
+.home-featured-description {
+    color: rgba(255,255,255,.7);
+    line-height: 1.7;
+}
+
+.home-featured-link {
+    display: inline-block;
+    width: fit-content;
+    margin-top: .75rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.home-featured-link:hover {
+    color: var(--primary);
+}
+
+/* call to action */
+.home-cta {
+    padding: 2.5rem;
+    text-align: center;
+    background: linear-gradient(
+        90deg,
+        rgba(142,22,22,.3),
+        rgba(216,64,64,.2)
+    );
+    border: 1px solid rgba(142,22,22,.4);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+.home-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home-cta p {
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,.7);
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.home-button {
+    display: inline-block;
+    padding: .7rem 1.6rem;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    color: var(--text);
+    text-decoration: none;
+    background: transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    transition: .25s;
+}
+
+.home-button:hover {
+    background: var(--primary);
+    color: var(--text);
+}
+
+/* ------ INDEX BLADES (Shared by Serial Killers & Unsolved Cases) ------ */
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.archive-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.archive-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(33,33,33,.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    transition: .3s;
+}
+
+.archive-card:hover {
+    border-color: rgba(216,64,64,.5);
+    box-shadow: 0 0 30px rgba(142,22,22,.25);
+}
+
+/* image */
+.archive-image-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.archive-image {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .5s;
+}
+
+.archive-card:hover .archive-image {
+    transform: scale(1.1);
+}
+
+.archive-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.8),
+        transparent 60%
+    );
+    opacity: .8;
+}
+
+/* content */
+.archive-content {
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.archive-content h2 {
+    margin-bottom: .6rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: color .3s;
+}
+
+.archive-card:hover .archive-content h2 {
+    color: var(--accent);
+}
+
+.archive-content p {
+    margin-top: .3rem;
+    font-size: .9rem;
+    color: rgba(255,255,255,.6);
+}
+
+/* accent line */
+.archive-accent-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width .3s;
+}
+
+.archive-card:hover .archive-accent-line {
+    width: 100%;
+}
+
+/* empty state */
+.archive-empty {
+    grid-column: 1 / -1;
+    padding: 4rem;
+    text-align: center;
+}
+
+.archive-empty p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.5);
+}
+
+/* ------ SHOW BLADES (Shared by Serial Killers & Unsolved Cases) ------ */
+
+.details-back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.details-back:hover {
+    text-decoration: underline;
+}
+
+/*  main card */
+.details-card {
+    margin-top: 1rem;
+    overflow: hidden;
+    background: rgba(33,33,33,.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    transition: .3s;
+}
+
+.details-card:hover {
+    box-shadow: 0 0 40px rgba(142,22,22,.3);
+}
+
+/* header */
+.details-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(142,22,22,.3);
+}
+
+.details-header h1 {
+    margin-bottom: .4rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.details-header p {
+    font-size: .95rem;
+    color: rgba(255,255,255,.6);
+}
+
+/* main grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+/* image */
+.details-image {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.details-image img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    transition: transform .5s;
+}
+
+.details-card:hover .details-image img {
+    transform: scale(1.03);
+}
+
+/* content */
+.details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* shared content panel */
+.content-panel {
+    padding: 1.5rem;
+    background: rgba(33,33,33,.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    transition: .25s;
+}
+
+.content-panel:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.content-panel h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* description */
+.details-description {
+    color: rgba(255,255,255,.8);
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* stats */
+.details-stats {
+    display: grid;
+    gap: 1.25rem;
+}
+
+/* Three cards (Serial Killer page) */
+.details-stats:has(.details-stat:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Two cards (Unsolved page) */
+.details-stats:not(:has(.details-stat:nth-child(3))) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.details-stat {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px;
+    transition: .25s;
+}
+
+.details-stat p {
+    margin-bottom: .5rem;
+    font-size: .9rem;
+    color: rgba(255,255,255,.6);
+}
+
+.details-stat span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* modifiers */
+.details-killed {
+    background: rgba(120,25,25,.12);
+    border: 1px solid var(--victimKilled);
+}
+
+.details-killed-confirmed {
+    background: rgba(120,25,25,.2);
+    border: 1px solid var(--victimKilled);
+}
+
+.details-wounded {
+    background: rgba(190,120,40,.12);
+    border: 1px solid var(--suspectWounded);
+}
+
+.details-suspects {
+    background: rgba(190,120,40,.12);
+    border: 1px solid var(--suspectWounded);
+}
+
+/* lists */
+.details-lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(142,22,22,.3);
+}
+
+.details-list h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.details-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.details-list-item {
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    transition: .2s;
+}
+
+.details-list-item:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,.25);
+}
+
+/* list modifiers */
+.details-killed-item {
+    background: rgba(120,25,25,.2);
+    border: 1px solid var(--victimKilled);
+}
+
+.details-wounded-item {
+    background: rgba(190,120,40,.15);
+    border: 1px solid var(--suspectWounded);
+}
+
+.details-suspects-item {
+    background: rgba(190,120,40,.15);
+    border: 1px solid var(--suspectWounded);
+}
+
+.details-name {
+    font-weight: 600;
+}
+
+.details-age {
+    margin-left: .35rem;
+    color: rgba(255,255,255,.7);
+}
+
+.details-empty {
+    color: rgba(255,255,255,.6);
+}
+
+/* ---------- RESOURCES BLADE ---------- */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.resources-section {
+    background: rgba(33,33,33,.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    transition: .3s;
+}
+
+.resources-section:hover {
+    box-shadow: 0 0 40px rgba(142,22,22,.3);
+}
+
+.resources-section-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(142,22,22,.3);
+}
+
+.resources-section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.resources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.resources-card {
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(80,80,80,.1);
+    border: 1px solid rgba(142,22,22,.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    transition: .25s;
+}
+
+.resources-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.resources-card a {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.resources-card a:hover {
+    text-decoration: underline;
+}
+
+.resources-card p {
+    margin-top: .75rem;
+    color: rgba(255,255,255,.7);
+    line-height: 1.7;
+}
+
+/* ---------- VICTIMS BLADE ---------- */
+.victims-card {
+    margin-top: 1rem;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(33,33,33,.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(142,22,22,.3);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    transition: .3s;
+}
+
+.victims-card:hover {
+    box-shadow: 0 0 40px rgba(142,22,22,.3);
+}
+
+.victims-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.victims-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.victims-text p {
+    max-width: 420px;
+    margin: auto;
+    color: rgba(255,255,255,.7);
+    line-height: 1.7;
+}
+
+.victims-footer {
+    max-width: 320px;
+    margin: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(142,22,22,.3);
+}
+
+.victims-footer p {
+    font-size: .75rem;
+    color: rgba(255,255,255,.5);
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+    /* navigation */
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .home-link {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        display: none;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .navbar-links a {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar-end, .navbar-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .btn-login, .btn-register, .btn-logout {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* login & register */
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-image {
+        display: none;
+    }
+
+    .auth-form {
+        padding: 2.5rem;
+    }
+
+    /* home blade */
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .home-explore h2, .home-cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-button {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+
+    /* serial killer & unsolved cases index blade */
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* serial killer & unsolved cases show blade */
+    .details-header h1 {
+        font-size: 2rem;
+    }
+
+    .details-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    .details-lists {
+        grid-template-columns: 1fr;
+    }
+
+    .details-image img {
+        height: 380px;
+    }
+
+    /* resources blade */
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
