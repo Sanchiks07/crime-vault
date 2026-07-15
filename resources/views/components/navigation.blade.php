@@ -40,9 +40,7 @@
 
             @auth
                 <div class="navbar-end">
-                    <span>{{ Auth::user()->name }}</span>
-
-                    <a href="{{ route('profile.edit') }}" class="btn-profile">Profile</a>
+                    <span>Welcome, {{ Auth::user()->name }}!</span>
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

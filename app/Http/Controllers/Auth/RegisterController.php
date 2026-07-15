@@ -10,6 +10,12 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     public function index() {
+        $previous = url()->previous();
+
+        if (!session()->has('url.intended') && !str_contains($previous, '/login') && !str_contains($previous, '/register')) {
+            session(['url.intended' => $previous]);
+        }
+
         return view('auth.register');
     }
 
@@ -27,6 +33,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('tasks.index');
+        return redirect()->intended(route('home'));
     }
 }

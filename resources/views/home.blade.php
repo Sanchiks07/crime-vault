@@ -35,60 +35,70 @@
             <h2>Explore the Archive</h2>
 
             <div class="home-grid">
-                <div class="home-card">
-                    <div class="home-card-overlay"></div>
+                <a href="{{ route('cases.killers.index') }}" class="archive-card-link">
+                    <div class="home-card">
+                        <div class="home-card-overlay"></div>
 
-                    <div class="home-card-content">
-                        <h3>Serial Killers</h3>
-                        <p>Profiles, timelines, and behavioral patterns.</p>
+                        <div class="home-card-content">
+                            <h3>Serial Killers</h3>
+                            <p>Profiles, timelines, and behavioral patterns.</p>
+                        </div>
+
+                        <div class="home-card-line"></div>
                     </div>
+                </a>
 
-                    <div class="home-card-line"></div>
-                </div>
+                <a href="{{ route('cases.unsolved.index') }}" class="archive-card-link">
+                    <div class="home-card">
+                        <div class="home-card-overlay"></div>
 
-                <div class="home-card">
-                    <div class="home-card-overlay"></div>
+                        <div class="home-card-content">
+                            <h3>Unsolved Cases</h3>
+                            <p>Mysteries frozen in time.</p>
+                        </div>
 
-                    <div class="home-card-content">
-                        <h3>Unsolved Cases</h3>
-                        <p>Mysteries frozen in time.</p>
+                        <div class="home-card-line"></div>
                     </div>
+                </a>
 
-                    <div class="home-card-line"></div>
-                </div>
+                <a href="{{ route('psychology') }}" class="archive-card-link">
+                    <div class="home-card">
+                        <div class="home-card-overlay"></div>
 
-                <div class="home-card">
-                    <div class="home-card-overlay"></div>
+                        <div class="home-card-content">
+                            <h3>Psychology</h3>
+                            <p>Inside the mind behind the crime.</p>
+                        </div>
 
-                    <div class="home-card-content">
-                        <h3>Psychology</h3>
-                        <p>Inside the mind behind the crime.</p>
+                        <div class="home-card-line"></div>
                     </div>
+                </a>
 
-                    <div class="home-card-line"></div>
-                </div>
+                <a href="{{ route('victims') }}" class="archive-card-link">
+                    <div class="home-card">
+                        <div class="home-card-overlay"></div>
 
-                <div class="home-card">
-                    <div class="home-card-overlay"></div>
+                        <div class="home-card-content">
+                            <h3>Victims</h3>
+                            <p>The lives behind the headlines.</p>
+                        </div>
 
-                    <div class="home-card-content">
-                        <h3>Victims</h3>
-                        <p>The lives behind the headlines.</p>
+                        <div class="home-card-line"></div>
                     </div>
+                </a>
 
-                    <div class="home-card-line"></div>
-                </div>
+                <a href="{{ route('resources') }}" class="archive-card-link">
+                    <div class="home-card">
+                        <div class="home-card-overlay"></div>
 
-                <div class="home-card">
-                    <div class="home-card-overlay"></div>
+                        <div class="home-card-content">
+                            <h3>Resources</h3>
+                            <p>Tools and research materials.</p>
+                        </div>
 
-                    <div class="home-card-content">
-                        <h3>Resources</h3>
-                        <p>Tools and research materials.</p>
+                        <div class="home-card-line"></div>
                     </div>
-
-                    <div class="home-card-line"></div>
-                </div>
+                </a>
             </div>
         </section>
 

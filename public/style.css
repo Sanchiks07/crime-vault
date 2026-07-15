@@ -11,32 +11,85 @@ body {
 }
 
 :root {
-    /* dark mode */
-    --bg: #1d1616;
-    --surface: #3c2828;
-    --primary: #8e1616;
-    --accent: #d84040;
-    --text: #eeeeee;
+    /* Backgrounds */
+    --bg: #0F0F0F;
+    --bg-secondary: #181818;
+    --bg-tertiary: #222222;
+    --bg-card: #1D1D1D;
+    --bg-navbar: rgba(15, 15, 15, .92);
 
-    --victimKilled: #ff5c5c;
-    --suspectWounded: #ffc457;
+    /* Borders */
+    --border: #343434;
+    --border-accent: #660B05;
+
+    /* Text */
+    --text: #FFFFFF;
+    --text-muted: #D8D8D8;
+    --text-faded: #A0A0A0;
+
+    /* Main Accent */
+    --primary: #660B05;
+    --primary-hover: #8C1007;
+    --primary-soft: rgba(102, 11, 5, .15);
+
+    /* Secondary Accent */
+    --gold: #FFF0C4;
+    --gold-hover: #FFFFFF;
+
+    /* Status */
+    --woundedSuspects: #C98B2B;
+    --killed: #B84141;
+
+    /* Shadows */
+    --shadow: rgba(0, 0, 0, .45);
+    --shadow-red: rgba(102, 11, 5, .28);
+
+    /* Glows */
+    --glow: rgba(140, 16, 7, .18);
 }
 
-[data-theme="light"] {
-    --bg: #eeeeee;
-    --surface: #f7f7f7;
-    --primary: #d84040;
-    --accent: #8e1616;
-    --text: #1d1616;
+:root[data-theme="light"] {
+    /* Backgrounds */
+    --bg: #FCF8F1;
+    --bg-secondary: #F6F0E6;
+    --bg-tertiary: #EEE6D9;
+    --bg-card: #FFFFFF;
+    --bg-navbar: rgba(252, 248, 241, .92);
 
-    --victimKilled: #c83232;
-    --suspectWounded: #b48c28;
+    /* Borders */
+    --border: #D7CCBC;
+    --border-accent: #660B05;
+
+    /* Text */
+    --text: #1E1E1E;
+    --text-muted: #5C5C5C;
+    --text-faded: #7A7A7A;
+
+    /* Main Accent */
+    --primary: #660B05;
+    --primary-hover: #8C1007;
+    --primary-soft: rgba(102, 11, 5, .08);
+
+    /* Secondary Accent */
+    --gold: #FFF0C4;
+    --gold-hover: #FFE39A;
+
+    /* Status */
+    --woundedSupects: #AA7420;
+    --killed: #A73333;
+
+    /* Shadows */
+    --shadow: rgba(0, 0, 0, .08);
+    --shadow-red: rgba(102, 11, 5, .10);
+
+    /* Glows */
+    --glow: rgba(140, 16, 7, .08);
 }
 
 /* ---------- NAVIGATION ---------- */
 .navbar {
     background: var(--bg);
-    border-bottom: 1px solid rgba(142,22,22,.3);
+    border-bottom: 1px solid var(--border-accent);
     color: var(--text);
     height: 70px;
     width: 100%;
@@ -44,7 +97,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .navbar-container {
@@ -63,7 +116,7 @@ body {
 }
 
 .home-link:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .navbar-menu {
@@ -81,7 +134,7 @@ body {
 }
 
 .navbar-links a {
-    color: rgba(255,255,255,.75);
+    color: var(--text-muted);
     text-decoration: none;
     padding: 1.45rem 0;
     border-bottom: 3px solid transparent;
@@ -89,13 +142,13 @@ body {
 }
 
 .navbar-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--gold);
+    border-bottom-color: var(--gold);
 }
 
 .navbar-links a.active {
     color: var(--text);
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--gold);
 }
 
 .navbar-end, .navbar-actions {
@@ -105,22 +158,43 @@ body {
 }
 
 .navbar-end span {
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
 }
 
 /* buttons */
-.btn-profile, .btn-logout, .btn-theme {
+.btn-logout, .btn-theme {
     padding: .55rem 1rem;
     background: transparent;
     color: var(--text);
     text-decoration: none;
-    border: 1px solid rgba(142,22,22,.4);
+    border: 1px solid var(--border-accent);
     border-radius: 8px;
     cursor: pointer;
     transition: .25s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-profile:hover, .btn-logout:hover, .btn-theme:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-login {
+    display: inline-flex;
+    padding: .55rem 1rem;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border-accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .25s;
+    font-size: 14px;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn-login:hover {
     background: var(--primary);
     border-color: var(--primary);
 }
@@ -163,7 +237,7 @@ body {
     align-items: flex-start;
     padding: 2rem;
     background:
-        linear-gradient(rgba(15,15,15,.75), rgba(15,15,15,.85)),
+        linear-gradient(var(--shadow), var(--shadow)),
         url("/images/auth-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -175,7 +249,7 @@ body {
     inset: 0;
     background:
         radial-gradient(circle at top left,
-        rgba(142,22,22,.35),
+        var(--glow),
         transparent 55%);
     pointer-events: none;
 }
@@ -186,16 +260,16 @@ body {
     color: var(--text);
     text-decoration: none;
     padding: .65rem 1.2rem;
-    background: rgba(0,0,0,.45);
-    border: 1px solid rgba(142,22,22,.4);
+    background: var(--shadow);
+    border: 1px solid var(--border-accent);
     border-radius: 999px;
     backdrop-filter: blur(8px);
     transition: .25s;
 }
 
 .auth-image a:hover, .auth-back a:hover {
-    background: rgba(142,22,22,.35);
-    border-color: var(--accent);
+    background: var(--glow);
+    border-color: var(--primary);
 }
 
 .auth-back {
@@ -208,7 +282,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 4rem;
-    background: var(--surface);
+    background: var(--bg-secondary);
     color: var(--text);
 }
 
@@ -219,13 +293,13 @@ body {
 }
 
 .auth-form p {
-    color: rgba(255,255,255,.65);
+    color: var(--text-muted);
     margin-bottom: 2rem;
     line-height: 1.6;
 }
 
 .auth-form p a {
-    color: var(--accent);
+    color: var(--gold);
     text-decoration: none;
 }
 
@@ -238,21 +312,21 @@ body {
     width: 100%;
     padding: .9rem 1rem;
     margin-bottom: 1.25rem;
-    background: rgba(255,255,255,.05);
+    background: var(--primary-soft);
     color: var(--text);
-    border: 1px solid rgba(142,22,22,.35);
+    border: 1px solid var(--border-accent);
     border-radius: 10px;
     transition: .25s;
 }
 
 .auth-form input::placeholder {
-    color: rgba(255,255,255,.35);
+    color: var(--text-faded);
 }
 
 .auth-form input:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(216,64,64,.18);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--glow);
 }
 
 /* submit button */
@@ -270,9 +344,9 @@ body {
 }
 
 .auth-form button:hover {
-    background: var(--accent);
+    background: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(142,22,22,.35);
+    box-shadow: 0 10px 30px var(--shadow-red);
 }
 
 /* ---------- SHARED PAGE LAYOUT ---------- */
@@ -318,7 +392,7 @@ body {
 .glow-right {
     width: 400px;
     height: 400px;
-    background: var(--accent);
+    background: var(--gold);
     bottom: -120px;
     right: -80px;
 }
@@ -340,7 +414,7 @@ body {
     margin: auto;
     font-size: 1.125rem;
     line-height: 1.7;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
 }
 
 /* ---------- HOME BLADE ---------- */
@@ -354,16 +428,16 @@ body {
 .home-hero {
     padding: 2.5rem;
     text-align: center;
-    background: rgba(33, 33, 33, .8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.4);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    box-shadow: 0 10px 30px var(--shadow);
     transition: .3s;
 }
 
 .home-hero:hover {
-    box-shadow: 0 0 40px rgba(142,22,22,.3);
+    box-shadow: 0 0 40px var(--shadow-red);
 }
 
 .home-hero h1 {
@@ -378,22 +452,22 @@ body {
     margin: auto;
     font-size: 1.125rem;
     line-height: 1.8;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
 }
 
 /* about */
 .home-about {
     padding: 1.75rem;
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    box-shadow: 0 8px 20px var(--shadow);
     transition: .25s;
 }
 
 .home-about:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+    box-shadow: 0 10px 25px var(--shadow);
 }
 
 .home-about h2 {
@@ -402,7 +476,7 @@ body {
 }
 
 .home-about p {
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
     line-height: 1.8;
 }
 
@@ -423,21 +497,21 @@ body {
     position: relative;
     overflow: hidden;
     padding: 1.5rem;
-    background: rgba(33,33,33,.7);
-    border: 1px solid rgba(142,22,22,.2);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 14px;
     cursor: pointer;
     transition: .3s;
 }
 
 .home-card:hover {
-    border-color: rgba(216,64,64,.5);
+    border-color: var(--primary);
 }
 
 .home-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--accent), var(--primary));
+    background: linear-gradient(135deg, var(--gold), var(--primary));
     opacity: 0;
     transition: .3s;
 }
@@ -458,7 +532,7 @@ body {
 
 .home-card p {
     font-size: .9rem;
-    color: rgba(255,255,255,.6);
+    color: var(--text-muted);
 }
 
 .home-card-line {
@@ -467,7 +541,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--gold);
     transition: width .3s;
 }
 
@@ -484,25 +558,18 @@ body {
 
 .home-purpose-card, .home-featured-card {
     padding: 1.5rem;
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     border-radius: 20px;
     transition: .3s;
-}
-
-.home-purpose-card {
-    border: 1px solid rgba(142,22,22,.3);
-}
-
-.home-featured-card {
-    border: 1px solid rgba(216,64,64,.3);
+    border: 1px solid var(--border-accent);
 }
 
 .home-purpose-card:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    box-shadow: 0 10px 25px var(--shadow);
 }
 
 .home-featured-card:hover {
-    box-shadow: 0 0 25px rgba(216,64,64,.2);
+    box-shadow: 0 0 25px var(--shadow-red);
 }
 
 .home-purpose-card h2, .home-featured-card h2 {
@@ -511,7 +578,7 @@ body {
 }
 
 .home-purpose-card p {
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
     line-height: 1.8;
 }
 
@@ -529,11 +596,11 @@ body {
 
 .home-featured-type {
     font-size: .875rem;
-    color: rgba(255,255,255,.5);
+    color: var(--text-faded);
 }
 
 .home-featured-description {
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
@@ -541,7 +608,7 @@ body {
     display: inline-block;
     width: fit-content;
     margin-top: .75rem;
-    color: var(--accent);
+    color: var(--gold);
     text-decoration: none;
     transition: .2s;
 }
@@ -556,12 +623,12 @@ body {
     text-align: center;
     background: linear-gradient(
         90deg,
-        rgba(142,22,22,.3),
-        rgba(216,64,64,.2)
+        var(--primary-soft),
+        var(--glow)
     );
-    border: 1px solid rgba(142,22,22,.4);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
 .home-cta h2 {
@@ -571,7 +638,7 @@ body {
 
 .home-cta p {
     margin-bottom: 2rem;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
 }
 
 .home-buttons {
@@ -589,7 +656,7 @@ body {
     color: var(--text);
     text-decoration: none;
     background: transparent;
-    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    box-shadow: 0 4px 12px var(--shadow);
     transition: .25s;
 }
 
@@ -616,17 +683,17 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+    box-shadow: 0 6px 18px var(--shadow);
     transition: .3s;
 }
 
 .archive-card:hover {
-    border-color: rgba(216,64,64,.5);
-    box-shadow: 0 0 30px rgba(142,22,22,.25);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--shadow-red);
 }
 
 /* image */
@@ -656,7 +723,7 @@ body {
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0,0,0,.8),
+        var(--shadow),
         transparent 60%
     );
     opacity: .8;
@@ -676,13 +743,13 @@ body {
 }
 
 .archive-card:hover .archive-content h2 {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .archive-content p {
     margin-top: .3rem;
     font-size: .9rem;
-    color: rgba(255,255,255,.6);
+    color: var(--text-muted);
 }
 
 /* accent line */
@@ -692,7 +759,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--gold);
     transition: width .3s;
 }
 
@@ -709,15 +776,14 @@ body {
 
 .archive-empty p {
     font-size: 1.1rem;
-    color: rgba(255,255,255,.5);
+    color: var(--text-faded);
 }
 
-/* ------ SHOW BLADES (Shared by Serial Killers & Unsolved Cases) ------ */
-
+/* ------ SHARED SHOW BLADES (Serial Killers & Unsolved Cases) ------ */
 .details-back {
     display: inline-block;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--gold);
     text-decoration: none;
     transition: .2s;
 }
@@ -730,23 +796,23 @@ body {
 .details-card {
     margin-top: 1rem;
     overflow: hidden;
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    box-shadow: 0 15px 40px var(--shadow);
     transition: .3s;
 }
 
 .details-card:hover {
-    box-shadow: 0 0 40px rgba(142,22,22,.3);
+    box-shadow: 0 0 40px var(--shadow-red);
 }
 
 /* header */
 .details-header {
     padding: 1.5rem;
     text-align: center;
-    border-bottom: 1px solid rgba(142,22,22,.3);
+    border-bottom: 1px solid var(--border-accent);
 }
 
 .details-header h1 {
@@ -757,7 +823,7 @@ body {
 
 .details-header p {
     font-size: .95rem;
-    color: rgba(255,255,255,.6);
+    color: var(--text-muted);
 }
 
 /* main grid */
@@ -784,10 +850,6 @@ body {
     transition: transform .5s;
 }
 
-.details-card:hover .details-image img {
-    transform: scale(1.03);
-}
-
 /* content */
 .details-content {
     display: flex;
@@ -798,28 +860,22 @@ body {
 /* shared content panel */
 .content-panel {
     padding: 1.5rem;
-    background: rgba(33,33,33,.7);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    box-shadow: 0 4px 12px var(--shadow);
     transition: .25s;
 }
 
-.content-panel:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
 .content-panel h2 {
-    margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 /* description */
 .details-description {
-    color: rgba(255,255,255,.8);
-    line-height: 1.8;
+    color: var(--text);
     white-space: pre-line;
 }
 
@@ -849,7 +905,7 @@ body {
 .details-stat p {
     margin-bottom: .5rem;
     font-size: .9rem;
-    color: rgba(255,255,255,.6);
+    color: var(--text-muted);
 }
 
 .details-stat span {
@@ -859,23 +915,23 @@ body {
 
 /* modifiers */
 .details-killed {
-    background: rgba(120,25,25,.12);
-    border: 1px solid var(--victimKilled);
+    background: var(--primary-soft);
+    border: 1px solid var(--killed);
 }
 
 .details-killed-confirmed {
-    background: rgba(120,25,25,.2);
-    border: 1px solid var(--victimKilled);
+    background: var(--glow);
+    border: 1px solid var(--killed);
 }
 
 .details-wounded {
-    background: rgba(190,120,40,.12);
-    border: 1px solid var(--suspectWounded);
+    background: rgba(201,139,43,.12);
+    border: 1px solid var(--woundedSuspects);
 }
 
 .details-suspects {
-    background: rgba(190,120,40,.12);
-    border: 1px solid var(--suspectWounded);
+    background: rgba(201,139,43,.12);
+    border: 1px solid var(--woundedSuspects);
 }
 
 /* lists */
@@ -884,7 +940,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 1.5rem;
-    border-top: 1px solid rgba(142,22,22,.3);
+    border-top: 1px solid var(--border-accent);
 }
 
 .details-list h2 {
@@ -904,28 +960,28 @@ body {
 .details-list-item {
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px var(--shadow);
     transition: .2s;
 }
 
 .details-list-item:hover {
-    box-shadow: 0 6px 15px rgba(0,0,0,.25);
+    box-shadow: 0 6px 15px var(--shadow);
 }
 
 /* list modifiers */
 .details-killed-item {
-    background: rgba(120,25,25,.2);
-    border: 1px solid var(--victimKilled);
+    background: var(--glow);
+    border: 1px solid var(--killed);
 }
 
 .details-wounded-item {
-    background: rgba(190,120,40,.15);
-    border: 1px solid var(--suspectWounded);
+    background: rgba(201,139,43,.15);
+    border: 1px solid var(--woundedSuspects);
 }
 
 .details-suspects-item {
-    background: rgba(190,120,40,.15);
-    border: 1px solid var(--suspectWounded);
+    background: rgba(201,139,43,.15);
+    border: 1px solid var(--woundedSuspects);
 }
 
 .details-name {
@@ -934,11 +990,11 @@ body {
 
 .details-age {
     margin-left: .35rem;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
 }
 
 .details-empty {
-    color: rgba(255,255,255,.6);
+    color: var(--text-muted);
 }
 
 /* ---------- RESOURCES BLADE ---------- */
@@ -946,25 +1002,23 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin: 2rem;
 }
 
 .resources-section {
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    box-shadow: 0 15px 40px var(--shadow);
     transition: .3s;
-}
-
-.resources-section:hover {
-    box-shadow: 0 0 40px rgba(142,22,22,.3);
+    padding: 2rem;
 }
 
 .resources-section-header {
     padding: 1.5rem;
-    border-bottom: 1px solid rgba(142,22,22,.3);
+    border-bottom: 1px solid var(--border-accent);
 }
 
 .resources-section-header h2 {
@@ -976,27 +1030,22 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1.5rem;
 }
 
 .resources-card {
     padding: 1rem;
     border-radius: 14px;
-    background: rgba(80,80,80,.1);
-    border: 1px solid rgba(142,22,22,.2);
-    box-shadow: 0 4px 12px rgba(0,0,0,.18);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px var(--shadow);
     transition: .25s;
-}
-
-.resources-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
 
 .resources-card a {
     display: inline-block;
     font-size: 1.125rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--gold);
     text-decoration: none;
     transition: .2s;
 }
@@ -1007,7 +1056,7 @@ body {
 
 .resources-card p {
     margin-top: .75rem;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
@@ -1016,17 +1065,17 @@ body {
     margin-top: 1rem;
     padding: 2rem;
     text-align: center;
-    background: rgba(33,33,33,.8);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(142,22,22,.3);
+    border: 1px solid var(--border-accent);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    box-shadow: 0 15px 40px var(--shadow);
     transition: .3s;
 }
 
 .victims-card:hover {
-    box-shadow: 0 0 40px rgba(142,22,22,.3);
+    box-shadow: 0 0 40px var(--shadow-red);
 }
 
 .victims-content {
@@ -1044,7 +1093,7 @@ body {
 .victims-text p {
     max-width: 420px;
     margin: auto;
-    color: rgba(255,255,255,.7);
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
@@ -1052,12 +1101,12 @@ body {
     max-width: 320px;
     margin: auto;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(142,22,22,.3);
+    border-top: 1px solid var(--border-accent);
 }
 
 .victims-footer p {
     font-size: .75rem;
-    color: rgba(255,255,255,.5);
+    color: var(--text-faded);
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
@@ -1090,7 +1139,7 @@ body {
         top: 70px;
         left: 0;
         width: 100%;
-        background: #2c3e50;
+        background: var(--bg-secondary);
         flex-direction: column;
         align-items: flex-start;
         padding: 1rem 2rem;
@@ -1110,7 +1159,7 @@ body {
     .navbar-links a {
         width: 100%;
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid var(--border);
     }
 
     .navbar-end, .navbar-actions {

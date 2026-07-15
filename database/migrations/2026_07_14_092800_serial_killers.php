@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('serial_killers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('nickname');
             $table->json('ages');
             $table->string('country');

@@ -1,11 +1,11 @@
 <x-layout>
-<div class="resources-page">
+<div class="page">
     <div class="background-glow">
         <div class="glow glow-left"></div>
         <div class="glow glow-right"></div>
     </div>
 
-    <div class="resources-container">
+    <div class="page-container">
         <div class="page-header">
             <h1>Resources</h1>
 
@@ -21,14 +21,14 @@
 
         <div class="resources-grid">
             @foreach ($groupedResources as $sectionTitle => $items)
-                <div class="resource-section">
-                    <div class="resource-header">
+                <div class="resources-section">
+                    <div class="resources-header">
                         <h2>{{ ucfirst($sectionTitle) }}</h2>
-                    </div>
+                    </div><br>
 
-                    <div class="resource-list">
+                    <div class="resources-list">
                         @foreach ($items as $item)
-                            <div class="resource-card">
+                            <div class="resources-card">
                                 <a href="{{ $item->url }}" target="_blank" rel="noopener noreferrer">{{ $item->title }}</a>
                                 <p>{{ $item->description }}</p>
                             </div>

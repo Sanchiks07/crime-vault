@@ -52,11 +52,11 @@ class SerialKillerSeeder extends Seeder
 
             // 2nd case
             [
-                'name' => 'Unknown',
+                'name' => null,
                 'nickname' => 'Zodiac Killer',
                 'ages' => json_encode([
                     [
-                        'name' => 'Unknown',
+                        'name' => null,
                         'age' => null,
                     ]
                 ]),
@@ -88,11 +88,11 @@ class SerialKillerSeeder extends Seeder
 
             // 3rd case
             [
-                'name' => 'Unknown',
+                'name' => null,
                 'nickname' => 'Jack the Ripper',
                 'ages' => json_encode([
                     [
-                        'name' => 'Unknown',
+                        'name' => null,
                         'age' => null,
                     ]
                 ]),
@@ -119,7 +119,7 @@ class SerialKillerSeeder extends Seeder
 
                 The legacy of Jack the Ripper is one of enduring mystery. The case highlighted the social conditions of the time, drawing attention to poverty, inequality, and the vulnerability of those living on the margins of society. More than a century later, the victims are still remembered, not just as part of a legend, but as individuals whose lives were taken in a series of crimes that remain unsolved.
                 TEXT,
-                'image' => ''
+                'image' => null
             ],
 
             // 4th case
@@ -238,7 +238,7 @@ class SerialKillerSeeder extends Seeder
 
                 The Hillside Strangler case exposed how two offenders working together could complicate criminal investigations and delay the identification of those responsible. It also highlighted the vulnerability of victims who were often overlooked by society. Today, the case remains one of California's most infamous serial murder investigations, remembered not only for its brutality but also for the twelve lives that were stolen.
                 TEXT,
-                'image' => 'hillside-stranglers.jpg'
+                'image' => null
             ],
 
 
