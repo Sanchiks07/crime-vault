@@ -1,0 +1,1857 @@
+:root {
+    /* Main Theme */
+    --psy-bg: rgb(var(--bg));
+    --psy-surface: rgb(var(--surface));
+    --psy-primary: rgb(var(--primary));
+    --psy-accent: rgb(var(--accent));
+    --psy-text: rgb(var(--text));
+
+    /* Additional Shades */
+    --psy-surface-light: rgba(var(--surface), 0.78);
+    --psy-surface-dark: rgba(12, 10, 10, 0.88);
+
+    --psy-border: rgba(var(--accent), .18);
+    --psy-border-hover: rgba(var(--accent), .45);
+
+    --psy-shadow: 0 20px 60px rgba(0,0,0,.45);
+
+    --psy-shadow-hover: 0 30px 80px rgba(0,0,0,.60);
+
+    --psy-glow: 0 0 35px rgba(var(--accent), .20);
+
+    --psy-glow-strong: 0 0 70px rgba(var(--accent), .35);
+
+    --psy-radius: 22px;
+    --psy-radius-small: 14px;
+
+    --psy-transition: .35s ease;
+
+    --psy-max-width: 1450px;
+}
+
+
+/*==================================================
+    PAGE
+==================================================*/
+.psychology-page{
+    position:relative;
+    overflow:hidden;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,
+            rgba(var(--accent), .09),
+            transparent 28%),
+
+        radial-gradient(circle at 90% 15%,
+            rgba(var(--primary), .14),
+            transparent 35%),
+
+        radial-gradient(circle at 15% 80%,
+            rgba(var(--accent), .06),
+            transparent 30%),
+
+        linear-gradient(
+            180deg,
+            rgb(16,16,16),
+            rgb(var(--bg)) 22%,
+            rgb(20,17,17) 70%,
+            rgb(14,14,14)
+        );
+    color:var(--psy-text);
+}
+
+/*==================================================
+    LARGE BACKGROUND GLOWS
+==================================================*/
+.psychology-page::before{
+    content:"";
+    position:fixed;
+    inset:-20%;
+    pointer-events:none;
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent), .08),
+            transparent 60%
+        );
+    filter:blur(140px);
+    animation: psychologyGlowOne 18s ease-in-out infinite;
+    z-index:0;
+}
+
+
+.psychology-page::after{
+    content:"";
+    position:fixed;
+    width:900px;
+    height:900px;
+    right:-250px;
+    bottom:-250px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--primary), .12),
+            transparent 72%
+        );
+    filter:blur(120px);
+    pointer-events:none;
+    animation: psychologyGlowTwo 24s ease-in-out infinite;
+    z-index:0;
+}
+
+
+/*==================================================
+    CONTENT ABOVE BACKGROUND
+==================================================*/
+.psychology-page>*{
+    position:relative;
+    z-index:2;
+}
+
+/*==================================================
+    MAIN CONTAINER
+==================================================*/
+.psychology-container{
+    width:min(94%, var(--psy-max-width));
+    margin:auto;
+}
+
+/*==================================================
+    TYPOGRAPHY
+==================================================*/
+.psychology-page h1, .psychology-page h2,
+.psychology-page h3, .psychology-page h4{
+    color:white;
+    line-height:1.15;
+    letter-spacing:.5px;
+    font-weight:700;
+}
+
+
+.psychology-page h1{
+    font-size:clamp(3rem, 6vw, 5.8rem);
+    margin-bottom:30px;
+}
+
+
+.psychology-page h2{
+    font-size:clamp(2rem,4vw,3.5rem);
+    margin-bottom:20px;
+}
+
+.psychology-page h3{
+    font-size:1.35rem;
+    margin-bottom:16px;
+}
+
+.psychology-page p{
+    color:rgba(255,255,255,.82);
+    font-size:1.02rem;
+    line-height:1.95;
+}
+
+.psychology-page strong {
+    color:white;
+}
+
+.psychology-page a{
+    color:var(--psy-accent);
+    transition:var(--psy-transition);
+    text-decoration:none;
+}
+
+.psychology-page a:hover{
+    color:white;
+}
+
+/*==================================================
+    SELECTION
+==================================================*/
+.psychology-page ::selection{
+    background:rgba(var(--accent), .30);
+    color:white;
+}
+
+/*==================================================
+    SECTION SPACING
+==================================================*/
+.psychology-section{
+    position:relative;
+    padding:140px 0;
+}
+
+.psychology-section:first-of-type{
+    padding-top:180px;
+}
+
+/*==================================================
+    SECTION DIVIDER
+==================================================*/
+.psychology-section::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:160px;
+    height:1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(var(--accent), .45),
+            transparent
+        );
+}
+
+/*==================================================
+    SMOOTH SCROLLING
+==================================================*/
+html{
+    scroll-behavior:smooth;
+}
+
+/*==================================================
+    SUBTLE FADE OVERLAY
+==================================================*/
+.psychology-overlay{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 45%,
+            rgba(0,0,0,.35)
+        );
+}
+
+
+/*==================================================
+    ANIMATIONS
+==================================================*/
+
+@keyframes psychologyGlowOne{
+    0%{
+        transform: translate(-2%,0) scale(1);
+    }
+
+    50%{
+        transform: translate(3%,2%) scale(1.08);
+    }
+    
+    100%{
+        transform: translate(-2%,0) scale(1);
+    }
+}
+
+@keyframes psychologyGlowTwo{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.12);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+/*==================================================
+    HERO
+==================================================*/
+.psychology-hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+
+/*==================================================
+    HERO CONTENT
+==================================================*/
+.psychology-hero-content{
+    position:relative;
+    z-index:5;
+    max-width:900px;
+    padding:40px 20px;
+    animation: heroFadeUp 1.2s ease;
+}
+
+.psychology-hero-content h1{
+    margin-bottom:24px;
+    text-shadow: 0 0 25px rgba(var(--accent), .18);
+}
+
+.psychology-hero-content p{
+    font-size:1.15rem;
+    line-height:2;
+    max-width:760px;
+    margin:0 auto 40px;
+    color:rgba(255,255,255,.82);
+}
+
+/*==================================================
+    HERO LABEL
+==================================================*/
+.hero-label{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 22px;
+    margin-bottom:35px;
+    border:1px solid rgba(var(--accent), .25);
+    border-radius:999px;
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(18px);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.8rem;
+    color:rgba(255,255,255,.75);
+}
+
+.hero-label::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--psy-accent);
+    box-shadow: 0 0 14px rgba(var(--accent), .75);
+}
+
+/*==================================================
+    HERO BUTTONS
+==================================================*/
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.hero-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 34px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:all .35s ease;
+    cursor:pointer;
+}
+
+.hero-button.primary{
+    background:linear-gradient(
+        135deg,
+        rgba(var(--accent),1),
+        rgba(var(--primary),1)
+    );
+    color:white;
+    box-shadow: 0 15px 45px rgba(var(--accent), .30);
+}
+
+.hero-button.primary:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 25px 60px rgba(var(--accent), .45);
+}
+
+.hero-button.secondary{
+    background:rgba(255,255,255,.03);
+    color:white;
+    border:1px solid rgba(var(--accent), .22);
+    backdrop-filter:blur(16px);
+}
+
+.hero-button.secondary:hover{
+    border-color:rgba(var(--accent), .6);
+    background:rgba(var(--accent), .08);
+    transform:translateY(-5px);
+}
+
+/*==================================================
+    HERO SCROLL INDICATOR
+==================================================*/
+.hero-scroll{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    color:rgba(255,255,255,.6);
+    font-size:.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    animation: scrollBounce 2.6s infinite;
+}
+
+.hero-scroll-line{
+    width:2px;
+    height:60px;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(var(--accent),.8),
+            transparent
+        );
+}
+
+/*==================================================
+    HERO BACKGROUND GLOW
+==================================================*/
+
+.hero-glow{
+    position:absolute;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent), .14),
+            transparent 70%
+        );
+    filter:blur(70px);
+    animation: heroPulse 8s ease-in-out infinite;
+    z-index:-1;
+}
+
+/*==================================================
+    HERO GRID
+==================================================*/
+.hero-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+    background-size:60px 60px;
+    opacity:.35;
+    mask-image: radial-gradient(circle, white 35%, transparent 100%);
+    z-index:-2;
+}
+
+/*==================================================
+    FLOATING PARTICLES
+==================================================*/
+.hero-particle{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:rgba(var(--accent), .55);
+    filter:blur(.4px);
+    animation: floatParticle 14s linear infinite;
+}
+
+/*==================================================
+    HERO ANIMATIONS
+==================================================*/
+@keyframes heroFadeUp{
+    from{
+        opacity:0;
+        transform: translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heroPulse{
+    0%{
+        transform:scale(1);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scale(1.15);
+        opacity:.85;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:.55;
+    }
+}
+
+
+@keyframes scrollBounce{
+    0%,100%{
+        transform: translate(-50%,0);
+    }
+
+    50%{
+        transform: translate(-50%,10px);
+    }
+}
+
+
+@keyframes floatParticle{
+    from{
+        transform: translateY(100vh) scale(.8);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    to{
+        transform: translateY(-15vh) scale(1.3);
+        opacity:0;
+    }
+}
+
+/*==================================================
+    SECTION HEADERS
+==================================================*/
+.section-heading{
+    position:relative;
+    max-width:900px;
+    margin:0 auto 90px;
+    text-align:center;
+}
+
+.section-heading h2{
+    position:relative;
+    display:inline-block;
+    margin-bottom:28px;
+    padding-bottom:18px;
+}
+
+.section-heading h2::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:120px;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(var(--accent),1),
+        transparent
+    );
+    box-shadow: 0 0 18px rgba(var(--accent), .35);
+}
+
+.section-heading p{
+    font-size:1.08rem;
+    line-height:2;
+    color:rgba(255,255,255,.78);
+}
+
+/*==================================================
+    MUSEUM EXHIBIT TAG
+==================================================*/
+.section-tag{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 24px;
+    margin-bottom:26px;
+    border-radius:999px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--surface), .90),
+            rgba(25,25,25,.92)
+        );
+    border:1px solid rgba(var(--accent), .25);
+    color:rgba(255,255,255,.72);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.78rem;
+    font-weight:600;
+    overflow:hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,.35);
+}
+
+.section-tag::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.05),
+            transparent
+        );
+    transform:translateX(-100%);
+    transition:1s;
+}
+
+.section-heading:hover .section-tag::before{
+    transform:translateX(100%);
+}
+
+/*==================================================
+    GENERAL GRID
+==================================================*/
+.psychology-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap:34px;
+    align-items:stretch;
+}
+
+/*==================================================
+    TWO COLUMN GRID
+==================================================*/
+.comparison-grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(320px,1fr));
+    gap:40px;
+    margin-top:40px;
+}
+
+/*==================================================
+    MUSEUM PANELS
+==================================================*/
+.museum-panel{
+    position:relative;
+    margin-top:70px;
+    padding:45px;
+    border-radius:var(--psy-radius);
+    overflow:hidden;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .88),
+            rgba(22,18,18,.96)
+        );
+    border:1px solid rgba(var(--accent), .18);
+    box-shadow: var(--psy-shadow);
+}
+
+.museum-panel::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:5px;
+    height:100%;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(var(--accent),1),
+            rgba(var(--primary),1)
+        );
+}
+
+.museum-panel h3{
+    margin-bottom:18px;
+}
+
+.museum-panel p{
+    margin:0;
+}
+
+/*==================================================
+    BLOCKQUOTE
+==================================================*/
+.museum-panel blockquote{
+    margin:0;
+    padding-left:35px;
+    position:relative;
+    font-size:1.3rem;
+    line-height:1.9;
+    color:white;
+    font-style:italic;
+}
+
+.museum-panel blockquote::before{
+    content:"“";
+    position:absolute;
+    left:0;
+    top:-12px;
+    font-size:4rem;
+    color:rgba(var(--accent), .55);
+    line-height:1;
+}
+
+/*==================================================
+    SUBTITLES
+==================================================*/
+.card-subtitle{
+    display:inline-block;
+    margin-bottom:18px;
+    padding:6px 14px;
+    border-radius:999px;
+    background:rgba(var(--accent), .12);
+    border:1px solid rgba(var(--accent), .18);
+    color:rgba(255,255,255,.70);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.75rem;
+}
+
+/*==================================================
+    NUMBER BADGES
+==================================================*/
+.card-number{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:26px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--accent),1),
+            rgba(var(--primary),1)
+        );
+    color:white;
+    font-weight:700;
+    font-size:1.1rem;
+    box-shadow: 0 10px 30px rgba(var(--accent), .35);
+}
+
+/*==================================================
+    HORIZONTAL RULES
+==================================================*/
+.psychology-page hr{
+    margin:28px 0;
+    border:none;
+    height:1px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(var(--accent), .30),
+            transparent
+        );
+}
+
+/*==================================================
+    SPACING HELPERS
+==================================================*/
+.psychology-section > * + *{
+    margin-top:40px;
+}
+
+/*==================================================
+    PSYCHOLOGY CARDS
+==================================================*/
+.psychology-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    padding:38px;
+    overflow:hidden;
+    border-radius:var(--psy-radius);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .92),
+            rgba(18,18,18,.96)
+        );
+    border:1px solid var(--psy-border);
+    box-shadow: var(--psy-shadow);
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease,
+        background .45s ease;
+    isolation:isolate;
+}
+
+/*==================================================
+    TOP ACCENT LINE
+==================================================*/
+.psychology-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--primary),1),
+            rgba(var(--accent),1)
+        );
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.45s ease;
+}
+
+/*==================================================
+    BACKGROUND GLOW
+==================================================*/
+.psychology-card::after{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    top:-170px;
+    right:-170px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent), .10),
+            transparent 72%
+        );
+    opacity:0;
+    transition:.45s ease;
+    z-index:-1;
+}
+
+/*==================================================
+    CARD HOVER
+==================================================*/
+.psychology-card:hover{
+    transform: translateY(-10px);
+    border-color: var(--psy-border-hover);
+    box-shadow: var(--psy-shadow-hover), var(--psy-glow);
+}
+
+.psychology-card:hover::before{
+    transform:scaleX(1);
+}
+
+.psychology-card:hover::after{
+    opacity:1;
+}
+
+/*==================================================
+    CARD TYPOGRAPHY
+==================================================*/
+.psychology-card h3{
+    margin-bottom:18px;
+    color:white;
+    transition:.35s;
+}
+
+.psychology-card:hover h3{
+    color:var(--psy-accent);
+}
+
+.psychology-card p{
+    color:rgba(255,255,255,.80);
+    margin-bottom:18px;
+}
+
+.psychology-card p:last-child{
+    margin-bottom:0;
+}
+
+/*==================================================
+    CARD ICON PLACEHOLDER
+==================================================*/
+.psychology-card .card-icon{
+    width:72px;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:28px;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--accent), .14),
+            rgba(var(--primary), .10)
+        );
+    border:1px solid rgba(var(--accent), .20);
+    font-size:2rem;
+    color:var(--psy-accent);
+}
+
+/*==================================================
+    MUSEUM NOTES
+==================================================*/
+.museum-note{
+    margin-top:auto;
+    padding:22px;
+    border-radius:16px;
+    background: rgba(255,255,255,.025);
+    border-left:4px solid var(--psy-accent);
+}
+
+.museum-note strong{
+    display:block;
+    margin-bottom:10px;
+    color:var(--psy-accent);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.82rem;
+}
+
+.museum-note p{
+    margin:0;
+    color:rgba(255,255,255,.76);
+}
+
+/*==================================================
+    PLACEHOLDER CARDS
+==================================================*/
+.placeholder-card{
+    cursor:default;
+    border-style:dashed;
+}
+
+.placeholder-card::before{
+    transform:scaleX(1);
+    opacity:.45;
+}
+
+.placeholder-card:hover{
+    transform:translateY(-6px);
+}
+
+/*==================================================
+    COMPARISON CARDS
+==================================================*/
+.comparison-card{
+    text-align:center;
+    min-height:100%;
+}
+
+.comparison-card h3{
+    margin-bottom:28px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+/*==================================================
+    MYTH CARDS
+==================================================*/
+.myth-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.myth-card h3:first-of-type{
+    color:#ffb3b3;
+}
+
+.myth-card h3:last-of-type{
+    color:#bdf7cb;
+}
+
+.myth-card:hover{
+    transform: rotateX(2deg) translateY(-10px);
+}
+
+/*==================================================
+    LISTS
+==================================================*/
+.museum-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.museum-list li{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:18px;
+    color:rgba(255,255,255,.82);
+    line-height:1.8;
+}
+
+.museum-list li:last-child{
+    margin-bottom:0;
+}
+
+.museum-list li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:12px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--psy-accent);
+    box-shadow: 0 0 12px rgba(var(--accent), .55);
+}
+
+/*==================================================
+    INTERACTIVE PLACEHOLDER
+==================================================*/
+.interactive-placeholder{
+    position:relative;
+    margin-top:80px;
+    padding:50px;
+    text-align:center;
+    border-radius:var(--psy-radius);
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255,255,255,.02),
+            rgba(255,255,255,.02) 12px,
+            rgba(255,255,255,.01) 12px,
+            rgba(255,255,255,.01) 24px
+        ),
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .92),
+            rgba(18,18,18,.98)
+        );
+    border:2px dashed rgba(var(--accent), .28);
+    box-shadow: var(--psy-shadow);
+}
+
+.interactive-placeholder::before{
+    content:"COMING SOON";
+    display:inline-block;
+    margin-bottom:20px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(var(--accent), .12);
+    border:1px solid rgba(var(--accent), .22);
+    color:var(--psy-accent);
+    letter-spacing:3px;
+    font-size:.72rem;
+    font-weight:700;
+}
+
+.interactive-placeholder h3{
+    margin-bottom:18px;
+}
+
+.interactive-placeholder p{
+    max-width:700px;
+    margin:auto;
+}
+
+/*==================================================
+    TIMELINE
+==================================================*/
+.timeline-container{
+    position:relative;
+    max-width:1100px;
+    margin:80px auto 0;
+    padding:40px 0;
+}
+
+/*==================================================
+    CENTER LINE
+==================================================*/
+.timeline-container::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:3px;
+    height:100%;
+    border-radius:999px;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(var(--accent), .8),
+            rgba(var(--primary), .9),
+            rgba(var(--accent), .8),
+            transparent
+        );
+    box-shadow: 0 0 22px rgba(var(--accent), .30);
+}
+
+/*==================================================
+    TIMELINE ITEM
+==================================================*/
+.timeline-item{
+    position:relative;
+    width:50%;
+    padding:0 70px;
+    margin-bottom:90px;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+}
+
+/*==================================================
+    LEFT / RIGHT
+==================================================*/
+.timeline-item:nth-child(odd){
+    left:0;
+    text-align:right;
+}
+
+.timeline-item:nth-child(even){
+    left:50%;
+}
+
+/*==================================================
+    TIMELINE DOT
+==================================================*/
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    top:20px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:rgb(var(--accent));
+    border:4px solid rgb(var(--bg));
+    box-shadow:
+        0 0 0 6px rgba(var(--accent), .15),
+        0 0 22px rgba(var(--accent), .55);
+    animation: timelinePulse 4s ease-in-out infinite;
+}
+
+.timeline-item:nth-child(odd)::before{
+    right:-11px;
+}
+
+.timeline-item:nth-child(even)::before{
+    left:-11px;
+}
+
+/*==================================================
+    YEAR BADGE
+==================================================*/
+.timeline-year{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 22px;
+    margin-bottom:22px;
+    border-radius:999px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--primary),1),
+            rgba(var(--accent),1)
+        );
+    color:white;
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:.82rem;
+    text-transform:0 12px 35px rgba(var(--accent), .25);
+}
+
+/*==================================================
+    TIMELINE CARD
+==================================================*/
+.timeline-content{
+    position:relative;
+    padding:32px;
+    border-radius:var(--psy-radius);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .94),
+            rgba(18,18,18,.98)
+        );
+    border:1px solid rgba(var(--accent), .18);
+    box-shadow:var(--psy-shadow);
+    transition:.4s ease;
+}
+
+.timeline-content:hover{
+    transform:translateY(-8px);
+    border-color:rgba(var(--accent), .45);
+    box-shadow: var(--psy-shadow-hover), var(--psy-glow);
+}
+
+.timeline-content h3{
+    margin-bottom:16px;
+}
+
+.timeline-content p:last-child{
+    margin-bottom:0;
+}
+
+/*==================================================
+    CONNECTOR ARROWS
+==================================================*/
+.timeline-content::before{
+    content:"";
+    position:absolute;
+    top:26px;
+    width:22px;
+    height:22px;
+    transform:rotate(45deg);
+    background: rgba(var(--surface), .94);
+    border-top:1px solid rgba(var(--accent), .18);
+    border-left:1px solid rgba(var(--accent), .18);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before{
+    right:-11px;
+    transform: rotate(135deg);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before{
+    left:-11px;
+    transform: rotate(-45deg);
+}
+
+/*==================================================
+    TIMELINE HOVER
+==================================================*/
+.timeline-item:hover .timeline-year{
+    box-shadow: 0 18px 45px rgba(var(--accent), .45);
+}
+
+.timeline-item:hover::before{
+    box-shadow:
+        0 0 0 8px rgba(var(--accent), .18),
+        0 0 35px rgba(var(--accent), .80);
+}
+
+/*==================================================
+    TIMELINE ANIMATION
+==================================================*/
+@keyframes timelinePulse{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/*==================================================
+    RESPONSIVE TIMELINE
+==================================================*/
+@media (max-width:900px){
+    .timeline-container::before{
+        left:28px;
+    }
+
+    .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:75px;
+        padding-right:0;
+        text-align:left !important;
+
+    }
+
+    .timeline-item::before{
+        left:17px !important;
+        right:auto;
+    }
+
+    .timeline-content::before{
+        left:-11px !important;
+        right:auto;
+        transform:rotate(-45deg) !important;
+    }
+}
+
+/*==================================================
+    CLOSING SECTION
+==================================================*/
+.psychology-closing{
+    position:relative;
+    text-align:center;
+    padding:180px 0 220px;
+    overflow:hidden;
+}
+
+.psychology-closing::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(var(--accent), .10),
+            transparent 70%
+        );
+    pointer-events:none;
+}
+
+.psychology-closing .section-heading{
+    max-width:900px;
+    margin-inline:auto;
+}
+
+.psychology-closing blockquote{
+    max-width:900px;
+    margin:auto;
+}
+
+/*==================================================
+    READING CARDS
+==================================================*/
+#reading .psychology-card{
+    position:relative;
+    overflow:hidden;
+}
+
+#reading .psychology-card::after{
+    content:"📖";
+    position:absolute;
+    right:25px;
+    bottom:15px;
+    font-size:4rem;
+    opacity:.05;
+    transition:.4s;
+}
+
+#reading .psychology-card:hover::after{
+    transform: rotate(-8deg) scale(1.08);
+    opacity:.10;
+}
+
+/*==================================================
+    RESOURCE CARDS
+==================================================*/
+#resources .psychology-card{
+    position:relative;
+}
+
+#resources .psychology-card::after{
+    content:"📁";
+    position:absolute;
+    right:25px;
+    bottom:18px;
+    font-size:4rem;
+    opacity:.05;
+    transition:.4s;
+}
+
+#resources .psychology-card:hover::after{
+    transform: translateY(-6px);
+    opacity:.12;
+}
+
+/*==================================================
+    MUSEUM LIBRARY ICONS
+==================================================*/
+#reading .psychology-card:nth-child(1)::after{
+    content:"📘";
+}
+
+#reading .psychology-card:nth-child(2)::after{
+    content:"📕";
+}
+
+#reading .psychology-card:nth-child(3)::after{
+    content:"📗";
+}
+
+#reading .psychology-card:nth-child(4)::after{
+    content:"📙";
+}
+
+#reading .psychology-card:nth-child(5)::after{
+    content:"📓";
+}
+
+#reading .psychology-card:nth-child(6)::after{
+    content:"📚";
+}
+
+/*==================================================
+    SUBTLE CARD SHINE
+==================================================*/
+.psychology-card .card-shine{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            115deg,
+            transparent 20%,
+            rgba(255,255,255,.08) 48%,
+            transparent 70%
+        );
+    transform: translateX(-130%);
+    transition:.8s;
+    pointer-events:none;
+}
+
+.psychology-card:hover .card-shine{
+    transform: translateX(130%);
+}
+
+/*==================================================
+    FADE IN ANIMATION
+==================================================*/
+.fade-up{
+    opacity:0;
+    transform: translateY(50px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.fade-up.visible{
+    opacity:1;
+    transform: translateY(0);
+}
+
+/*==================================================
+    IMAGE PLACEHOLDER
+==================================================*/
+.psychology-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:var(--psy-radius);
+    border:1px solid rgba(var(--accent), .20);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .90),
+            rgba(18,18,18,.98)
+        );
+    box-shadow: var(--psy-shadow);
+}
+
+.psychology-image img{
+    width:100%;
+    display:block;
+    transition: transform .7s ease;
+}
+
+.psychology-image:hover img{
+    transform: scale(1.05);
+}
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+@media (max-width:1200px){
+    .psychology-section{
+        padding:110px 0;
+    }
+}
+
+@media (max-width:992px){
+    .comparison-grid{
+        grid-template-columns:1fr;
+    }
+
+    .psychology-grid{
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    }
+
+    .museum-panel{
+        padding:35px;
+    }
+}
+
+@media (max-width:768px){
+    .psychology-section{
+        padding:90px 0;
+    }
+
+    .section-heading{
+        margin-bottom:60px;
+    }
+
+    .psychology-card{
+        padding:28px;
+    }
+
+    .museum-panel{
+        padding:28px;
+    }
+
+    .interactive-placeholder{
+        padding:35px 25px;
+    }
+
+    .psychology-closing{
+        padding:130px 0 150px;
+    }
+}
+
+@media (max-width:560px){
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-button{
+        width:100%;
+        max-width:320px;
+    }
+
+    .section-tag{
+        letter-spacing:2px;
+        font-size:.72rem;
+    }
+
+    .card-number{
+        width:48px;
+        height:48px;
+        font-size:1rem;
+    }
+
+    .museum-panel blockquote{
+        font-size:1.1rem;
+        padding-left:24px;
+    }
+}
+
+/*==================================================
+    3D FLIP CARDS
+==================================================*/
+.myth-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap:40px;
+    perspective:1400px;
+}
+
+/*==================================================
+    FLIP CARD
+==================================================*/
+.flip-card{
+    position:relative;
+    height:420px;
+    perspective:1600px;
+}
+
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    transition: transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+/*==================================================
+    FRONT / BACK
+==================================================*/
+.flip-card-front, .flip-card-back{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:40px;
+    border-radius:var(--psy-radius);
+    overflow:hidden;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--surface), .95),
+            rgba(18,18,18,.98)
+        );
+    border:1px solid rgba(var(--accent), .18);
+    box-shadow: var(--psy-shadow);
+}
+
+/*==================================================
+    FRONT
+==================================================*/
+.flip-card-front{
+    align-items:center;
+    text-align:center;
+}
+
+.flip-card-front::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(var(--accent), .10),
+            transparent 60%
+        );
+}
+
+.flip-card-front h3{
+    position:relative;
+    z-index:2;
+    margin-top:28px;
+    font-size:1.45rem;
+}
+
+/*==================================================
+    BACK
+==================================================*/
+.flip-card-back{
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h3{
+    margin-top:22px;
+}
+
+.flip-card-back p{
+    margin-top:20px;
+}
+
+/*==================================================
+    LABELS
+==================================================*/
+.card-label{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    align-self:flex-start;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.myth-label{
+    color:#ffb8b8;
+    background: rgba(255,75,75,.12);
+    border: 1px solid rgba(255,75,75,.35);
+}
+
+.fact-label{
+    color:#b8ffd1;
+    background: rgba(80,255,140,.12);
+    border: 1px solid rgba(80,255,140,.30);
+}
+
+/*==================================================
+    ROTATE ICON
+==================================================*/
+.flip-icon{
+    margin-top:auto;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:1.5rem;
+    color:rgba(255,255,255,.75);
+    background: rgba(var(--accent), .10);
+    border: 1px solid rgba(var(--accent), .18);
+    transition:.4s;
+}
+
+.flip-card:hover .flip-icon{
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(var(--accent), .20);
+}
+
+/*==================================================
+    CARD GLOW
+==================================================*/
+.flip-card-front::after,
+.flip-card-back::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    right:-140px;
+    top:-140px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent), .14),
+            transparent 72%
+        );
+    opacity:0;
+    transition:.5s;
+}
+
+.flip-card:hover .flip-card-front::after,
+.flip-card:hover .flip-card-back::after{
+    opacity:1;
+}
+
+/*==================================================
+    HOVER SHADOW
+==================================================*/
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back{
+    border-color: rgba(var(--accent), .45);
+    box-shadow:
+        var(--psy-shadow-hover),
+        var(--psy-glow-strong);
+}
+
+/*==================================================
+    MOBILE
+==================================================*/
+@media (hover:none){
+    .flip-card{
+        height:auto;
+    }
+
+    .flip-card-inner{
+        transform:none !important;
+    }
+
+    .flip-card-front, .flip-card-back{
+        position:relative;
+        transform:none;
+    }
+
+    .flip-card-back{
+        margin-top:18px;
+    }
+}
+
+/*=========================================
+    STAGGER DELAYS
+=========================================*/
+.delay-1{
+    transition-delay:.08s;
+}
+
+.delay-2{
+    transition-delay:.16s;
+}
+
+.delay-3{
+    transition-delay:.24s;
+}
+
+.delay-4{
+    transition-delay:.32s;
+}
+
+.delay-5{
+    transition-delay:.40s;
+}
+
+.delay-6{
+    transition-delay:.48s;
+}
+
+/*=========================================
+    CARD HOVER IMPROVEMENTS
+=========================================*/
+.psychology-card{
+    overflow:hidden;
+}
+
+.psychology-card::selection{
+    background: rgba(var(--accent), .25);
+}
+
+.psychology-card::before{
+    transition:
+        transform .45s,
+        opacity .45s;
+}
+
+.psychology-card:hover{
+    transform: translateY(-12px) scale(1.02);
+}
+
+/*=========================================
+    IMAGE PARALLAX
+=========================================*/
+.psychology-image{
+    overflow:hidden;
+}
+
+.psychology-image img{
+    transition: transform .8s ease, filter .8s ease;
+}
+
+.psychology-image:hover img{
+    transform: scale(1.08);
+    filter: brightness(1.08);
+}
+
+/*=========================================
+    SECTION FADE
+=========================================*/
+.psychology-section{
+    transition: opacity .8s ease;
+}
+
+/*=========================================
+    SECTION TITLE
+=========================================*/
+.section-heading h2{
+    transition:
+        transform .5s ease,
+        letter-spacing .5s ease;
+}
+
+.section-heading:hover h2{
+    transform: translateY(-3px);
+    letter-spacing:1px;
+}
+
+/*=========================================
+    CARD SHIMMER
+=========================================*/
+.psychology-card::after{
+    transition: opacity .45s, transform .8s;
+}
+
+.psychology-card:hover::after{
+    transform: scale(1.25);
+}
+
+/*=========================================
+    TIMELINE IMPROVEMENTS
+=========================================*/
+.timeline-content{
+    transition:
+        transform .45s,
+        box-shadow .45s,
+        border-color .45s;
+}
+
+.timeline-item:hover .timeline-content{
+    transform: translateY(-8px) scale(1.02);
+}
+
+/*=========================================
+    MUSEUM PANEL
+=========================================*/
+.museum-panel{
+    transition: transform .45s, box-shadow .45s;
+}
+
+.museum-panel:hover{
+    transform: translateY(-8px);
+    box-shadow:
+        var(--psy-shadow-hover),
+        var(--psy-glow);
+}
