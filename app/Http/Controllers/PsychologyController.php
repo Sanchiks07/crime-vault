@@ -7,6 +7,50 @@ use Illuminate\Http\Request;
 class PsychologyController extends Controller
 {
     public function index() {
-        return view('psychology');
+        return view('psychology.index');
+    }
+
+    public function fundimentals() {
+        return view('psychology.fundimentals');
+    }
+
+    public function personality() {
+        return view('psychology.personality');
+    }
+
+    public function profiling() {
+        return view('psychology.profiling');
+    }
+
+    public function crimeScenes() {
+        return view('psychology.crimeScenes');
+    }
+
+    public function investigativePsychology() {
+        return view('psychology.investigativePsychology');
+    }
+
+    public function victimology() {
+        return view('psychology.victimology');
+    }
+
+    public function experiments() {
+        return view('psychology.experiments');
+    }
+
+    public function myths() {
+        return view('psychology.myths');
+    }
+
+    public function resources() {
+        return view('psychology.resources');
+    }
+
+    public function facts() {
+        return view('psychology.facts');
+    }
+
+    public function faq() {
+        return view('psychology.faq');
     }
 }

@@ -61,7 +61,7 @@
                     </div>
                 </a>
 
-                <a href="{{ route('psychology') }}" class="archive-card-link">
+                <a href="{{ route('psychology.index') }}" class="archive-card-link">
                     <div class="home-card">
                         <div class="home-card-overlay"></div>
 

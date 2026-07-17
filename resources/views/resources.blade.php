@@ -12,7 +12,9 @@
             <p>
                 This page collects the websites, books, videos, and other reference material I used while researching the cases featured on this site.
                 If you have any suggestions of what I should add to this collection, feel free to contact me.
-            </p>
+            </p><br>
+
+            <small>Resources for psychology ar located in the Psychology page.</small>
         </div>
 
         @php
