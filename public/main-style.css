@@ -5,9 +5,18 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg);
     color: var(--text);
+}
+
+body a, body p {
+    font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 :root {

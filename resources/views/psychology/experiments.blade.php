@@ -8,9 +8,22 @@
         </div>
         
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- EXPERIMENTS -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== EXPERIMENTS ====== -->
             <section id="experiments" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Psychological Research</span>

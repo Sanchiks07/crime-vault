@@ -1,22 +1,35 @@
 <x-layout>
     <div class="psychology-page">
-        <div class="psychology-container">
         <!-- Background Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
             <div class="grid-overlay"></div>
         </div>
+
+        <div class="psychology-container">
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
         
-            <!-- ===================================== -->
-            <!-- MYTHS & FACTS -->
-            <!-- ===================================== -->
+            <!-- ====== MYTHS & FACTS ====== -->
             <section class="psychology-section" id="myths">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XVI</span>
+                    <span class="section-tag">Common Misconceptions</span>
                     <h2>Popular Psychology Myths</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Crime dramas have introduced countless psychological misconceptions.
                         Some are entertaining.
                         Others can seriously distort public understanding of criminal psychology.
@@ -112,84 +125,7 @@
                         </div>
                     </article>
                 </div>
-            </section>
-
-            <!-- ===================================== -->
-            <!-- Popular Myths -->
-            <!-- ===================================== -->
-            <section class="psychology-section" id="myths">
-                <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XVI</span>
-                    <h2>Popular Psychology Myths</h2>
-
-                    <p>
-                        Crime dramas have introduced countless psychological misconceptions.
-                        Some are entertaining.
-                        Others can seriously mislead public understanding of investigations.
-                    </p>
-                </div>
-
-                <div class="psychology-grid">
-                    <article class="psychology-card myth-card">
-                        <h3>Myth</h3>
-                        <p>Profilers can identify offenders from a single crime scene.</p>
-
-                        <hr>
-
-                        <h3>Fact</h3>
-
-                        <p>
-                            Profiling narrows possibilities.
-                            It never replaces forensic evidence,
-                            interviews, or investigative work.
-                        </p>
-                    </article>
-
-                    <article class="psychology-card myth-card">
-                        <h3>Myth</h3>
-                        <p>Liars always display obvious body language.</p>
-
-                        <hr>
-
-                        <h3>Fact</h3>
-
-                        <p>
-                            No universal gesture reliably identifies deception.
-                            Context and evidence remain essential.
-                        </p>
-                    </article>
-
-                    <article class="psychology-card myth-card">
-                        <h3>Myth</h3>
-                        <p>Psychological disorders automatically make someone dangerous.</p>
-
-                        <hr>
-
-                        <h3>Fact</h3>
-
-                        <p>
-                            Most people living with mental illnesses are not violent.
-                            Violence is influenced by many interacting biological,
-                            psychological, environmental, and situational factors.
-                        </p>
-                    </article>
-
-                    <article class="psychology-card myth-card">
-                        <h3>Myth</h3>
-                        <p>Witnesses remember crimes exactly as they happened.</p>
-
-                        <hr>
-
-                        <h3>Fact</h3>
-
-                        <p>
-                            Memory is remarkably useful,
-                            but it is also vulnerable to stress,
-                            suggestion, expectation, and the passage of time.
-                        </p>
-                    </article>
-                </div>
-            </section>            
+            </section>       
         </div>
     </div>
 </x-layout>

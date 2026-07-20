@@ -8,9 +8,22 @@
         </div>
         
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- FACT CARDS -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myths</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== FACT CARDS ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Important Facts</span>
@@ -62,9 +75,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- DID YOU KNOW -->
-            <!-- ===================================== -->
+            <!-- ====== DID YOU KNOW ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Quick Facts</span>

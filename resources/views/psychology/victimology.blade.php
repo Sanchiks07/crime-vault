@@ -1,6 +1,5 @@
 <x-layout>
     <div class="psychology-page">
-        <div class="psychology-container">
         <!-- Background Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
@@ -8,15 +7,29 @@
             <div class="grid-overlay"></div>
         </div>
         
-            <!-- ===================================== -->
-            <!-- VICTIMOLOGY -->
-            <!-- ===================================== -->
+        <div class="psychology-container">
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== VICTIMOLOGY ====== -->
             <section class="psychology-section" id="victimology">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit VIII</span>
+                    <span class="section-tag">Vicitm Studies</span>
                     <h2>Victimology</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Victimology studies the experiences of victims, the impact of crime,
                         and the relationship between individuals, offenders, communities, and justice systems.
                     </p>

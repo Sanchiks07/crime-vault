@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- Background Effects -->
+        <!-- ====== BACKGROUND EFFECTS ====== -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -8,15 +8,28 @@
         </div>
         
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- Psychology in Interviews -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== PSYCHOLOGY IN INTERVIEWS ====== -->
             <section class="psychology-section" id="interviews">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XIII</span>
+                    <span class="section-tag">Interview Techniques</span>
                     <h2>The Psychology of Interviews</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Investigative interviews are conversations designed to gather reliable information,
                         not performances intended to force confessions.
                     </p>
@@ -47,8 +60,7 @@
                         <h3>Active Listening</h3>
 
                         <p>
-                            Listening carefully is often more valuable than asking
-                            dozens of rapid questions.
+                            Listening carefully is often more valuable than asking dozens of rapid questions.
                             Small inconsistencies may emerge naturally over time.
                         </p>
                     </article>
@@ -58,25 +70,19 @@
 
                         <p>
                             People rarely remember events like video recordings.
-                            Memory is reconstructed,
-                            influenced by stress,
-                            attention,
-                            emotion,
-                            and time.
+                            Memory is reconstructed, influenced by stress, attention, emotion, and time.
                         </p>
                     </article>
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- Psychology & Memory -->
-            <!-- ===================================== -->
+            <!-- ====== PSYCHOLOGY & MEMORY ====== -->
             <section class="psychology-section" id="memory">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XIV</span>
+                    <span class="section-tag">Memory & Recall</span>
                     <h2>The Psychology of Memory</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Memory feels permanent, almost like a recording waiting to be replayed.
                         Modern psychology tells a different story.
                         Human memory is reconstructed each time we remember an event,
@@ -84,8 +90,8 @@
                     </p>
                 </div>
 
-                <div class="museum-panel">
-                    <h3>Memory Is Reconstruction</h3>
+                <div class="museum-panel"  style="margin-bottom:35px">
+                    <h3>Memory Is Reconstruction</h3><br>
 
                     <p>
                         Instead of storing exact copies of experiences,
@@ -138,15 +144,13 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- Body Language -->
-            <!-- ===================================== -->
+            <!-- ======= Body Language ======= -->
             <section class="psychology-section" id="body-language">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit IX</span>
+                    <span class="section-tag">Nonverbal Communication</span>
                     <h2>Body Language: Myths vs Facts</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Television often suggests that deception can be detected through a single gesture.
                         Real behavioral science paints a much more complicated picture.
                     </p>
@@ -157,10 +161,9 @@
                         <h3>Myth</h3>
                         <p>"People who avoid eye contact are lying."</p>
 
-                        <hr>
+                        <hr style="margin:20px 0">
 
                         <h3>Reality</h3>
-
                         <p>
                             Eye contact varies greatly between cultures,
                             personalities, anxiety levels, and neurodiversity.
@@ -172,10 +175,9 @@
                         <h3>Myth</h3>
                         <p>"Crossed arms mean someone is hiding something."</p>
 
-                        <hr>
+                        <hr style="margin:20px 0">
 
                         <h3>Reality</h3>
-
                         <p>
                             People cross their arms because they are cold,
                             tired, comfortable, thinking, or simply standing naturally.
@@ -186,10 +188,9 @@
                         <h3>Myth</h3>
                         <p>"Fidgeting proves guilt."</p>
 
-                        <hr>
+                        <hr style="margin:20px 0">
 
                         <h3>Reality</h3>
-
                         <p>
                             Stress affects innocent and guilty people alike.
                             Anxiety is not a reliable indicator of deception.
@@ -210,15 +211,13 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- Decision Making -->
-            <!-- ===================================== -->
+            <!-- ====== Decision Making ====== -->
             <section class="psychology-section" id="decision-making">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XV</span>
+                    <span class="section-tag">>Decision Making</span>
                     <h2>Decision Making Under Pressure</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Whether someone is a witness, investigator, first responder, or ordinary citizen,
                         pressure changes the way decisions are made.
                         The brain often shifts from careful analysis to rapid survival-oriented thinking.
@@ -268,15 +267,13 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- COGNITIVE BIASES -->
-            <!-- ===================================== -->
+            <!-- ====== COGNITIVE BIASES ======== -->
             <section class="psychology-section" id="biases">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit VII</span>
+                    <span class="section-tag">Cognitive Psychology</span>
                     <h2>Cognitive Biases</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         The human brain is remarkably efficient...
                         and remarkably unreliable.
                         Investigators, witnesses, jurors, journalists, and ordinary citizens
@@ -355,16 +352,6 @@
 
                         <p>Modern investigative training actively addresses these hidden influences.</p>
                     </article>
-                </div>
-
-                <div class="interactive-placeholder">
-                    <h3>Interactive Exhibit</h3>
-
-                    <p>
-                        Future feature:
-                        Compare eyewitness accounts, review evidence, and discover how cognitive biases
-                        can quietly change investigative decisions.
-                    </p>
                 </div>
             </section>
         </div>

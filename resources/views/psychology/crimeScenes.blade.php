@@ -1,22 +1,35 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- Background Effects -->
+        <!-- ====== BACKGROUND EFFECTS ====== -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
             <div class="grid-overlay"></div>
         </div>
-        
+
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- ORGANIZED VS DISORGANIZED CRMIME SCENES -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== ORGANIZED & DISORGANIZED CRIME SCENES ====== -->
             <section class="psychology-section" id="organized-disorganized">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XI</span>
+                    <span class="section-tag">Crime Scene Analysis</span>
                     <h2>Organized and Disorganized Crime Scenes</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         One of the most well-known concepts in criminal profiling is the distinction
                         between organized and disorganized crime scenes.
                         Modern investigators treat these categories as broad tendencies rather than rigid labels.
@@ -52,7 +65,7 @@
                 </div>
 
                 <div class="museum-panel">
-                    <h3>An Important Reminder</h3>
+                    <h3>An Important Reminder</h3><br>
 
                     <p>
                         Real investigations rarely fit perfectly into either category.
@@ -62,15 +75,13 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- CRIME SCENE BEHAVIOUR -->
-            <!-- ===================================== -->
+            <!-- ====== CRIME SCENE BEHAVIOUR ====== -->
             <section class="psychology-section" id="crime-scene">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit XII</span>
+                    <span class="section-tag">Behavioural Evidence</span>
                     <h2>What a Crime Scene Can Reveal</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Crime scenes tell stories, but not complete ones.
                         Investigators interpret physical evidence alongside psychology,
                         forensic science, and witness information.

@@ -29,7 +29,7 @@
                     Victims
                 </a>
 
-                <a href="{{ route('psychology.index') }}" class="{{ request()->routeIs('psychology') ? 'active' : '' }}">
+                <a href="{{ route('psychology.introduction') }}" class="{{ request()->routeIs('psychology.*') ? 'active' : '' }}">
                     Psychology
                 </a>
 

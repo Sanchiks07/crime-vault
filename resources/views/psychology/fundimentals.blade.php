@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- Background Effects -->
+        <!-- ====== BACKGROUND EFFECTS ====== -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -8,9 +8,22 @@
         </div>
         
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- NATURE VS NURTURE -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== NATURE VS NURTURE ====== -->
             <section id="nature" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Development</span>
@@ -70,9 +83,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- BEHAVIOURAL DEVELOPMENT TIMELINE -->
-            <!-- ===================================== -->
+            <!-- ====== BEHAVIOURAL DEVELOPMENT TIMELINE ====== -->
             <section id="timeline" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Behavioural Development</span>
@@ -87,8 +98,7 @@
                         model used to explain how multiple biological, psychological and
                         environmental influences may interact over many years. At any stage,
                         protective factors such as supportive relationships, therapy,
-                        education, positive role models and timely intervention can alter an
-                        individual's direction.
+                        education, positive role models and timely intervention can alter an individual's direction.
                     </p>
                 </div>
 
@@ -107,8 +117,7 @@
                                 social interaction help children develop empathy, trust and
                                 emotional regulation. Chronic neglect, instability or severe
                                 abuse may interfere with these developmental processes,
-                                although many children exposed to adversity grow into healthy,
-                                non-violent adults.
+                                although many children exposed to adversity grow into healthy, non-violent adults.
                             </p>
                         </div>
                     </article>
@@ -125,8 +134,7 @@
                                 individual perceives relationships, conflict and personal
                                 safety. These experiences may contribute to anxiety,
                                 hypervigilance, emotional detachment or difficulties forming
-                                healthy attachments, but they are never direct causes of
-                                criminal behaviour.
+                                healthy attachments, but they are never direct causes of criminal behaviour.
                             </p>
                         </div>
                     </article>
@@ -180,29 +188,26 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- THE HUMAN BRAIN -->
-            <!-- ===================================== -->
+            <!-- ====== THE HUMAN BRAIN ====== -->
             <section id="brain" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Neuroscience</span>
                     <h2>The Brain & Criminal Behaviour</h2>
                 </div>
 
-                    <div class="brain-information">
-                        <p>
-                            Advances in neuroscience have improved our understanding of how
-                            different brain regions contribute to behaviour. While no "criminal
-                            brain" exists, researchers have identified areas involved in
-                            emotional processing, impulse control, empathy and decision making.
-                        </p>
+                <div class="brain-information">
+                    <p>
+                        Advances in neuroscience have improved our understanding of how
+                        different brain regions contribute to behaviour. While no "criminal
+                        brain" exists, researchers have identified areas involved in
+                        emotional processing, impulse control, empathy and decision making.
+                    </p>
 
-                        <p>
-                            Brain structure alone cannot explain violent crime. Most people
-                            with neurological differences never commit offences, highlighting
-                            the importance of environmental influences and individual choice.
-                        </p>
-                    </div>
+                    <p>
+                        Brain structure alone cannot explain violent crime. Most people
+                        with neurological differences never commit offences, highlighting
+                        the importance of environmental influences and individual choice.
+                    </p>
                 </div>
 
                 <div class="brain-region-grid">
@@ -244,13 +249,11 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- Psychology Timeline -->
-            <!-- ===================================== -->
+            <!-- ====== PSYCHOLOGY TIMELINE ====== -->
             <section class="psychology-section" id="timeline-overview">
                 <div class="section-heading">
                     <span class="section-tag">Quick Reference</span>
-                    <h2>A Journey Through Criminal Psychology</h2>
+                    <h2>A Journey Through Criminal Psychology</h2><br>
 
                     <p>
                         As you move through this gallery,
@@ -306,13 +309,11 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- HISTORY OF CRIMINAL PSYCHOLOGY -->
-            <!-- ===================================== -->
+            <!-- ====== HISTORY OF CRIMINAL PSYCHOLOGY ====== -->
             <section class="psychology-section" id="history">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit VI</span>
-                    <h2>History of Criminal Psychology</h2>
+                    <span class="section-tag">Historical Development</span>
+                    <h2>History of Criminal Psychology</h2><br>
                     <p>
                         Criminal psychology did not appear overnight. It evolved through centuries of changing beliefs,
                         scientific discoveries, and countless mistakes. Every generation believed it had finally

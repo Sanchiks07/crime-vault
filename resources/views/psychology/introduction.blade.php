@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- Background Effects -->
+        <!-- ====== BACKGROUND EFFECTS ====== -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -8,9 +8,7 @@
         </div>
 
         <div class="psychology-container">
-            <!-- ===================================== -->
-            <!-- HERO -->
-            <!-- ===================================== -->
+            <!-- ====== HERO ====== -->
             <section class="psychology-hero">
                 <div class="psychology-hero-content">
                     <span class="hero-label">Crime Vault • Criminal Psychology</span>
@@ -27,9 +25,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- QUICK NAVIGATION -->
-            <!-- ===================================== -->
+            <!-- ====== QUICK NAVIGATION ====== -->
             <section class="psychology-navigation">
                 <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
@@ -44,9 +40,7 @@
                 <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
             </section>
 
-            <!-- ===================================== -->
-            <!-- INTRODUCTION -->
-            <!-- ===================================== -->
+            <!-- ====== INTRODUCTION ====== -->
             <section id="introduction" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Foundations</span>
@@ -96,9 +90,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- INFO GRID -->
-            <!-- ===================================== -->
+            <!-- ====== INFO GRID ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Core Concepts</span>
@@ -144,41 +136,16 @@
                         <h3>Decision Making</h3>
 
                         <p>
-                            Even when risk factors are present, individuals continue making
-                            choices. Criminal psychology studies why certain decisions occur,
-                            how they escalate over time and how intervention may prevent
-                            further violence.
+                            Even when risk factors are present, individuals continue making choices. 
+                            Criminal psychology studies why certain decisions occur,
+                            how they escalate over time and how intervention may prevent further violence.
                         </p>
                     </article>
                 </div>
             </section>
-            
-            <!-- ===================================== -->
-            <!-- Final Reflection -->
-            <!-- ===================================== -->
+
+            <!-- ====== FINAL REFLECTION ====== -->
             <section class="psychology-section psychology-closing">
-                <div class="section-heading">
-                    <span class="section-tag">End of Exhibition</span>
-                    <h2>Leaving the Gallery</h2>
-
-                    <p>
-                        Criminal psychology is not about predicting monsters, reading minds,
-                        or finding easy explanations for difficult questions.
-                    </p>
-
-                    <p>
-                        It is the study of human behavior through evidence, careful observation,
-                        scientific reasoning, and a willingness to question even our strongest assumptions.
-                    </p>
-
-                    <p>
-                        Every investigation, every interview, every piece of evidence,
-                        and every psychological theory contributes another small piece to a much larger puzzle.
-                        The goal is not certainty, but understanding.
-                    </p>
-
-                </div>
-
                 <div class="museum-panel">
                     <blockquote>
                         "The most valuable tool in any investigation is not certainty...

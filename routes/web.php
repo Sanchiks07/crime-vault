@@ -31,11 +31,11 @@ Route::get('/cases/serial-killers/{serial_killer}', [SerialKillerController::cla
 Route::get('/cases/victims', [VictimController::class, 'index'])->name('victims');
 
 // Psychology
-Route::get('/psychology/psychology', [PsychologyController::class, 'index'])->name('psychology.index');
+Route::get('/psychology/psychology', [PsychologyController::class, 'introduction'])->name('psychology.introduction');
 Route::get('/psychology/fundimentals', [PsychologyController::class, 'fundimentals'])->name('psychology.fundimentals');
 Route::get('/psychology/personality', [PsychologyController::class, 'personality'])->name('psychology.personality');
 Route::get('/psychology/profiling', [PsychologyController::class, 'profiling'])->name('psychology.profiling');
-Route::get('/psychology/crime-scenes', [PsychologyController::class, 'crimeScens'])->name('psychology.crimeScenes');
+Route::get('/psychology/crime-scenes', [PsychologyController::class, 'crimeScenes'])->name('psychology.crimeScenes');
 Route::get('/psychology/investigative-psychology', [PsychologyController::class, 'investigativePsychology'])->name('psychology.investigativePsychology');
 Route::get('/psychology/victimology', [PsychologyController::class, 'victimology'])->name('psychology.victimology');
 Route::get('/psychology/experiments', [PsychologyController::class, 'experiments'])->name('psychology.experiments');

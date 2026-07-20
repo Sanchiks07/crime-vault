@@ -1,16 +1,29 @@
 <x-layout>
     <div class="psychology-page">
-        <div class="psychology-container">
         <!-- Background Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
             <div class="grid-overlay"></div>
         </div>
-        
-            <!-- ===================================== -->
-            <!-- PROFILING -->
-            <!-- ===================================== -->
+
+        <div class="psychology-container">
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
+
+            <!-- ====== PROFILING ====== -->
             <section id="profiling" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Investigation</span>
@@ -81,22 +94,20 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- FBI Profiling Process -->
-            <!-- ===================================== -->
+            <!-- ====== FBI Profiling Process ====== -->
             <section class="psychology-section" id="profiling-process">
                 <div class="section-heading">
-                    <span class="section-tag">Museum Exhibit X</span>
-                    <h2>The Profiling Process</h2>
+                    <span class="section-tag">Methodology</span>
+                    <h2>The Profiling Process</h2><br>
 
-                    <p>
+                    <p class="psychology-card">
                         Criminal profiling is often portrayed as a detective instantly identifying an unknown offender
                         from a few clues. Reality is far less dramatic and far more methodical.
                         Profiling is an investigative support tool, not a machine that reveals a person's identity.
                     </p>
                 </div>
 
-                <div class="museum-panel">
+                <div class="museum-panel" style="margin-bottom:35px">
                     <p>
                         A behavioral profile attempts to describe characteristics that are
                         statistically or psychologically consistent with the available evidence.
@@ -112,11 +123,8 @@
 
                         <p>
                             Investigators begin with facts rather than assumptions.
-                            Crime scene photographs, forensic reports,
-                            witness interviews,
-                            timelines,
-                            victim information,
-                            digital evidence,
+                            Crime scene photographs, forensic reports, witness interviews,
+                            timelines, victim information, digital evidence,
                             and medical findings are gathered before behavioral conclusions are considered.
                         </p>
                     </article>
@@ -126,13 +134,9 @@
                         <h3>Study Behavioral Patterns</h3>
 
                         <p>
-                            Analysts examine how the offender approached,
-                            controlled,
-                            interacted with,
+                            Analysts examine how the offender approached, controlled, interacted with,
                             and ultimately left the victim.
-                            These actions may reveal planning,
-                            confidence,
-                            impulsivity,
+                            These actions may reveal planning, confidence, impulsivity,
                             or familiarity with the location.
                         </p>
                     </article>
@@ -144,9 +148,7 @@
                         <p>
                             Some actions are required simply to commit the crime.
                             Others go beyond necessity and may reflect personal motivations,
-                            fantasies,
-                            rituals,
-                            or emotional needs.
+                            fantasies, rituals, or emotional needs.
                         </p>
                     </article>
 
@@ -155,58 +157,36 @@
                         <h3>Develop Behavioral Hypotheses</h3>
 
                         <p>
-                            Rather than making absolute claims,
-                            profilers build hypotheses about likely age ranges,
-                            experience,
-                            social functioning,
-                            risk-taking,
-                            and possible lifestyle characteristics.
+                            Rather than making absolute claims, profilers build hypotheses about likely age ranges,
+                            experience, social functioning, risk-taking, and possible lifestyle characteristics.
                         </p>
                     </article>
 
-                    <article class="psychology-card">
+                    <article class="psychology-card" style="margin-bottom:0">
                         <div class="card-number">05</div>
                         <h3>Compare With New Evidence</h3>
 
                         <p>
                             Profiles are continuously revised.
-                            As new forensic evidence,
-                            interviews,
-                            or surveillance become available,
-                            earlier assumptions may be strengthened,
-                            modified,
-                            or completely discarded.
+                            As new forensic evidence, interviews, or surveillance become available,
+                            earlier assumptions may be strengthened, modified, or completely discarded.
                         </p>
                     </article>
 
-                    <article class="psychology-card">
+                    <article class="psychology-card" style="margin-bottom:0">
                         <div class="card-number">06</div>
                         <h3>Support the Investigation</h3>
 
                         <p>
                             The final profile does not identify a suspect.
-                            Instead,
-                            it assists investigators in prioritizing leads,
-                            planning interviews,
-                            anticipating future behavior,
-                            and organizing complex investigations.
+                            Instead, it assists investigators in prioritizing leads, planning interviews,
+                            anticipating future behavior, and organizing complex investigations.
                         </p>
                     </article>
                 </div>
-
-                <div class="interactive-placeholder">
-                    <h3>Future Interactive Investigation</h3>
-
-                    <p>
-                        Review a fictional crime scene, examine behavioral evidence,
-                        and build your own offender profile before comparing it with a professional analysis.
-                    </p>
-                </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- MO vs SIGNATURE -->
-            <!-- ===================================== -->
+            <!-- ====== MO vs SIGNATURE ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Behavioural Analysis</span>
@@ -219,8 +199,8 @@
 
                         <p>
                             A Modus Operandi refers to the practical methods an offender uses
-                            to successfully commit a crime and avoid detection. Because
-                            offenders learn from experience, an MO can change over time.
+                            to successfully commit a crime and avoid detection.
+                            Because offenders learn from experience, an MO can change over time.
                         </p>
 
                         <ul>
@@ -262,9 +242,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- ORGANIZED vs DISORGANIZED OFFENDERS -->
-            <!-- ===================================== -->
+            <!-- ====== ORGANIZED vs DISORGANIZED OFFENDERS ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Behavioural Classification</span>

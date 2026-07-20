@@ -1,16 +1,29 @@
 <x-layout>
     <div class="psychology-page">
-        <div class="psychology-container">
         <!-- Background Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
             <div class="grid-overlay"></div>
         </div>
+
+        <div class="psychology-container">
+            <!-- ====== QUICK NAVIGATION ====== -->
+            <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
+                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+            </section>
         
-            <!-- ===================================== -->
-            <!-- PSYCHOPATHY -->
-            <!-- ===================================== -->
+            <!-- ====== PSYCHOPATHY ====== -->
             <section id="psychopathy" class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Personality</span>
@@ -91,9 +104,7 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- PERSONALITY DISORDERS -->
-            <!-- ===================================== -->
+            <!-- ====== PERSONALITY DISORDERS ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
                     <span class="section-tag">Clinical Psychology</span>
@@ -155,12 +166,10 @@
                 </div>
             </section>
 
-            <!-- ===================================== -->
-            <!-- SERIAL KILLER TYPOLOGIES -->
-            <!-- ===================================== -->
+            <!-- ====== SERIAL KILLER TYPOLOGIES ====== -->
             <section class="psychology-section">
                 <div class="section-heading">
-                    <span class="section-tag">Motivation</span>
+                    <span class="section-tag">Behavioral Classification</span>
                     <h2>Common Serial Killer Typologies</h2>
                 </div>
 
