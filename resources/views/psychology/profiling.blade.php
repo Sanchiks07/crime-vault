@@ -13,6 +13,7 @@
                 <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
                 <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
+                <a href="{{ route('psychology.profiling') }}" class="{{ request()->routeIs('psychology.profiling') ? 'active' : '' }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
@@ -31,7 +32,7 @@
                 </div>
 
                 <div class="psychology-card">
-                    <p>
+                    <p style="margin-bottom:15px">
                         Criminal profiling is one of the most misunderstood areas of forensic
                         psychology. Popular television often presents profilers as individuals
                         capable of identifying an unknown offender after only a brief glance at

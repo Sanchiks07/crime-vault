@@ -16,6 +16,7 @@
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
+                <a href="{{ route('psychology.victimology') }}" class="{{ request()->routeIs('psychology.victimology') ? 'active' : '' }}">➤ Victimology</a>
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
                 <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
                 <a href="{{ route('psychology.resources') }}">➤ Resources</a>
@@ -78,7 +79,7 @@
                 </div>
 
                 <div class="museum-panel">
-                    <h3>Why Victimology Matters</h3>
+                    <h3>Why Victimology Matters</h3><br>
 
                     <p>
                         Understanding victims improves investigations, strengthens support services, guides prevention efforts,

@@ -20,7 +20,8 @@
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
                 <a href="{{ route('psychology.myths') }}">➤ Myths</a>
                 <a href="{{ route('psychology.resources') }}">➤ Resources</a>
-                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
+                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
+                <a href="{{ route('psychology.faq') }}" class="{{ request()->routeIs('psychology.faq') ? 'active' : '' }}">➤ FAQ</a>
             </section>
 
             <!-- ====== FAQ ====== -->

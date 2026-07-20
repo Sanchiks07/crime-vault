@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- ====== BACKGROUND EFFECTS ====== -->
+        <!-- Background Effect -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -27,6 +27,7 @@
 
             <!-- ====== QUICK NAVIGATION ====== -->
             <section class="psychology-navigation">
+                <a href="{{ route('psychology.introduction') }}" class="{{ request()->routeIs('psychology.introduction') ? 'active' : '' }}">➤ Introduction</a>
                 <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
@@ -148,8 +149,7 @@
             <section class="psychology-section psychology-closing">
                 <div class="museum-panel">
                     <blockquote>
-                        "The most valuable tool in any investigation is not certainty...
-                        it is curiosity guided by evidence."
+                        "The most valuable tool in any investigation is not certainty... it is curiosity guided by evidence."
                     </blockquote>
                 </div>
             </section>

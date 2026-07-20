@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- ====== BACKGROUND EFFECTS ====== -->
+        <!-- Background Effect -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -15,6 +15,7 @@
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
+                <a href="{{ route('psychology.investigativePsychology') }}" class="{{ request()->routeIs('psychology.investigativePsychology') ? 'active' : '' }}">➤ Investigative Psychology</a>
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
                 <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
@@ -40,8 +41,7 @@
                         <h3>Building Rapport</h3>
 
                         <p>
-                            Establishing trust often encourages more complete,
-                            accurate,
+                            Establishing trust often encourages more complete, accurate,
                             and detailed accounts than aggressive questioning.
                         </p>
                     </article>
@@ -214,7 +214,7 @@
             <!-- ====== Decision Making ====== -->
             <section class="psychology-section" id="decision-making">
                 <div class="section-heading">
-                    <span class="section-tag">>Decision Making</span>
+                    <span class="section-tag">Decision Making</span>
                     <h2>Decision Making Under Pressure</h2>
 
                     <p class="psychology-card" style="margin-top:35px">
@@ -231,8 +231,7 @@
                         <p>
                             During threatening situations,
                             automatic survival responses can override deliberate reasoning.
-                            These reactions evolved to increase survival,
-                            not to improve later recall.
+                            These reactions evolved to increase survival, not to improve later recall.
                         </p>
                     </article>
 
@@ -250,8 +249,7 @@
                         <h3>Time Distortion</h3>
 
                         <p>
-                            Many people report that frightening experiences seem unusually fast
-                            or unusually slow.
+                            Many people report that frightening experiences seem unusually fast or unusually slow.
                             Perception of time is influenced by emotional intensity.
                         </p>
                     </article>
@@ -274,8 +272,7 @@
                     <h2>Cognitive Biases</h2>
 
                     <p class="psychology-card" style="margin-top:35px">
-                        The human brain is remarkably efficient...
-                        and remarkably unreliable.
+                        The human brain is remarkably efficient... and remarkably unreliable.
                         Investigators, witnesses, jurors, journalists, and ordinary citizens
                         all rely on mental shortcuts that can quietly distort reality.
                     </p>
@@ -327,8 +324,7 @@
                         <h3>Hindsight Bias</h3>
 
                         <p>
-                            After learning an outcome,
-                            people often believe they "knew it all along,"
+                            After learning an outcome, people often believe they "knew it all along,"
                             making past events seem more predictable than they really were.
                         </p>
                     </article>

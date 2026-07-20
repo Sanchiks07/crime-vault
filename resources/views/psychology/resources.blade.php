@@ -19,6 +19,7 @@
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
                 <a href="{{ route('psychology.myths') }}">➤ Myths</a>
+                <a href="{{ route('psychology.resources') }}" class="{{ request()->routeIs('psychology.resources') ? 'active' : '' }}">➤ Resources</a>
                 <a href="{{ route('psychology.facts') }}">➤ Facts</a>
                 <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
             </section>
@@ -31,7 +32,7 @@
                 </div>
 
                 <div class="psychology-card">
-                    <p>
+                    <p style="margin-bottom:15px">
                         Understanding criminal psychology requires more than documentaries and
                         headlines. The resources below include respected books, university
                         research, professional organisations and educational media that

@@ -12,6 +12,7 @@
             <section class="psychology-navigation">
                 <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
                 <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.personality') }}" class="{{ request()->routeIs('psychology.personality') ? 'active' : '' }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
@@ -31,14 +32,14 @@
                 </div>
 
                 <div class="psychology-card">
-                    <p>
+                    <p style="margin-bottom:15px">
                         Few psychological terms are as misunderstood as <strong>psychopath</strong>
                         and <strong>sociopath</strong>. They are frequently used in films,
                         television and news reports to describe anyone who commits a violent
                         crime, but modern psychology uses these concepts far more carefully.
                     </p>
 
-                    <p>
+                    <p style="margin-bottom:15px">
                         Interestingly, <strong>"psychopath"</strong> is not an official
                         clinical diagnosis listed in the Diagnostic and Statistical Manual of
                         Mental Disorders (DSM-5). Instead, many individuals described as

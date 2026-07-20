@@ -104,6 +104,10 @@
     transform: translateY(-2px);
 }
 
+.psychology-navigation a.active {
+    background: #8E1616;
+}
+
 /* ---------- INTRODUCTION SECTIONS ---------- */
 .psychology-section{
     margin-bottom: 80px;
@@ -309,6 +313,7 @@
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 35px;
+    border: 1px solid rgba(216, 64, 64, .2);
 }
 
 .brain-information p{
@@ -788,8 +793,9 @@
 
 .faq-answer p{
     padding: 0 26px 22px;
-    color: rgba(238, 238, 238, 0.8);
+    color: rgba(238, 238, 238, 0.904);
     line-height: 1.7;
+    margin-top: 20px;
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */

@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- ====== BACKGROUND EFFECTS ====== -->
+        <!-- Backgroun Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -14,6 +14,7 @@
                 <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
+                <a href="{{ route('psychology.crimeScenes') }}" class="{{ request()->routeIs('psychology.crimeScenes') ? 'active' : '' }}">➤ Crime Scenes</a>
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>

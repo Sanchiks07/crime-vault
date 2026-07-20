@@ -17,6 +17,7 @@
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
+                <a href="{{ route('psychology.experiments') }}" class="{{ request()->routeIs('psychology.experiments') ? 'active' : '' }}">➤ Experiments</a>
                 <a href="{{ route('psychology.myths') }}">➤ Myhts</a>
                 <a href="{{ route('psychology.resources') }}">➤ Resources</a>
                 <a href="{{ route('psychology.facts') }}">➤ Facts</a>
@@ -103,12 +104,8 @@
                         </p>
 
                         <div class="experiment-footer">
-                            <span>
-                                Focus
-                            </span>
-                            <p>
-                                Conformity and group influence.
-                            </p>
+                            <span>Focus</span>
+                            <p>Conformity and group influence.</p>
                         </div>
                     </article>
 

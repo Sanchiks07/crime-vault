@@ -1,6 +1,6 @@
 <x-layout>
     <div class="psychology-page">
-        <!-- ====== BACKGROUND EFFECTS ====== -->
+        <!-- Background Effects -->
         <div class="psychology-background">
             <div class="glow glow-left"></div>
             <div class="glow glow-right"></div>
@@ -11,6 +11,7 @@
             <!-- ====== QUICK NAVIGATION ====== -->
             <section class="psychology-navigation">
                 <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
+                <a href="{{ route('psychology.fundimentals') }}" class="{{ request()->routeIs('psychology.fundimentals') ? 'active' : '' }}">➤ Fundimentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
@@ -30,11 +31,11 @@
                     <h2>Nature vs Nurture</h2>
                 </div>
 
-                <div class="psychology-card split-layout">
+                <div class="split-layout">
                     <div class="split-column">
                         <h3>Nature</h3>
 
-                        <p>
+                        <p style="margin-bottom:15px">
                             Nature refers to the biological factors that influence behaviour,
                             including genetics, inherited traits, prenatal development and
                             neurological differences. Research suggests that certain biological
@@ -54,7 +55,7 @@
                     <div class="split-column">
                         <h3>Nurture</h3>
 
-                        <p>
+                        <p style="margin-bottom:15px">
                             Nurture describes everything experienced after birth. Parenting,
                             education, friendships, trauma, neglect, abuse, poverty,
                             community, culture and opportunity all shape personality and
@@ -72,8 +73,7 @@
 
                 <div class="quote-card">
                     <blockquote>
-                        "Genes load the gun, personality and psychology aim it, and life
-                        experiences pull the trigger."
+                        "Genes load the gun, personality and psychology aim it, and life experiences pull the trigger."
                     </blockquote>
 
                     <span>
@@ -232,10 +232,7 @@
                     <article class="brain-region">
                         <h3>Hippocampus</h3>
 
-                        <p>
-                            Supports memory formation and helps individuals learn from previous
-                            experiences.
-                        </p>
+                        <p>Supports memory formation and helps individuals learn from previous experiences.</p>
                     </article>
 
                     <article class="brain-region">
@@ -255,7 +252,7 @@
                     <span class="section-tag">Quick Reference</span>
                     <h2>A Journey Through Criminal Psychology</h2><br>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:20px">
                         As you move through this gallery,
                         notice how the focus gradually shifts from assumptions to evidence.
                         Modern criminal psychology is built on questioning, testing,
@@ -268,6 +265,7 @@
                         <div class="timeline-year">Observe</div>
                         <div class="timeline-content">
                             <h3>Behavior Comes First</h3>
+
                             <p>Investigators begin by documenting observable facts before forming theories.</p>
                         </div>
                     </div>
@@ -276,6 +274,7 @@
                         <div class="timeline-year">Question</div>
                         <div class="timeline-content">
                             <h3>Challenge Assumptions</h3>
+                            
                             <p>
                                 Every hypothesis should be tested against evidence rather than accepted
                                 because it feels convincing.
@@ -314,7 +313,7 @@
                 <div class="section-heading">
                     <span class="section-tag">Historical Development</span>
                     <h2>History of Criminal Psychology</h2><br>
-                    <p>
+                    <p class="psychology-card" style="margin-top:20px">
                         Criminal psychology did not appear overnight. It evolved through centuries of changing beliefs,
                         scientific discoveries, and countless mistakes. Every generation believed it had finally
                         discovered the answer to criminal behavior, only for later evidence to challenge those ideas.

@@ -18,6 +18,7 @@
                 <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
                 <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
                 <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
+                <a href="{{ route('psychology.myths') }}" class="{{ request()->routeIs('psychology.myths') ? 'active' : '' }}">➤ Myhts</a>
                 <a href="{{ route('psychology.resources') }}">➤ Resources</a>
                 <a href="{{ route('psychology.facts') }}">➤ Facts</a>
                 <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
