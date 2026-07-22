@@ -1118,6 +1118,246 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-faded);
 }
 
+/* ---------- VICTIMS PAGE ---------- */
+.page-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 4rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    color: rgba(238, 238, 238, 0.8);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.page-section {
+    margin-bottom: 5rem;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: .45rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 999px;
+    background: rgba(216, 64, 64, .15);
+    border: 1px solid rgba(216, 64, 64, .3);
+    color: var(--accent);
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.page-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,.25);
+}
+
+.page-card h2 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.page-card > p {
+    color: rgba(238,238,238,.8);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- INFO GRID ---------- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: .3s;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216,64,64,.4);
+}
+
+.info-card h3 {
+    color: var(--accent);
+    margin-bottom: .75rem;
+}
+
+.info-card p {
+    color: rgba(238,238,238,.75);
+    line-height: 1.6;
+}
+
+/* ---------- VICTIM GRID ---------- */
+.victim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.victim-card {
+    display: flex;
+    gap: 1.5rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 1.5rem;
+    transition: .3s;
+}
+
+.victim-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216,64,64,.35);
+}
+
+.victim-image-placeholder {
+    width: 130px;
+    height: 170px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    border: 1px dashed rgba(255,255,255,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(238,238,238,.45);
+    background: rgba(255,255,255,.02);
+    text-align: center;
+    font-size: .9rem;
+}
+
+.victim-info {
+    flex: 1;
+}
+
+.victim-info h3 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.victim-info ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.victim-info li {
+    color: rgba(238,238,238,.8);
+    margin-bottom: .45rem;
+}
+
+.victim-info strong {
+    color: var(--accent);
+}
+
+.victim-info p {
+    color: rgba(238,238,238,.72);
+    line-height: 1.7;
+}
+
+/* ---------- FACTS ---------- */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 1.5rem;
+}
+
+.fact-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 1.8rem;
+    transition: .3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216,64,64,.4);
+}
+
+.fact-card h3 {
+    color: var(--accent);
+    margin-bottom: .75rem;
+}
+
+.fact-card p {
+    color: rgba(238,238,238,.75);
+    line-height: 1.7;
+}
+
+/* ---------- QUOTE ---------- */
+.quote-card {
+    background: linear-gradient(
+        135deg,
+        rgba(142,22,22,.25),
+        rgba(29,22,22,.8)
+    );
+    border: 1px solid rgba(216,64,64,.2);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.quote-card blockquote {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ---------- VICTIM SLIDE ---------- */
+.victim-slide{
+    display:none;
+    animation:fade .8s ease;
+}
+
+.victim-slide.active{
+    display:block;
+}
+
+.killer-header{
+    text-align:center;
+    margin-bottom:2.5rem;
+}
+
+.killer-header h2{
+    color:var(--text-light);
+    font-size:2.2rem;
+    margin:.5rem 0;
+}
+
+.killer-header p{
+    color:rgba(238,238,238,.7);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 768px) {
     /* navigation */
@@ -1249,5 +1489,31 @@ h1, h2, h3, h4, h5, h6 {
     /* resources blade */
     .resources-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* victims page */
+    .page-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .page-card {
+        padding: 2rem;
+    }
+
+    .victim-card {
+        flex-direction: column;
+    }
+
+    .victim-image-placeholder {
+        width: 100%;
+        height: 260px;
+    }
+
+    .quote-card {
+        padding: 2rem;
+    }
+
+    .quote-card blockquote {
+        font-size: 1.25rem;
     }
 }

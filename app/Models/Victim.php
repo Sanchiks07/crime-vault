@@ -14,4 +14,8 @@ class Victim extends Model
     protected $casts = [
         'count' => 'array',
     ];
+
+    public function killer() {
+        return $this->belongsTo(SerialKiller::class);
+    }
 }

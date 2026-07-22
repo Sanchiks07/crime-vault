@@ -25,4 +25,8 @@ class SerialKiller extends Model
     public function victimRecord() {
         return $this->hasOne(Victim::class, 'killer_id');
     }
+
+    public function victims() {
+        return $this->hasOne(Victim::class, 'killer_id');
+    }
 }

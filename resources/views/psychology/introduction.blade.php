@@ -48,8 +48,8 @@
                     <h2>Understanding the Criminal Mind</h2>
                 </div>
 
-                <div class="psychology-card psychology-introduction">
-                    <div class="psychology-text">
+                <div class="psychology-introduction">
+                    <div class="psychology-text psychology-card">
                         <p>
                             Popular media often portrays violent offenders as monsters,
                             masterminds or mysterious geniuses whose actions cannot be

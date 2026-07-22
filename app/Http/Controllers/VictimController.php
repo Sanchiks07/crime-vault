@@ -8,6 +8,8 @@ use App\Models\Victim;
 class VictimController extends Controller
 {
     public function index() {
-        return view('victims');
+        $victims = Victim::with('killer')->get();
+
+        return view('victims', compact('victims'));
     }
 }
