@@ -7,11 +7,12 @@
         </button>
 
         <!-- Logo -->
-        <a href="{{ route('home') }}" class="home-link">Crime Vault</a>
+        <a href="{{ route('home') }}" class="home-link">
+            <img src="{{ asset('images/vault-logo.png') }}" alt="Crime Vault Logo" style="height:50px; width:auto;">
+        </a>
 
         <!-- Navigation -->
         <div class="navbar-menu" id="navbarMenu">
-
             <div class="navbar-links">
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
                     Home

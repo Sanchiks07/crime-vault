@@ -65,5 +65,5 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[current].classList.remove("active");
         current = (current + 1) % slides.length;
         slides[current].classList.add("active");
-    }, 10000);
+    }, 15000);
 });

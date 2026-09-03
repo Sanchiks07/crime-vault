@@ -11,10 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <!-- google font for text -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
 </head>
 <body>
     <x-navigation></x-navigation>
