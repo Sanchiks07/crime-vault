@@ -10,8 +10,8 @@ class PsychologyController extends Controller
         return view('psychology.introduction');
     }
 
-    public function fundimentals() {
-        return view('psychology.fundimentals');
+    public function fundamentals() {
+        return view('psychology.fundamentals');
     }
 
     public function personality() {

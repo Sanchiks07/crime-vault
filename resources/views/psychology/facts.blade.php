@@ -11,7 +11,7 @@
             <!-- ====== QUICK NAVIGATION ====== -->
             <section class="psychology-navigation">
                 <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
-                <a href="{{ route('psychology.fundimentals') }}">➤ Fundimentals</a>
+                <a href="{{ route('psychology.fundamentals') }}">➤ fundamentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>

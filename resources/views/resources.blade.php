@@ -16,12 +16,8 @@
                     If you have any suggestions of what I should add to this collection, feel free to contact me.
                 </p><br>
 
-                <small>Resources for psychology ar located in the Psychology page.</small>
+                <small>Psychology-specific resources are available on the Psychology page.</small>
             </div>
-
-            @php
-                $groupedResources = \App\Models\Resource::all()->groupBy('resource_type');
-            @endphp
 
             <div class="resources-grid">
                 @foreach ($groupedResources as $sectionTitle => $items)

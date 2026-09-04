@@ -26,11 +26,14 @@ class SerialKiller extends Model
         return $this->hasOne(Victim::class, 'killer_id');
     }
 
-    public function victims() {
-        return $this->hasOne(Victim::class, 'killer_id');
-    }
-
     public function favourites() {
         return $this->morphMany(Favourite::class, 'favouritetable');
+    }
+
+    public function getAgeTextAttribute(): string {
+        return collect($this->ages ?? [])
+            ->pluck('age')
+            ->filter(fn ($age) => !is_null($age))
+            ->implode(' / ') ?: 'Unknown';
     }
 }

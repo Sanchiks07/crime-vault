@@ -44,22 +44,6 @@
 
                         <div class="archive-grid">
                             @foreach ($serialKillers as $favourite)
-                                <!-- gets the ages and displays them correctly -->
-                                @php
-                                    $serial_killer = $favourite->favouritetable;
-
-                                    $ages = is_string($serial_killer->ages)
-                                        ? json_decode($serial_killer->ages, true)
-                                        : $serial_killer->ages;
-
-                                    $ageText = collect($ages ?? [])
-                                        ->pluck('age')
-                                        ->filter(fn ($age) => !is_null($age))
-                                        ->implode(' / ');
-
-                                    $ageText = $ageText ?: 'Unknown';
-                                @endphp
-
                                 <article class="archive-card">
                                     <!-- Remove Favourite Button -->
                                     <form action="{{ route('favourites.toggle', ['type' => 'serial-killer', 'id' => $serial_killer->id]) }}" method="POST" class="favourite-form">
@@ -83,7 +67,7 @@
                                         <div class="archive-content">
                                             <h2>{{ $serial_killer->nickname }}</h2>
                                             <p>Real name:{{ $serial_killer->name ?? 'Unknown' }}</p>
-                                            <p>Age: {{ $ageText }}</p>
+                                            <p>Age: {{ $serial_killer->age_text }}</p>
                                             <p>Country: {{ $serial_killer->country ?? 'Unknown' }}</p>
                                         </div>
                                     </a>

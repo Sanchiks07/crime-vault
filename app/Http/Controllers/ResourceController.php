@@ -8,8 +8,8 @@ use App\Models\Resource;
 class ResourceController extends Controller
 {
     public function index() {
-        $resources = Resource::all();
+        $groupedResources = Resource::all()->groupBy('resource_type');
 
-        return view('resources', compact('resources'));
+        return view('resources', compact('groupedResources'));
     }
 }
