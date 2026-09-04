@@ -15,13 +15,29 @@
 
             <div class="archive-grid">
                 @forelse ($serial_killers as $serial_killer)
-                    <a href="{{ route('cases.killers.show', $serial_killer) }}" class="archive-card-link">
-                        <article class="archive-card">
+                    <!-- checks if this serial killer is already in the users favourites. -->
+                    @php
+                        $isFavourite = $favouriteKillerIds->contains($serial_killer->id);
+                    @endphp
+
+                    <article class="archive-card">
+                        @auth
+                            <form action="{{ route('favourites.toggle', ['type' => 'serial-killer', 'id' => $serial_killer->id]) }}" method="POST" class="favourite-form">
+                                @csrf
+
+                                <button type="submit" class="favourite-button {{ $isFavourite ? 'active' : '' }}" title="{{ $isFavourite ? 'Remove from favourites' : 'Add to favourites' }}">
+                                    {{ $isFavourite ? '♥' : '♡' }}
+                                </button>
+                            </form>
+                        @endauth
+
+                        <a href="{{ route('cases.killers.show', $serial_killer) }}" class="archive-card-link">
                             <div class="archive-image-wrapper">
                                 <img
                                     src="{{ $serial_killer->image ? asset('images/killers/' . $serial_killer->image) : asset('images/default-image.png') }}"
                                     alt="{{ $serial_killer->nickname }}" class="archive-image"
                                 >
+
                                 <div class="archive-image-overlay"></div>
                             </div>
 
@@ -47,8 +63,8 @@
                             </div>
 
                             <div class="archive-accent-line"></div>
-                        </article>
-                    </a>
+                        </a>
+                    </article>
                 @empty
                     <div class="archive-empty">
                         <p>No serial killer data available.</p>

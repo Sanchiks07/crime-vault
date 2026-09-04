@@ -37,6 +37,12 @@
                 <a href="{{ route('resources') }}" class="{{ request()->routeIs('resources') ? 'active' : '' }}">
                     Resources
                 </a>
+
+                @auth
+                    <a href="{{ route('favourites') }}" class="{{ request()->routeIs('favourites') ? 'active' : '' }}">
+                        Favourites
+                    </a>
+                @endauth
             </div>
 
             @auth
@@ -45,7 +51,6 @@
 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <button type="submit" class="btn-logout">Logout</button>
                     </form>
 

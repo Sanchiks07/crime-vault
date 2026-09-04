@@ -10,14 +10,29 @@
         <div class="page-container">
             <div class="page-header">
                 <h1>Unsolved Cases</h1>
-
                 <p>Explore cold cases, mysteries, and unresolved investigations.</p>
             </div>
 
             <div class="archive-grid">
                 @forelse ($unsolved_cases as $unsolved_case)
-                    <a href="{{ route('cases.unsolved.show', $unsolved_case) }}" class="archive-card-link">
-                        <article class="archive-card">
+
+                    <!-- checks if this unsolved case is already in the users favourites -->
+                    @php
+                        $isFavourite = $favouriteUnsolvedIds->contains($unsolved_case->id);
+                    @endphp
+
+                    <article class="archive-card">
+                        @auth
+                            <form action="{{ route('favourites.toggle', ['type' => 'unsolved-case', 'id' => $unsolved_case->id]) }}" method="POST" class="favourite-form">
+                                @csrf
+
+                                <button type="submit" class="favourite-button {{ $isFavourite ? 'active' : '' }}" title="{{ $isFavourite ? 'Remove from favourites' : 'Add to favourites' }}">
+                                    {{ $isFavourite ? '♥' : '♡' }}
+                                </button>
+                            </form>
+                        @endauth
+
+                        <a href="{{ route('cases.unsolved.show', $unsolved_case) }}" class="archive-card-link">
                             <div class="archive-image-wrapper">
                                 <img
                                     src="{{ $unsolved_case->image ? asset('images/unsolved/' . $unsolved_case->image) : asset('images/default-image.png') }}"
@@ -34,8 +49,8 @@
                             </div>
 
                             <div class="archive-accent-line"></div>
-                        </article>
-                    </a>
+                        </a>
+                    </article>
                 @empty
                     <div class="archive-empty">
                         <p>No unsolved case data available.</p>

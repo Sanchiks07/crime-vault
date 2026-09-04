@@ -29,4 +29,8 @@ class SerialKiller extends Model
     public function victims() {
         return $this->hasOne(Victim::class, 'killer_id');
     }
+
+    public function favourites() {
+        return $this->morphMany(Favourite::class, 'favouritetable');
+    }
 }

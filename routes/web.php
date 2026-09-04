@@ -9,6 +9,7 @@ use App\Http\Controllers\SerialKillerController;
 use App\Http\Controllers\VictimController;
 use App\Http\Controllers\PsychologyController;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\FavouriteController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -46,3 +47,7 @@ Route::get('/psychology/faq', [PsychologyController::class, 'faq'])->name('psych
 
 // Resources
 Route::get('/resources', [ResourceController::class, 'index'])->name('resources');
+
+// Favourites
+Route::get('/favourites', [FavouriteController::class, 'index'])->name('favourites')->middleWare('auth');
+Route::post('/favourites/{type}/{id}', [FavouriteController::class, 'toggle'])->name('favourites.toggle')->middleWare('auth');

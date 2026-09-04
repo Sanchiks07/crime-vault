@@ -1712,6 +1712,46 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ---------- FAVOURITES ---------- */
+.favourite-form {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.favourite-button {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    background: rgba(18, 18, 18, 0.8);
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.favourite-button:hover {
+    transform: scale(1.08);
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    color: var(--primary-hover);
+}
+
+.favourite-button.active {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+    color: var(--primary-hover);
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media (max-width: 768px) {
     /* navigation */

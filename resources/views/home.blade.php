@@ -129,7 +129,7 @@
                 </div>
             </section>
 
-            <!-- CTA -->
+            <!-- Call To Action -->
             <section class="home-cta">
                 <h2>Start Exploring</h2>
 

@@ -19,4 +19,8 @@ class UnsolvedCase extends Model
         'count' => 'array',
         'suspects' => 'array',
     ];
+
+    public function favourites() {
+        return $this->morphMany(Favourite::class, 'favouritetable');
+    }
 }
