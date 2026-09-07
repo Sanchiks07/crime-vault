@@ -30,6 +30,11 @@ class SerialKiller extends Model
         return $this->morphMany(Favourite::class, 'favouritetable');
     }
 
+    public function discussions() {
+        return $this->morphMany(Discussion::class, 'discussable');
+    }
+
+    // gets the age and then displays it correctly, if there are multiple ages, it will display them separated by a slash
     public function getAgeTextAttribute(): string {
         return collect($this->ages ?? [])
             ->pluck('age')

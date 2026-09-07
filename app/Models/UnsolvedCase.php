@@ -23,4 +23,8 @@ class UnsolvedCase extends Model
     public function favourites() {
         return $this->morphMany(Favourite::class, 'favouritetable');
     }
+
+    public function discussions() {
+        return $this->morphMany(Discussion::class, 'discussable');
+    }
 }
