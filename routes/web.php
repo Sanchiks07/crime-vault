@@ -10,6 +10,7 @@ use App\Http\Controllers\VictimController;
 use App\Http\Controllers\PsychologyController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\FavouriteController;
+use App\Http\Controllers\DiscussionController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -51,3 +52,8 @@ Route::get('/resources', [ResourceController::class, 'index'])->name('resources'
 // Favourites
 Route::get('/favourites', [FavouriteController::class, 'index'])->name('favourites')->middleWare('auth');
 Route::post('/favourites/{type}/{id}', [FavouriteController::class, 'toggle'])->name('favourites.toggle')->middleWare('auth');
+
+// Discussions
+// Discussions
+Route::post('/discussions/{type}/{id}', [DiscussionController::class, 'store'])->name('discussions.store')->middleware('auth');
+Route::delete('/discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy')->middleware('auth');
