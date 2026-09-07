@@ -25,6 +25,10 @@ class UnsolvedCaseController extends Controller
     }
 
     public function show(UnsolvedCase $unsolved_case) {
+        $unsolved_case->load([
+            'discussions.user'
+        ]);
+
         return view('cases.unsolved.show', compact('unsolved_case'));
     }
 }

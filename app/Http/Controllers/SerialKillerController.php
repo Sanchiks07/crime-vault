@@ -25,7 +25,10 @@ class SerialKillerController extends Controller
 
 
     public function show(SerialKiller $serial_killer) {
-        $serial_killer->load('victimRecord');
+        $serial_killer->load([
+            'victimRecord',
+            'discussions.user'
+        ]);
 
         return view('cases.killers.show', compact('serial_killer'));
     }

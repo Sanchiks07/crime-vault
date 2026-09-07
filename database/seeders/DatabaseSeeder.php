@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             SerialKillerSeeder::class,
             VictimSeeder::class,
             UnsolvedCaseSeeder::class,
-            ResourceSeeder::class
+            ResourceSeeder::class,
+            DiscussionSeeder::class
         ]);
     }
 }
