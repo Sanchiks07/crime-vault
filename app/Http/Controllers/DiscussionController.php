@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Discussion;
+use App\Models\SerialKiller;
+use App\Models\UnsolvedCase;
 
 class DiscussionController extends Controller
 {

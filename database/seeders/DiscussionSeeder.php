@@ -22,37 +22,49 @@ class DiscussionSeeder extends Seeder
                 'user_id' => 3,
                 'discussable_id' => 1,
                 'discussable_type' => 'App\Models\SerialKiller',
-                'content' => 'One of the most disturbing parts of this case is how long the crimes continued before the killer was stopped.'
+                'content' => 'One of the most disturbing parts of this case is how long the crimes continued before the killer was stopped.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
                 'discussable_id' => 1,
                 'discussable_type' => 'App\Models\SerialKiller',
-                'content' => 'I think the investigation itself is just as interesting as the psychology behind the crimes.'
+                'content' => 'I think the investigation itself is just as interesting as the psychology behind the crimes.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 3,
                 'discussable_id' => 2,
                 'discussable_type' => 'App\Models\SerialKiller',
-                'content' => 'There are still so many unanswered questions around this case, especially regarding the true number of victims.'
+                'content' => 'There are still so many unanswered questions around this case, especially regarding the true number of victims.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 3,
                 'discussable_id' => 1,
                 'discussable_type' => 'App\Models\UnsolvedCase',
-                'content' => 'The lack of a confirmed suspect makes this case especially difficult to understand. I wonder which piece of evidence was the most important.'
+                'content' => 'The lack of a confirmed suspect makes this case especially difficult to understand. I wonder which piece of evidence was the most important.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 2,
                 'discussable_id' => 1,
                 'discussable_type' => 'App\Models\UnsolvedCase',
-                'content' => 'Some of the suspect theories seem convincing at first, but a lot of them fall apart when the timeline is compared closely.'
+                'content' => 'Some of the suspect theories seem convincing at first, but a lot of them fall apart when the timeline is compared closely.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
                 'user_id' => 3,
                 'discussable_id' => 2,
                 'discussable_type' => 'App\Models\UnsolvedCase',
-                'content' => 'This case feels like one where a small overlooked detail could completely change the investigation.'
+                'content' => 'This case feels like one where a small overlooked detail could completely change the investigation.',
+                'created_at' => now(),
+                'updated_at' => now()
             ],
         ]);
     }
