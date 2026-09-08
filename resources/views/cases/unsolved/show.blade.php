@@ -204,7 +204,7 @@
 
                                 <span>
                                     <!-- ? - doesn't show error and doesn't crash -->
-                                    {{ $discussion->created_at->timezone('Europe/Riga')->format('d M Y, H:i') ?? 'Unknown date' }}
+                                    {{ $discussion->created_at?->timezone('Europe/Riga')->format('d M Y, H:i') ?? 'Unknown date' }}
                                 </span>
                             </div>
 
@@ -213,6 +213,23 @@
                             </p>
 
                             @auth
+                                @if(auth()->id() === $discussion->user_id)
+                                    <details class="discussion-edit">
+                                        <summary>Edit</summary>
+
+                                        <form action="{{ route('discussions.update', $discussion) }}" method="POST" class="discussion-edit-form">
+                                            @csrf
+                                            @method('PATCH')
+
+                                            <textarea name="content" rows="4" maxlength="2000" required>{{ $discussion->content }}</textarea>
+
+                                            <button type="submit">
+                                                Save Changes
+                                            </button>
+                                        </form>
+                                    </details>
+                                @endif
+
                                 @if(auth()->id() === $discussion->user_id || auth()->user()->isAdmin())
                                     <div class="discussion-actions">
                                         <form action="{{ route('discussions.destroy', $discussion) }}" method="POST">

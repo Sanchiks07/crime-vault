@@ -30,6 +30,22 @@ class DiscussionController extends Controller
         return back()->with('success', 'Comment posted successfully.');
     }
 
+    public function update(Request $request, Discussion $discussion) {
+        if ($discussion->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        $validated = $request->validate([
+            'content' => ['required', 'string', 'max:2000'],
+        ]);
+
+        $discussion->update([
+            'content' => $validated['content'],
+        ]);
+
+        return back()->with('success', 'Comment updated successfully.');
+    }
+
     public function destroy(Discussion $discussion) {
         $user = auth()->user();
 

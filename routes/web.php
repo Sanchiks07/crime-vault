@@ -11,6 +11,8 @@ use App\Http\Controllers\PsychologyController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\AdminDiscussionController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -54,6 +56,8 @@ Route::get('/favourites', [FavouriteController::class, 'index'])->name('favourit
 Route::post('/favourites/{type}/{id}', [FavouriteController::class, 'toggle'])->name('favourites.toggle')->middleWare('auth');
 
 // Discussions
-// Discussions
 Route::post('/discussions/{type}/{id}', [DiscussionController::class, 'store'])->name('discussions.store')->middleware('auth');
+Route::patch('/discussions/{discussion}', [DiscussionController::class, 'update'])->name('discussions.update')->middleware('auth');
 Route::delete('/discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy')->middleware('auth');
+// Admin discussions
+Route::get('/admin/discussions', [AdminDiscussionController::class, 'index'])->name('admin.discussions')->middleware(['auth', AdminMiddleware::class]);

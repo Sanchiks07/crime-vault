@@ -42,6 +42,12 @@
                     <a href="{{ route('favourites') }}" class="{{ request()->routeIs('favourites') ? 'active' : '' }}">
                         Favourites
                     </a>
+
+                    @if(auth()->user()->isAdmin())
+                        <a href="{{ route('admin.discussions') }}" class="{{ request()->routeIs('admin.discussions') ? 'active' : '' }}">
+                            Moderation
+                        </a>
+                    @endif
                 @endauth
             </div>
 

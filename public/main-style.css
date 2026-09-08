@@ -1551,6 +1551,54 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
 }
 
+.discussion-edit {
+    margin-top: .6rem;
+}
+
+.discussion-edit summary {
+    display: inline-block;
+    color: var(--gold);
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.discussion-edit summary:hover {
+    text-decoration: underline;
+}
+
+.discussion-edit-form {
+    margin-top: .6rem;
+}
+
+.discussion-edit-form textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: .8rem;
+    resize: vertical;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border-accent);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: .9rem;
+    outline: none;
+}
+
+.discussion-edit-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.discussion-edit-form button {
+    margin-top: .5rem;
+    padding: .5rem .9rem;
+    background: var(--gold);
+    color: #111;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .discussion-delete {
     padding: .45rem .8rem;
     background: transparent;
@@ -1599,6 +1647,112 @@ h1, h2, h3, h4, h5, h6 {
 .discussion-errors ul {
     margin: 0;
     padding-left: 1.2rem;
+}
+
+/* ---------- ADMIN DISCUSSION MODERATION ---------- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--shadow);
+}
+
+.admin-header h1 {
+    margin-bottom: .4rem;
+    font-size: 2rem;
+}
+
+.admin-header p {
+    color: var(--text-muted);
+}
+
+.admin-discussion-count {
+    flex-shrink: 0;
+    padding: .5rem .8rem;
+    background: var(--primary-soft);
+    border: 1px solid var(--border-accent);
+    border-radius: 999px;
+    font-size: .85rem;
+    color: var(--text-muted);
+}
+
+.admin-discussions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-discussion-card {
+    padding: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px var(--shadow);
+    min-width: 0;
+}
+
+.admin-discussion-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .75rem;
+}
+
+.admin-discussion-top > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.admin-discussion-date {
+    flex-shrink: 0;
+    font-size: .8rem;
+    color: var(--text-muted);
+}
+
+.admin-discussion-content {
+    margin: 0;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.admin-discussion-info {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--border-accent);
+}
+
+.admin-discussion-info div {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.admin-discussion-info span {
+    font-size: .75rem;
+    color: var(--text-muted);
+}
+
+.admin-discussion-info strong {
+    font-size: .9rem;
+}
+
+.admin-discussion-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: .75rem;
 }
 
 /* ---------- RESOURCES BLADE ---------- */
