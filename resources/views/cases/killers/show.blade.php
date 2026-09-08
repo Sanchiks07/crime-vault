@@ -180,7 +180,9 @@
                         <textarea name="content" id="content" maxlength="2000" placeholder="Share your thoughts about this case..." required>{{ old('content') }}</textarea>
 
                         <div class="discussion-form-footer">
-                            <span>Maximum 2000 characters</span>
+                            <span>
+                                <span class="character-count">0</span>/2000 characters
+                            </span>
                             <button type="submit">Post Comment</button>
                         </div>
                     </form>
@@ -240,7 +242,7 @@
 
                                 @if(auth()->id() === $discussion->user_id || auth()->user()->isAdmin())
                                     <div class="discussion-actions">
-                                        <form action="{{ route('discussions.destroy', $discussion) }}" method="POST">
+                                        <form action="{{ route('discussions.destroy', $discussion) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this comment?')">
                                             @csrf
                                             @method('DELETE')
 

@@ -11,9 +11,14 @@ class DiscussionController extends Controller
 {
     // So later a request can identify whether the comment belongs to: serial-killer or unsolved-case
     public function store(Request $request, string $type, int $id) {
-        $validated = $request->validate([
-            'content' => ['required', 'string', 'max:2000'],
-        ]);
+        $validated = $request->validate(
+            ['content' => ['required', 'string', 'max:2000']],
+            // error messages for validation
+            [
+                'content.required' => 'Please enter a comment before submitting.',
+                'content.max' => 'Your comment cannot be longer than 2000 characters.',
+            ]
+        );
 
         $discussable = match ($type) {
             'serial-killer' => SerialKiller::findOrFail($id),
@@ -35,9 +40,14 @@ class DiscussionController extends Controller
             abort(403);
         }
 
-        $validated = $request->validate([
-            'content' => ['required', 'string', 'max:2000'],
-        ]);
+        $validated = $request->validate(
+            ['content' => ['required', 'string', 'max:2000']],
+            // error messages for validation
+            [
+                'content.required' => 'Please enter a comment before submitting.',
+                'content.max' => 'Your comment cannot be longer than 2000 characters.',
+            ]
+        );
 
         $discussion->update([
             'content' => $validated['content'],

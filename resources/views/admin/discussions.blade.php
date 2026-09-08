@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="admin-discussion-actions">
-                            <form action="{{ route('discussions.destroy', $discussion) }}" method="POST">
+                            <form action="{{ route('discussions.destroy', $discussion) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this comment?')">
                                 @csrf
                                 @method('DELETE')
 

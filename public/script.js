@@ -67,3 +67,20 @@ document.addEventListener("DOMContentLoaded", () => {
         slides[current].classList.add("active");
     }, 15000);
 });
+
+
+// discussion character count
+// finds each discussion textarea
+document.querySelectorAll('.discussion-form textarea').forEach(textarea => {
+    const counter = textarea
+        .closest('.discussion-form')
+        .querySelector('.character-count');
+
+    const updateCounter = () => {
+        counter.textContent = textarea.value.length;
+    };
+
+    textarea.addEventListener('input', updateCounter);
+
+    updateCounter();
+});
