@@ -1029,6 +1029,105 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ------ INDEX BLADES (Shared by Serial Killers & Unsolved Cases) ------ */
+/* filters */
+.archive-filters {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: 18px;
+    box-shadow: 0 6px 18px var(--shadow);
+    backdrop-filter: blur(12px);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.filter-group label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.filter-group input, .filter-group select {
+    width: 100%;
+    padding: .8rem .9rem;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border-accent);
+    border-radius: 10px;
+    font: inherit;
+    outline: none;
+    transition: .25s;
+}
+
+.filter-group select option {
+    background: var(--background);
+    color: var(--text);
+}
+
+.filter-group input::placeholder {
+    color: var(--text-faded);
+}
+
+.filter-group input:focus, .filter-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--shadow-red);
+}
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.filter-submit, .filter-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: .75rem 1rem;
+    border-radius: 10px;
+    font: inherit;
+    font-size: .9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.filter-submit {
+    background: var(--primary);
+    color: var(--text);
+    border: 1px solid var(--primary);
+}
+
+.filter-submit:hover {
+    box-shadow: 0 0 18px var(--shadow-red);
+    transform: translateY(-1px);
+}
+
+.filter-clear {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-accent);
+}
+
+.filter-clear:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.archive-empty .filter-clear {
+    margin-top: 1rem;
+}
+
 .archive-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2254,6 +2353,21 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     /* serial killer & unsolved cases index blade */
+    .archive-filters {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .filter-actions {
+        grid-column: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-submit, .filter-clear {
+        width: 100%;
+    }
+
     .archive-grid {
         grid-template-columns: 1fr;
     }
