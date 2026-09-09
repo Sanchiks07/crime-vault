@@ -7,8 +7,83 @@ use App\Models\UnsolvedCase;
 
 class UnsolvedCaseController extends Controller
 {
-    public function index() {
-        $unsolved_cases = UnsolvedCase::all();
+    public function index(Request $request) {
+        $query = UnsolvedCase::query();
+
+        // search by case name
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->input('search') . '%');
+        }
+
+        // filter by country
+        if ($request->filled('country')) {
+            $query->where('country', $request->input('country'));
+        }
+
+        // filter by victim count
+        if ($request->filled('victims')) {
+            switch ($request->input('victims')) {
+                case '1':
+                    $query->whereJsonLength('count', 1);
+                    break;
+
+                case '2-5':
+                    $query->whereJsonLength('count', '>=', 2)
+                        ->whereJsonLength('count', '<=', 5);
+                    break;
+
+                case '6-plus':
+                    $query->whereJsonLength('count', '>=', 6);
+                    break;
+            }
+        }
+
+        // filter by suspect count
+        if ($request->filled('suspects')) {
+            switch ($request->input('suspects')) {
+                case '0':
+                    $query->whereJsonLength('suspects', 0);
+                    break;
+
+                case '1-3':
+                    $query->whereJsonLength('suspects', '>=', 1)
+                        ->whereJsonLength('suspects', '<=', 3);
+                    break;
+
+                case '4-plus':
+                    $query->whereJsonLength('suspects', '>=', 4);
+                    break;
+            }
+        }
+
+        // sort results
+        switch ($request->input('sort')) {
+            case 'name-desc':
+                $query->orderBy('name', 'desc');
+                break;
+
+            case 'victims-asc':
+                $query->orderByRaw('JSON_LENGTH(count) ASC');
+                break;
+
+            case 'victims-desc':
+                $query->orderByRaw('JSON_LENGTH(count) DESC');
+                break;
+
+            case 'name-asc':
+            default:
+                $query->orderBy('name', 'asc');
+                break;
+        }
+
+        $unsolved_cases = $query->get();
+
+        // gets all unique countries for the filter dropdown
+        $countries = UnsolvedCase::query()
+            ->select('country')
+            ->distinct()
+            ->orderBy('country')
+            ->pluck('country');
 
         // empty collection for users who are not logged in
         $favouriteUnsolvedIds = collect();
@@ -21,7 +96,7 @@ class UnsolvedCaseController extends Controller
                 ->pluck('favouritetable_id');
         }
 
-        return view('cases.unsolved.index', compact('unsolved_cases', 'favouriteUnsolvedIds'));
+        return view('cases.unsolved.index', compact('unsolved_cases', 'favouriteUnsolvedIds', 'countries'));
     }
 
     public function show(UnsolvedCase $unsolved_case) {
