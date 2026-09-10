@@ -10,9 +10,23 @@ class SerialKillerController extends Controller
     public function index(Request $request) {
         $query = SerialKiller::query();
 
+        $allowedVictimFilters = [
+            '0-5',
+            '6-10',
+            '11-20',
+            '21-plus'
+        ];
+
+        $allowedSorts = [
+            'name-asc',
+            'name-desc',
+            'victims-asc',
+            'victims-desc'
+        ];
+
         // search by real name or nickname
         if ($request->filled('search')) {
-            $search = $request->input('search');
+            $search = trim($request->input('search'));
 
             $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', '%' . $search . '%')
@@ -26,7 +40,7 @@ class SerialKillerController extends Controller
         }
 
         // filter by confirmed victim count
-        if ($request->filled('victims')) {
+        if ($request->filled('victims') && in_array($request->input('victims'), $allowedVictimFilters, true)) {
             switch ($request->input('victims')) {
                 case '0-5':
                     $query->where('victim_count->killed->confirmed', '<=', 5);
@@ -53,17 +67,35 @@ class SerialKillerController extends Controller
         }
 
         // sort results
-        switch ($request->input('sort')) {
+        $sort = in_array($request->input('sort'), $allowedSorts, true) ? $request->input('sort') : 'name-asc';
+
+        switch ($sort) {
             case 'name-desc':
                 $query->orderBy('nickname', 'desc');
                 break;
 
             case 'victims-asc':
-                $query->orderBy('victim_count->killed->confirmed', 'asc');
+                $query
+                    ->orderByRaw("
+                        CAST(
+                            JSON_UNQUOTE(
+                                JSON_EXTRACT(victim_count, '$.killed.confirmed')
+                            ) AS UNSIGNED
+                        ) ASC
+                    ")
+                    ->orderBy('nickname', 'asc');
                 break;
 
             case 'victims-desc':
-                $query->orderBy('victim_count->killed->confirmed', 'desc');
+                $query
+                    ->orderByRaw("
+                        CAST(
+                            JSON_UNQUOTE(
+                                JSON_EXTRACT(victim_count, '$.killed.confirmed')
+                            ) AS UNSIGNED
+                        ) DESC
+                    ")
+                    ->orderBy('nickname', 'asc');
                 break;
 
             case 'name-asc':

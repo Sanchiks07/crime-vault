@@ -10,9 +10,30 @@ class UnsolvedCaseController extends Controller
     public function index(Request $request) {
         $query = UnsolvedCase::query();
 
+        $allowedVictimFilters = [
+            '1',
+            '2-5',
+            '6-plus'
+        ];
+
+        $allowedSuspectFilters = [
+            '0',
+            '1-3',
+            '4-plus'
+        ];
+
+        $allowedSorts = [
+            'name-asc',
+            'name-desc',
+            'victims-asc',
+            'victims-desc'
+        ];
+
         // search by case name
         if ($request->filled('search')) {
-            $query->where('name', 'like', '%' . $request->input('search') . '%');
+            $search = trim($request->input('search'));
+
+            $query->where('name', 'like', '%' . $search . '%');
         }
 
         // filter by country
@@ -21,7 +42,7 @@ class UnsolvedCaseController extends Controller
         }
 
         // filter by victim count
-        if ($request->filled('victims')) {
+        if ($request->filled('victims') && in_array($request->input('victims'), $allowedVictimFilters, true)) {
             switch ($request->input('victims')) {
                 case '1':
                     $query->whereJsonLength('count', 1);
@@ -39,7 +60,7 @@ class UnsolvedCaseController extends Controller
         }
 
         // filter by suspect count
-        if ($request->filled('suspects')) {
+        if ($request->filled('suspects') && in_array($request->input('suspects'), $allowedSuspectFilters, true)) {
             switch ($request->input('suspects')) {
                 case '0':
                     $query->whereJsonLength('suspects', 0);
@@ -57,17 +78,23 @@ class UnsolvedCaseController extends Controller
         }
 
         // sort results
-        switch ($request->input('sort')) {
+        $sort = in_array($request->input('sort'), $allowedSorts, true) ? $request->input('sort') : 'name-asc';
+
+        switch ($sort) {
             case 'name-desc':
                 $query->orderBy('name', 'desc');
                 break;
 
             case 'victims-asc':
-                $query->orderByRaw('JSON_LENGTH(count) ASC');
+                $query
+                    ->orderByRaw('JSON_LENGTH(count) ASC')
+                    ->orderBy('name', 'asc');
                 break;
 
             case 'victims-desc':
-                $query->orderByRaw('JSON_LENGTH(count) DESC');
+                $query
+                    ->orderByRaw('JSON_LENGTH(count) DESC')
+                    ->orderBy('name', 'asc');
                 break;
 
             case 'name-asc':
