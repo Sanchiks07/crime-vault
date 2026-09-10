@@ -75,11 +75,20 @@
                         Apply filters
                     </button>
 
-                    <a href="{{ route('cases.killers.index') }}" class="filter-clear">
-                        Clear filters
-                    </a>
+                    @if (request()->filled('search') || request()->filled('country') || request()->filled('victims') || request('sort', 'name-asc') !== 'name-asc')
+                        <a href="{{ route('cases.killers.index') }}" class="filter-clear">
+                            Clear filters
+                        </a>
+                    @endif
                 </div>
             </form>
+
+            <div class="filter-results">
+                <p>
+                    {{ $serial_killers->count() }}
+                    {{ $serial_killers->count() === 1 ? 'case found' : 'cases found' }}
+                </p>
+            </div>
 
             <div class="archive-grid">
                 @forelse ($serial_killers as $serial_killer)
@@ -124,10 +133,6 @@
                     <div class="archive-empty">
                         @if (request()->filled('search') || request()->filled('country') || request()->filled('victims'))
                             <p>No serial killers match the selected filters.</p>
-
-                            <a href="{{ route('cases.killers.index') }}" class="filter-clear">
-                                Clear filters
-                            </a>
                         @else
                             <p>No serial killer data available.</p>
                         @endif

@@ -1128,6 +1128,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
 }
 
+.filter-results {
+    margin: -1rem 0 1.5rem;
+}
+
+.filter-results p {
+    font-size: .9rem;
+    color: var(--text-muted);
+}
+
 .archive-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

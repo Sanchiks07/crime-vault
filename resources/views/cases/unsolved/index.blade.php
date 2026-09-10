@@ -87,11 +87,20 @@
                         Apply filters
                     </button>
 
-                    <a href="{{ route('cases.unsolved.index') }}" class="filter-clear">
-                        Clear filters
-                    </a>
+                    @if (request()->filled('search') || request()->filled('country') || request()->filled('victims') || request()->filled('suspects') || request('sort', 'name-asc') !== 'name-asc')
+                        <a href="{{ route('cases.unsolved.index') }}" class="filter-clear">
+                            Clear filters
+                        </a>
+                    @endif
                 </div>
             </form>
+
+            <div class="filter-results">
+                <p>
+                    {{ $unsolved_cases->count() }}
+                    {{ $unsolved_cases->count() === 1 ? 'case found' : 'cases found' }}
+                </p>
+            </div>
 
             <div class="archive-grid">
                 @forelse ($unsolved_cases as $unsolved_case)
@@ -134,10 +143,6 @@
                     <div class="archive-empty">
                         @if ( request()->filled('search') || request()->filled('country') || request()->filled('victims') || request()->filled('suspects'))
                             <p>No unsolved cases match the selected filters.</p>
-
-                            <a href="{{ route('cases.unsolved.index') }}" class="filter-clear">
-                                Clear filters
-                            </a>
                         @else
                             <p>No unsolved case data available.</p>
                         @endif
