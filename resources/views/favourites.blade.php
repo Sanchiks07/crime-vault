@@ -44,6 +44,10 @@
 
                         <div class="archive-grid">
                             @foreach ($serialKillers as $favourite)
+                                @php
+                                    $serial_killer = $favourite->favouritetable;
+                                @endphp
+
                                 <article class="archive-card">
                                     <!-- Remove Favourite Button -->
                                     <form action="{{ route('favourites.toggle', ['type' => 'serial-killer', 'id' => $serial_killer->id]) }}" method="POST" class="favourite-form">

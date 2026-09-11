@@ -97,12 +97,36 @@
                     <div class="victim-slider">
                         @foreach($victims as $case)
                             <div class="victim-slide">
-                                <div class="killer-header">
-                                    <span class="section-tag">Case {{ $loop->iteration }}</span>
+                                <div class="victim-case-header">
+                                    <div class="victim-case-title">
+                                        <span class="section-tag">
+                                            Case {{ $loop->iteration }}
+                                        </span>
 
-                                    <h2>{{ $case->killer->name ?? $case->killer->nickname }}</h2>
+                                        <h2>Lives Connected to This Case</h2>
 
-                                    <p>Confirmed Victims & Survivors</p>
+                                        <p>
+                                            Associated with the
+                                            <strong>
+                                                {{ $case->killer->name ?? $case->killer->nickname }}
+                                            </strong>
+                                            case
+                                        </p>
+
+                                        <div class="victim-slider-controls">
+                                            <button type="button" class="victim-slider-button victim-prev" aria-label="Previous case">
+                                                ←
+                                            </button>
+
+                                            <span class="victim-slide-count">
+                                                {{ $loop->iteration }} / {{ $victims->count() }}
+                                            </span>
+
+                                            <button type="button" class="victim-slider-button victim-next" aria-label="Next case">
+                                                →
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="victim-grid">
@@ -150,7 +174,7 @@
                                         </article>
                                     @endforeach
                                 </div>
-                            </div>
+                            </section>
                         @endforeach
                     </div>
                 </div>

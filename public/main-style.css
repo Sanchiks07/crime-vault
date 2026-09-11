@@ -1975,7 +1975,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-faded);
 }
 
-/* ---------- VICTIMS PAGE ---------- */
+/* victims page */
 .page-header {
     text-align: center;
     max-width: 850px;
@@ -2032,7 +2032,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
 }
 
-/* ---------- INFO GRID ---------- */
+/* info grid */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -2063,7 +2063,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
 
-/* ---------- VICTIM GRID ---------- */
+/* victim grid */
 .victim-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
@@ -2181,41 +2181,201 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- VICTIM SLIDE ---------- */
 .victim-slide{
-    display:none;
-    animation:fade .8s ease;
+    display: none;
+    animation: fade .8s ease;
 }
 
 .victim-slide.active{
-    display:block;
+    display: block;
 }
 
-.killer-header{
-    text-align:center;
-    margin-bottom:2.5rem;
+/* header */
+.victim-case-header {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
 }
 
-.killer-header h2{
-    color:var(--text-light);
-    font-size:2.2rem;
-    margin:.5rem 0;
+.victim-case-header h2{
+    color: var(--text-light);
+    font-size: 2.2rem;
+    margin: .5rem 0;
 }
 
-.killer-header p{
-    color:rgba(238,238,238,.7);
+.victim-case-header p{
+    color: rgba(238,238,238,.7);
+}
+
+.victim-case-title {
+    flex: 1;
+}
+
+.victim-case-title .section-tag {
+    margin-bottom: 0.8rem;
+}
+
+.victim-case-title h2 {
+    margin-bottom: 0.55rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.victim-case-title p {
+    margin: 0;
+    color: rgba(238, 238, 238, 0.72);
+    line-height: 1.6;
+}
+
+.victim-case-title strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* controls */
+.victim-slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+    padding-top: 1.5rem;
+}
+
+.victim-slider-button {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.victim-slider-button:hover {
+    transform: translateY(-2px);
+    background: rgba(216, 64, 64, 0.15);
+    border-color: rgba(216, 64, 64, 0.4);
+    color: var(--accent);
+}
+
+.victim-slider-button:active {
+    transform: translateY(0);
+}
+
+/* count */
+.victim-slide-count {
+    min-width: 52px;
+    text-align: center;
+    color: rgba(238, 238, 238, 0.6);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
 }
 
 @keyframes fade{
-    from{
+    from {
         opacity:0;
         transform:translateY(10px);
     }
-    to{
+    to {
         opacity:1;
         transform:translateY(0);
     }
 }
 
 /* ---------- FAVOURITES ---------- */
+.favourites-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.01)
+        );
+    box-shadow: 0 10px 30px var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle glow in section */
+.favourites-section::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    filter: blur(70px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* section header */
+.favourites-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+    z-index: 1;
+}
+
+.favourites-section-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    position: relative;
+    padding-left: 1rem;
+}
+
+/* accent line beside heading */
+.favourites-section-header h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 70%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background: var(--primary);
+}
+
+.favourites-section-header span {
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--border-light);
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary-hover);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* favourite button */
 .favourite-form {
     position: absolute;
     top: 1rem;
@@ -2231,28 +2391,62 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     border: 1px solid var(--border-light);
     border-radius: 50%;
-    background: rgba(18, 18, 18, 0.8);
+    background: rgba(18, 18, 18, 0.82);
     color: var(--text);
     font-size: 1.5rem;
     cursor: pointer;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     transition:
         transform 0.2s ease,
         background 0.2s ease,
         color 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .favourite-button:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
     background: var(--primary-soft);
     border-color: var(--primary);
     color: var(--primary-hover);
+    box-shadow: 0 0 15px var(--primary-soft);
 }
 
 .favourite-button.active {
     background: var(--primary-soft);
     border-color: var(--primary);
     color: var(--primary-hover);
+}
+
+/* empty state */
+.archive-empty {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.01)
+        );
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.archive-empty h2 {
+    margin-bottom: 0.7rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.archive-empty p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
@@ -2454,5 +2648,27 @@ h1, h2, h3, h4, h5, h6 {
 
     .quote-card blockquote {
         font-size: 1.25rem;
+    }
+
+    .victim-case-title h2 {
+        font-size: 1.45rem;
+    }
+
+    /* favourites */
+    .favourites-section {
+        padding: 1.3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .favourites-section-header {
+        align-items: flex-start;
+    }
+
+    .favourites-section-header h2 {
+        font-size: 1.35rem;
+    }
+
+    .favourites-section-header span {
+        font-size: 0.7rem;
     }
 }

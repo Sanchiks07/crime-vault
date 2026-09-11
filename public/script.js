@@ -52,23 +52,6 @@ document.querySelectorAll(".faq-question").forEach(button => {
 });
 
 
-// victim slide
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".victim-slide");
-
-    if (!slides.length) return;
-    let current = 0;
-
-    slides[current].classList.add("active");
-
-    setInterval(() => {
-        slides[current].classList.remove("active");
-        current = (current + 1) % slides.length;
-        slides[current].classList.add("active");
-    }, 15000);
-});
-
-
 // discussion character count
 // finds each discussion textarea
 document.querySelectorAll('.discussion-form textarea').forEach(textarea => {
@@ -83,4 +66,67 @@ document.querySelectorAll('.discussion-form textarea').forEach(textarea => {
     textarea.addEventListener('input', updateCounter);
 
     updateCounter();
+});
+
+
+// victims slider controls
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.victim-slide');
+
+    if (slides.length === 0) {
+        return;
+    }
+
+    let currentSlide = 0;
+    let victimSliderInterval;
+
+    function showVictimSlide(index) {
+        if (index >= slides.length) {
+            index = 0;
+        }
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+        });
+
+        slides[index].classList.add('active');
+
+        currentSlide = index;
+    }
+
+    function nextVictimSlide() {
+        showVictimSlide(currentSlide + 1);
+    }
+
+    function previousVictimSlide() {
+        showVictimSlide(currentSlide - 1);
+    }
+
+    function startVictimSlider() {
+        clearInterval(victimSliderInterval);
+        victimSliderInterval = setInterval(() => {
+            nextVictimSlide();
+        }, 8000);
+    }
+
+    document.querySelectorAll('.victim-next').forEach((button) => {
+        button.addEventListener('click', function () {
+            nextVictimSlide();
+            startVictimSlider();
+        });
+    });
+
+    document.querySelectorAll('.victim-prev').forEach((button) => {
+        button.addEventListener('click', function () {
+            previousVictimSlide();
+            startVictimSlider();
+        });
+    });
+
+    showVictimSlide(0);
+    startVictimSlider();
 });
