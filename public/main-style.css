@@ -2179,7 +2179,7 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
 }
 
-/* ---------- VICTIM SLIDE ---------- */
+/* ---------- VICTIM PAGE ---------- */
 .victim-slide{
     display: none;
     animation: fade .8s ease;

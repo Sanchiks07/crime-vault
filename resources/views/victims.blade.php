@@ -108,7 +108,7 @@
                                         <p>
                                             Associated with the
                                             <strong>
-                                                {{ $case->killer->name ?? $case->killer->nickname }}
+                                                {{ $case->killer->name ?? $case->killer->nickname ?? 'Unknown' }}
                                             </strong>
                                             case
                                         </p>
@@ -174,7 +174,7 @@
                                         </article>
                                     @endforeach
                                 </div>
-                            </section>
+                            </div>
                         @endforeach
                     </div>
                 </div>
