@@ -2066,9 +2066,10 @@ h1, h2, h3, h4, h5, h6 {
 /* victim grid */
 .victim-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .victim-card {
@@ -2180,12 +2181,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- VICTIM PAGE ---------- */
-.victim-slide{
+.victim-slide {
     display: none;
-    animation: fade .8s ease;
+    animation: fade 0.8s ease;
 }
 
-.victim-slide.active{
+.victim-slide.active {
     display: block;
 }
 
@@ -2198,14 +2199,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.victim-case-header h2{
+.victim-case-header h2 {
     color: var(--text-light);
     font-size: 2.2rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
 }
 
-.victim-case-header p{
-    color: rgba(238,238,238,.7);
+.victim-case-header p {
+    color: rgba(238, 238, 238, 0.7);
 }
 
 .victim-case-title {
@@ -2234,7 +2235,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* controls */
+/* slider controls */
 .victim-slider-controls {
     display: flex;
     align-items: center;
@@ -2274,7 +2275,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0);
 }
 
-/* count */
 .victim-slide-count {
     min-width: 52px;
     text-align: center;
@@ -2284,62 +2284,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.05em;
 }
 
-@keyframes fade{
-    from {
-        opacity:0;
-        transform:translateY(10px);
-    }
-    to {
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* victims profile type differences */
-.victim-profile-label {
-    display: inline-block;
-    margin-bottom: 0.35rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.75;
-}
-
-.victim-card-detailed:not(.victim-card-survivor) .victim-profile-label {
-    opacity: 0.65;
-}
-
-.victim-card-survivor {
-    border-left: 3px solid currentColor;
-}
-
-.victim-card-survivor .victim-profile-label {
-    opacity: 0.9;
-}
-
-.victim-case-connection {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.victim-case-connection h4 {
-    margin-bottom: 0.35rem;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.7;
-}
-
-.victim-case-date {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-    opacity: 0.6;
-}
-
-/* victim remembrance summary */
+/* remembrance summary */
 .victim-remembrance-summary {
     margin: 1.5rem 0 2rem;
     padding: 1.25rem;
@@ -2360,14 +2305,208 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .victim-remembrance-stats strong {
-    font-size: 1.1rem;
     margin-right: 0.25rem;
+    font-size: 1.1rem;
 }
 
 .victim-remembrance-summary p {
     margin: 0;
     line-height: 1.6;
     opacity: 0.75;
+}
+
+/* profile card */
+.victim-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.035);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.victim-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.055);
+}
+
+/* victime image */
+.victim-profile-image {
+    width: 100%;
+    min-height: 220px;
+    align-self: start;
+}
+
+.victim-profile-image img, .victim-image-placeholder {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.victim-profile-image img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.victim-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+}
+
+/* profile content */
+.victim-info {
+    min-width: 0;
+}
+
+.victim-profile-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.victim-profile-header h3 {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+
+.victim-profile-label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.65;
+}
+
+.victim-age {
+    flex-shrink: 0;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* basic details */
+.victim-profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.victim-profile-details p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.victim-profile-details strong {
+    opacity: 0.85;
+}
+
+/* profile sections */
+.victim-profile-section {
+    margin-top: 1.15rem;
+}
+
+.victim-profile-section h4, .victim-case-connection h4 {
+    margin: 0 0 0.45rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    opacity: 0.65;
+}
+
+.victim-profile-section p, .victim-case-connection p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    opacity: 0.82;
+}
+
+.victim-interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.victim-interest-list span {
+    padding: 0.3rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    opacity: 0.75;
+}
+
+.victim-case-connection {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.victim-case-connection h4 {
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+.victim-case-date {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.78rem;
+    opacity: 0.55;
+}
+
+.victim-legacy {
+    padding: 0.9rem 1rem;
+    border-left: 2px solid currentColor;
+    border-radius: 0 8px 8px 0;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.victim-card-survivor {
+    border-left: 3px solid currentColor;
+}
+
+.victim-card-survivor .victim-profile-label {
+    opacity: 0.9;
+}
+
+/* slide animation */
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ---------- FAVOURITES ---------- */
@@ -2745,5 +2884,31 @@ h1, h2, h3, h4, h5, h6 {
 
     .favourites-section-header span {
         font-size: 0.7rem;
+    }
+
+    /* victims */
+    .victimes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .victim-card {
+        grid-template-columns: 1fr;
+    }
+
+    .victim-profile-image {
+        max-width: 240px;
+        min-height: 0;
+    }
+
+    .victim-profile-image img, .victim-image-placeholder {
+        height: 280px;
+    }
+
+    .victim-profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .victim-remembrance-stats {
+        gap: 0.75rem 1.25rem;
     }
 }
