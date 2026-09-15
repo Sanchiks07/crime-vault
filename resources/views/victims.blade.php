@@ -129,47 +129,275 @@
                                     </div>
                                 </div>
 
+                                <div class="victim-remembrance-summary">
+                                    @php
+                                        $killedCount = count($case->count['killed'] ?? []);
+                                        $woundedCount = count($case->count['wounded'] ?? []);
+                                        $documentedCount = $killedCount + $woundedCount;
+                                    @endphp
+
+                                    <div class="victim-remembrance-stats">
+                                        <span>
+                                            <strong>{{ $documentedCount }}</strong>
+                                            documented {{ $documentedCount === 1 ? 'person' : 'people' }}
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            <strong>{{ $killedCount }}</strong>
+                                            {{ $killedCount === 1 ? 'life lost' : 'lives lost' }}
+                                        </span>
+
+                                        @if($woundedCount > 0)
+                                            <span>
+                                                •
+                                            </span>
+                                            
+                                            <span>
+                                                <strong>{{ $woundedCount }}</strong>
+                                                {{ $woundedCount === 1 ? 'survivor' : 'survivors' }}
+                                            </span>
+                                        @endif
+                                    </div>
+
+                                    <p>
+                                        The people below are presented as individuals first.
+                                        Their connection to this case is only one part of their story.
+                                    </p>
+                                </div>
+
                                 <div class="victim-grid">
                                     <!-- Killed -->
                                     @foreach($case->count['killed'] as $victim)
-                                        <article class="victim-card">
-                                            <div class="victim-image-placeholder">
-                                                Photo
+                                        <article class="victim-card victim-card-detailed">
+                                            <div class="victim-profile-image">
+                                                @if(!empty($victim['image']))
+                                                    <img src="{{ asset($victim['image']) }}" alt="Photograph of {{ $victim['name'] ?? 'victim' }}">
+                                                @else
+                                                    <div class="victim-image-placeholder">
+                                                        Photo unavailable
+                                                    </div>
+                                                @endif
                                             </div>
 
                                             <div class="victim-info">
-                                                <h3>{{ $victim['name'] ?? 'Unknown' }}</h3>
+                                                <div class="victim-profile-header">
+                                                    <div>
+                                                        <span class="victim-profile-label">
+                                                            Remembering
+                                                        </span>
 
-                                                <ul>
-                                                    <li><strong>Age:</strong> {{ $victim['age'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Occupation:</strong> {{ $victim['occupation'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Location:</strong> {{ $victim['location'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Status:</strong> Deceased</li>
-                                                </ul>
+                                                        <h3>{{ $victim['name'] ?? 'Unknown' }}</h3>
+                                                    </div>
 
-                                                <p>{{ $victim['summary'] ?? 'No additional information is currently available.' }}</p>
+                                                    @if(!empty($victim['age']))
+                                                        <span class="victim-age">
+                                                            Age {{ $victim['age'] }}
+                                                        </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="victim-profile-details">
+                                                    @if(!empty($victim['birth_date']) || !empty($victim['death_date']))
+                                                        <p>
+                                                            <strong>Life:</strong>
+                                                            {{ $victim['birth_date'] ?? '?' }} - {{ $victim['death_date'] ?? '?' }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['occupation']) && $victim['occupation'] !== 'Unknown')
+                                                        <p>
+                                                            <strong>Occupation:</strong>
+                                                            {{ $victim['occupation'] }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['education']))
+                                                        <p>
+                                                            <strong>Education:</strong>
+                                                            {{ $victim['education'] }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['location']))
+                                                        <p>
+                                                            <strong>Location:</strong>
+                                                            {{ $victim['location'] }}
+                                                        </p>
+                                                    @endif
+
+                                                </div>
+
+                                                @if(!empty($victim['about']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Their Life</h4>
+                                                        <p>{{ $victim['about'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['interests']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Interests</h4>
+
+                                                        <div class="victim-interest-list">
+                                                            @foreach($victim['interests'] as $interest)
+                                                                <span>{{ $interest }}</span>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['aspirations']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Aspirations</h4>
+                                                        <p>{{ $victim['aspirations'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['case_connection']))
+                                                    <div class="victim-case-connection">
+                                                        <h4>Connection to the Case</h4>
+
+                                                        @if(!empty($victim['case_date']))
+                                                            <span class="victim-case-date">
+                                                                {{ $victim['case_date'] }}
+                                                            </span>
+                                                        @endif
+
+                                                        <p>{{ $victim['case_connection'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['legacy']))
+                                                    <div class="victim-profile-section victim-legacy">
+                                                        <h4>Legacy & Remembrance</h4>
+                                                        <p>{{ $victim['legacy'] }}</p>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </article>
                                     @endforeach
 
                                     <!-- Survivors -->
                                     @foreach($case->count['wounded'] ?? [] as $victim)
-                                        <article class="victim-card">
-                                            <div class="victim-image-placeholder">
-                                                Photo
+                                        <article class="victim-card victim-card-detailed victim-card-survivor">
+
+                                            <div class="victim-profile-image">
+                                                @if(!empty($victim['image']))
+                                                    <img
+                                                        src="{{ asset($victim['image']) }}"
+                                                        alt="Photograph of {{ $victim['name'] ?? 'victim' }}"
+                                                    >
+                                                @else
+                                                    <div class="victim-image-placeholder">
+                                                        Photo unavailable
+                                                    </div>
+                                                @endif
                                             </div>
 
                                             <div class="victim-info">
-                                                <h3>{{ $victim['name'] ?? 'Unknown' }}</h3>
 
-                                                <ul>
-                                                    <li><strong>Age:</strong> {{ $victim['age'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Occupation:</strong> {{ $victim['occupation'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Location:</strong> {{ $victim['location'] ?? 'Unknown' }}</li>
-                                                    <li><strong>Status:</strong> Survivor</li>
-                                                </ul>
+                                                <div class="victim-profile-header">
+                                                    <div>
+                                                        <span class="victim-profile-label">
+                                                            Survivor
+                                                        </span>
 
-                                                <p>{{ $victim['summary'] ?? 'No additional information is currently available.' }}</p>
+                                                        <h3>{{ $victim['name'] ?? 'Unknown' }}</h3>
+                                                    </div>
+
+                                                    @if(!empty($victim['age']))
+                                                        <span class="victim-age">
+                                                            Age {{ $victim['age'] }}
+                                                        </span>
+                                                    @endif
+                                                </div>
+
+                                                <div class="victim-profile-details">
+
+                                                    @if(!empty($victim['birth_date']) || !empty($victim['death_date']))
+                                                        <p>
+                                                            <strong>Life:</strong>
+
+                                                            {{ $victim['birth_date'] ?? '?' }}
+                                                            –
+                                                            {{ $victim['death_date'] ?? '?' }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['occupation']) && $victim['occupation'] !== 'Unknown')
+                                                        <p>
+                                                            <strong>Occupation:</strong>
+                                                            {{ $victim['occupation'] }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['education']))
+                                                        <p>
+                                                            <strong>Education:</strong>
+                                                            {{ $victim['education'] }}
+                                                        </p>
+                                                    @endif
+
+                                                    @if(!empty($victim['location']))
+                                                        <p>
+                                                            <strong>Location:</strong>
+                                                            {{ $victim['location'] }}
+                                                        </p>
+                                                    @endif
+
+                                                </div>
+
+                                                @if(!empty($victim['about']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Their Life</h4>
+                                                        <p>{{ $victim['about'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['interests']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Interests</h4>
+
+                                                        <div class="victim-interest-list">
+                                                            @foreach($victim['interests'] as $interest)
+                                                                <span>{{ $interest }}</span>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['aspirations']))
+                                                    <div class="victim-profile-section">
+                                                        <h4>Aspirations</h4>
+                                                        <p>{{ $victim['aspirations'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['case_connection']))
+                                                    <div class="victim-case-connection">
+                                                        <h4>Connection to the Case</h4>
+
+                                                        @if(!empty($victim['case_date']))
+                                                            <span class="victim-case-date">
+                                                                {{ $victim['case_date'] }}
+                                                            </span>
+                                                        @endif
+
+                                                        <p>{{ $victim['case_connection'] }}</p>
+                                                    </div>
+                                                @endif
+
+                                                @if(!empty($victim['legacy']))
+                                                    <div class="victim-profile-section victim-legacy">
+                                                        <h4>Legacy & Remembrance</h4>
+                                                        <p>{{ $victim['legacy'] }}</p>
+                                                    </div>
+                                                @endif
+
                                             </div>
                                         </article>
                                     @endforeach
