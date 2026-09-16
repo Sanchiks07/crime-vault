@@ -23,12 +23,12 @@ class CaseBrowsingTest extends TestCase
     }
 
     public function test_guest_can_view_resources_page(): void {
-        $this->get(route('resources.index'))
+        $this->get(route('resources'))
             ->assertStatus(200);
     }
 
     public function test_guest_cannot_view_favourites_page(): void {
-        $this->get(route('favourites.index'))
+        $this->get(route('favourites'))
             ->assertRedirect(route('login'));
     }
 }
