@@ -472,7 +472,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'December 20, 1968',
                             'case_connection' => 'David and Betty Lou Jensen were together near Lake Herman Road outside Benicia when they were attacked. David was shot at close range and died while being transported to the hospital. Their murders are recognized as the first confirmed attack attributed to the Zodiac Killer.',
                             'legacy' => 'David and Betty Lou became the first two confirmed victims associated with the Zodiac case, which remains unsolved decades later.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/david-arthur-faraday.jpg',
                         ],
                         [
                             'name' => 'Betty Lou Jensen',
@@ -491,7 +491,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'December 20, 1968',
                             'case_connection' => 'Betty Lou was with David Faraday near Lake Herman Road outside Benicia when they were attacked. She was shot while attempting to get away from the vehicle. Their murders later became recognized as the Zodiac Killer\'s first confirmed attack.',
                             'legacy' => 'Betty Lou and David became the first two confirmed victims associated with the Zodiac case, which remains unsolved decades later.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/betty-lou-jensen.jpg',
                         ],
                         [
                             'name' => 'Darlene Elizabeth Ferrin',
@@ -507,7 +507,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 4-5, 1969',
                             'case_connection' => 'Darlene and her friend Michael Mageau were sitting in her car at Blue Rock Springs Park when a man approached the vehicle and opened fire. Darlene was taken to the hospital but died from her injuries. Michael survived. Shortly afterward, a caller contacted Vallejo police and claimed responsibility for this attack as well as the Lake Herman Road murders.',
                             'legacy' => 'The telephone call made after the attack directly connected Darlene\'s murder with the earlier killings of David Faraday and Betty Lou Jensen and became a major development in establishing the series of crimes attributed to the Zodiac Killer.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/darlene-elizabeth-ferrin.jpg',
                         ],
                         [
                             'name' => 'Cecelia Ann Shepard',
@@ -525,7 +525,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 27, 1969',
                             'case_connection' => 'Cecelia was visiting with her friend and former boyfriend Bryan Hartnell at Lake Berryessa when they were approached by a hooded attacker. Both were restrained and stabbed. Cecelia survived for approximately two days after the attack but died from her injuries on September 29. Bryan survived.',
                             'legacy' => 'The Lake Berryessa attack became one of the most distinctive crimes attributed to the Zodiac because the attacker wore a hood bearing the cross-circle symbol later associated with him. Cecelia\'s death remains one of the five confirmed murders attributed to the unidentified killer.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/cecelia-ann-shepard.png',
                         ],
                         [
                             'name' => 'Paul Lee Stine',
@@ -541,7 +541,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 11, 1969',
                             'case_connection' => 'Paul was working as a taxi driver when he picked up a passenger in San Francisco and drove to the Presidio Heights neighborhood. He was shot inside his taxi at Washington and Cherry Streets. Witnesses observed the attacker leaving the scene.',
                             'legacy' => 'Paul is the last confirmed murder victim attributed to the Zodiac Killer. After his murder, the Zodiac mailed a piece of Paul\'s shirt with a letter to the San Francisco Chronicle, providing direct evidence that the letter writer had access to the crime scene.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/paul-lee-stine.jpg',
                         ]
                     ],
 
@@ -560,7 +560,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 5, 1969',
                             'case_connection' => 'Michael was sitting in the passenger seat of Darlene Ferrin\'s car at Blue Rock Springs Park when a man approached the vehicle with a flashlight and opened fire. Michael was struck multiple times but survived. Darlene died from her injuries. Michael was able to provide police with a description of the attacker after the shooting.',
                             'legacy' => 'As a survivor of a confirmed Zodiac attack, Michael provided investigators with one of the few eyewitness accounts of the killer. His testimony became an important part of the investigation into the unidentified attacker.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/michael-renault-mageau.jpg',
                         ],
                         [
                             'name' => 'Bryan Calvin Hartnell',
@@ -576,7 +576,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 27, 1969',
                             'case_connection' => 'Bryan and Cecelia Shepard were spending the afternoon at Lake Berryessa when they were approached by a hooded man carrying a gun. The attacker restrained them before stabbing both. Bryan survived, while Cecelia died from her injuries two days later. After the attack, Bryan was able to give investigators a detailed account of what had happened.',
                             'legacy' => 'Bryan\'s survival provided investigators with one of the most detailed firsthand accounts of a confirmed Zodiac attack, including information about the attacker\'s clothing, behavior and statements. He later became an attorney and has periodically spoken publicly about surviving the attack.',
-                            'image' => null,
+                            'image' => 'images/victims/zodiac/bryan-calvin-hartnell.jpg',
                         ]
                     ],
                 ])
@@ -601,7 +601,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'August 31, 1888',
                             'case_connection' => 'Mary was found dead in Buck\'s Row, Whitechapel, during the early morning. Her murder is traditionally regarded as the first of the five canonical murders attributed to Jack the Ripper.',
                             'legacy' => 'Mary is remembered as the first of the canonical five. Her life also reflects the poverty, housing insecurity and limited social protections experienced by many women in Victorian London.',
-                            'image' => null,
+                            'image' => 'images/victims/jack-ripper/mary-ann-nichols.jpg',
                         ],
                         [
                             'name' => 'Annie Chapman',
@@ -619,7 +619,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 8, 1888',
                             'case_connection' => 'Annie was found dead in the backyard of 29 Hanbury Street in Spitalfields during the early morning. Her murder is traditionally regarded as the second of the five canonical murders attributed to Jack the Ripper.',
                             'legacy' => 'Testimony at Annie\'s inquest preserved unusually detailed information about how she tried to earn money and survive in the East End, providing a picture of her life beyond her association with the Whitechapel murders.',
-                            'image' => null,
+                            'image' => 'images/victims/jack-ripper/annie-chapman.jpg',
                         ],
                         [
                             'name' => 'Elizabeth Stride',
@@ -635,7 +635,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 30, 1888',
                             'case_connection' => 'Elizabeth was found dead in Dutfield\'s Yard off Berner Street during the early morning. Her murder is traditionally included among the canonical five, although the absence of the extensive injuries seen in several of the other murders has contributed to continuing debate over whether she was killed by the same person.',
                             'legacy' => 'Historical records from the Swedish Church and her inquest preserve substantial information about Elizabeth\'s life and migration from Sweden to Britain, allowing her story to be reconstructed beyond her association with the Whitechapel murders.',
-                            'image' => null,
+                            'image' => 'images/victims/jack-ripper/elizabeth-stride.jpg',
                         ],
                         [
                             'name' => 'Catherine Eddowes',
@@ -651,7 +651,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 30, 1888',
                             'case_connection' => 'Catherine was found dead in Mitre Square in the City of London less than an hour after Elizabeth Stride was discovered. The two murders became known together as the "Double Event" and Catherine\'s murder is traditionally regarded as the fourth canonical Jack the Ripper killing.',
                             'legacy' => 'Catherine\'s murder generated extensive police and inquest records and became central to the investigation of the Whitechapel murders. Her surviving historical record also documents the unstable work and housing conditions faced by poor women in Victorian London.',
-                            'image' => null,
+                            'image' => 'images/victims/jack-ripper/catherine-eddowes.jpg',
                         ],
                         [
                             'name' => 'Mary Jane Kelly',
@@ -667,7 +667,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 9, 1888',
                             'case_connection' => 'Mary was found dead inside her room at 13 Miller\'s Court. She was the only one of the canonical five killed indoors and is traditionally regarded as the final canonical victim attributed to Jack the Ripper.',
                             'legacy' => 'Mary\'s uncertain biography has led to extensive historical research attempting to establish her identity and early life. She remains the final victim in the traditional canonical sequence, although both her history and the exact boundaries of the Ripper murders continue to be debated.',
-                            'image' => null,
+                            'image' => 'images/victims/jack-ripper/mary-jane-kelly.jpeg',
                         ]
                     ],
 
