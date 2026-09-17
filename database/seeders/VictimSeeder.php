@@ -33,7 +33,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'February 1, 1974',
                             'case_connection' => 'Lynda disappeared from her basement bedroom in Seattle\'s University District. Her remains were discovered at Taylor Mountain in March 1975, and Ted Bundy later confessed to her murder.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/lynda-ann-healy.jpg',
                         ],
                         [
                             'name' => 'Donna Gail Manson',
@@ -49,7 +49,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'March 12, 1974',
                             'case_connection' => 'Donna left her college residence intending to attend a jazz concert on campus but never arrived. Ted Bundy later confessed to killing her. Her remains have never been conclusively recovered.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/donna-gail-manson.jpg',
                         ],
                         [
                             'name' => 'Susan Elaine Rancourt',
@@ -67,7 +67,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'April 17, 1974',
                             'case_connection' => 'Susan disappeared from the Central Washington State College campus after an evening meeting. Her remains were later recovered at Taylor Mountain, and Ted Bundy confessed to her murder.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/susan-rancourt.jpg',
                         ],
                         [
                             'name' => 'Roberta Kathleen Parks',
@@ -83,7 +83,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 6, 1974',
                             'case_connection' => 'Kathy disappeared from the Oregon State University campus after leaving her residence that evening. Her remains were later recovered at Taylor Mountain, and Ted Bundy confessed to her murder.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/roberta-kathleen-parks.jpg',
                         ],
                         [
                             'name' => 'Brenda Carol Ball',
@@ -99,7 +99,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 1, 1974',
                             'case_connection' => 'Brenda was last seen after leaving the Flame Tavern in Burien. Her remains were discovered at Taylor Mountain in March 1975.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/brenda-carol-ball.jpg',
                         ],
                         [
                             'name' => 'Georgann Hawkins',
@@ -119,7 +119,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 11, 1974',
                             'case_connection' => 'Georgann disappeared while walking the short distance between her boyfriend\'s fraternity house and her sorority house near the University of Washington. Ted Bundy later confessed to abducting and killing her. Her remains have never been conclusively identified.',
                             'legacy' => 'Her family has emphasized remembering Georgann for the person she was rather than allowing her murder to define her life.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/georgann-hawkins.jpg',
                         ],
                         [
                             'name' => 'Janice Ann Ott',
@@ -135,7 +135,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 14, 1974',
                             'case_connection' => 'Janice disappeared from Lake Sammamish State Park after witnesses saw her leave with a man who introduced himself as Ted and asked for help with a sailboat. Her remains were discovered near Issaquah in September 1974. Bundy later confessed to her murder.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/janice-ann-ott.jpg',
                         ],
                         [
                             'name' => 'Denise Marie Naslund',
@@ -153,7 +153,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 14, 1974',
                             'case_connection' => 'Denise disappeared after leaving her group at Lake Sammamish State Park to walk toward the restroom area. Her remains were discovered near Issaquah in September 1974 alongside those of Janice Ott. Bundy later confessed to her murder.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/denise-marie-naslund.jpg',
                         ],
                         [
                             'name' => 'Nancy Wilcox',
@@ -169,7 +169,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 1, 1974',
                             'case_connection' => 'Nancy left her family home in Holladay during the evening and never returned. Her remains have never been recovered. Ted Bundy confessed to her killing shortly before his execution, although her missing-person case has continued to be treated as open by authorities.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/nancy-wilcox.jpg',
                         ],
                         [
                             'name' => 'Melissa Anne Smith',
@@ -185,7 +185,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 18, 1974',
                             'case_connection' => 'Melissa disappeared after leaving her home in Midvale. Her body was discovered by hunters nine days later in Summit County. Investigators attributed her murder to Ted Bundy, although he was never prosecuted for her death.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/melissa-anne-smith.jpg',
                         ],
                         [
                             'name' => 'Laura Ann Aime',
@@ -203,7 +203,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 31, 1974',
                             'case_connection' => 'Laura disappeared after leaving a Halloween party in Lehi. Her body was discovered by hikers in American Fork Canyon later that November. Ted Bundy was long suspected and later confessed to her murder. In 2026, modern forensic testing conclusively matched DNA recovered in Laura\'s case to Bundy.',
                             'legacy' => 'Laura\'s case remained open for more than five decades. In April 2026, investigators announced that preserved evidence and modern DNA technology had conclusively identified Ted Bundy as her killer, finally allowing authorities to close the case.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/laura-ann-aime.jpg',
                         ],
                         [
                             'name' => 'Debra Jean Kent',
@@ -219,7 +219,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 8, 1974',
                             'case_connection' => 'Debra left the school auditorium during the evening to collect her younger brothers from a nearby skating rink but never reached them. A handcuff key found outside the school was later found to fit the handcuffs used during Bundy\'s attempted abduction of Carol DaRonch earlier that day. Bundy confessed to Debra\'s murder shortly before his execution.',
                             'legacy' => 'Human remains recovered in Utah in 1989 included a kneecap that could not initially be identified. Later DNA testing identified it as belonging to Debra, resolving her missing-person case decades after her disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/debra-jean-kent.png',
                         ],
                         [
                             'name' => 'Caryn Eileen Campbell',
@@ -235,10 +235,10 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 12, 1975',
                             'case_connection' => 'Caryn disappeared while staying at the Wildwood Inn in Snowmass Village. She had gone from the hotel lobby toward her room and did not return. Her body was discovered several weeks later near the resort. Ted Bundy was formally charged with her murder in Colorado but escaped custody before the case could proceed to trial.',
                             'legacy' => 'The investigation into Caryn\'s murder became a major part of the Colorado case against Bundy and helped connect authorities in different states investigating similar disappearances and murders.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/caryn-eileen-campbell.jpg',
                         ],
                         [
-                            'name' => 'Julie L. Cunningham',
+                            'name' => 'Julie Lyle Cunningham',
                             'birth_date' => 'January 10, 1949',
                             'death_date' => null,
                             'age' => 26,
@@ -253,7 +253,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'March 15, 1975',
                             'case_connection' => 'Julie disappeared after leaving her apartment in Vail during the evening. Ted Bundy later confessed to abducting and killing her and provided investigators with a description of where he said he had left her remains. Despite searches, Julie\'s body has never been recovered.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/bundy/julie-lyle-cunningham.jpg',
                         ],
                         [
                             'name' => 'Denise Lynn Oliverson',
@@ -271,7 +271,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'April 6, 1975',
                             'case_connection' => 'Denise left her home on her bicycle intending to ride to her parents\' house. She never arrived. The following day, searchers discovered her bicycle and shoes beneath the Fifth Street Bridge near railroad tracks. Bundy later told investigators that he had killed a woman in Grand Junction and disposed of her body in the Colorado River. Denise\'s remains have never been recovered.',
                             'legacy' => 'Her case remains listed by Colorado authorities, and the Grand Junction Police Department continues to request information concerning her disappearance and death.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/denise-lynn-oliverson.jpg',
                         ],
                         [
                             'name' => 'Lynette Dawn Culver',
@@ -287,7 +287,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 6, 1975',
                             'case_connection' => 'Lynette disappeared after leaving Alameda Junior High School during her lunch break. She was later seen boarding a bus at Hawthorne Junior High School but was never seen again. Shortly before his execution, Ted Bundy confessed to abducting and killing Lynette and claimed that he disposed of her body in a river. Her remains have never been recovered.',
                             'legacy' => 'Despite Bundy\'s confession, Lynette remains officially listed as missing and her case continues to be investigated by the Pocatello Police Department. Her family has continued to seek answers and closure.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/lynette-dawn-culver.jpg',
                         ],
                         [
                             'name' => 'Susan Curtis',
@@ -306,7 +306,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 28, 1975',
                             'case_connection' => 'Susan disappeared while attending a youth conference at Brigham Young University in Provo. Ted Bundy confessed to her murder shortly before his execution and told investigators that he had buried her near Price, Utah. Searches based on his account did not locate her remains.',
                             'legacy' => 'Susan\'s remains have never been recovered, and her disappearance remains part of the unresolved legacy of Bundy\'s crimes.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/susan-curtis.jpg',
                         ],
                         [
                             'name' => 'Margaret Elizabeth Bowman',
@@ -322,7 +322,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 15, 1978',
                             'case_connection' => 'Margaret was killed during the attack on the Chi Omega sorority house at Florida State University. Lisa Levy was also killed, while Karen Chandler and Kathy Kleiner survived attacks inside the house that night.',
                             'legacy' => 'Margaret\'s murder became part of the Florida case that resulted in Ted Bundy\'s conviction and death sentence for the Chi Omega murders.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/margaret-elizabeth-bowman.jpg',
                         ],
                         [
                             'name' => 'Lisa Janet Levy',
@@ -338,7 +338,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 15, 1978',
                             'case_connection' => 'Lisa was killed during the attack on the Chi Omega sorority house at Florida State University. Margaret Bowman was also killed, while Karen Chandler and Kathy Kleiner survived attacks inside the house.',
                             'legacy' => 'Forensic evidence from Lisa\'s murder, particularly a bite-mark comparison used during the trial, became a major part of the prosecution\'s case against Ted Bundy. The reliability of bite-mark analysis has since been heavily questioned within forensic science.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/lisa-janet-levy.jpg',
                         ],
                         [
                             'name' => 'Kimberly Diane Leach',
@@ -354,7 +354,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'February 9, 1978',
                             'case_connection' => 'Kimberly disappeared from Lake City Junior High School during the school day. Her remains were discovered in April 1978 west of Lake City. Ted Bundy was later convicted of kidnapping and murdering her.',
                             'legacy' => 'Kimberly was the final murder victim for which Ted Bundy was convicted. His conviction in her case resulted in an additional death sentence.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/kimberly-diane-leach.jpg',
                         ]
                     ],
 
@@ -375,7 +375,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 4, 1974',
                             'case_connection' => 'Karen was attacked while asleep in her apartment in Seattle\'s University District. She survived extremely serious injuries and is generally considered the first known surviving victim of Ted Bundy\'s documented attacks.',
                             'legacy' => 'Karen survived the attack and lived for decades largely outside the public spotlight. Her survival is an important part of the Bundy case and challenges accounts that focus only on those he killed.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/karen-sparks.jpg',
                         ],
                         [
                             'name' => 'Carol DaRonch',
@@ -391,7 +391,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 8, 1974',
                             'case_connection' => 'Carol was approached at Fashion Place Mall by Bundy, who falsely presented himself as a police officer and persuaded her to accompany him. After he attempted to restrain her with handcuffs, Carol fought back, escaped from his car and obtained help.',
                             'legacy' => 'Carol identified Ted Bundy as her attacker and testified against him. Her evidence was crucial to his 1976 aggravated kidnapping conviction in Utah, one of the major legal developments that helped authorities keep Bundy in custody and investigate his connection to other crimes.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/carol-daronch.jpg',
                         ],
                         [
                             'name' => 'Karen Chandler',
@@ -407,7 +407,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 15, 1978',
                             'case_connection' => 'Karen survived the attack on the Chi Omega sorority house. She and her roommate Kathy Kleiner were attacked after Bundy had killed Margaret Bowman and Lisa Levy in nearby rooms. Karen suffered extensive injuries but survived.',
                             'legacy' => 'Karen later spoke publicly about her experience, helping preserve the perspective of the women who survived the Chi Omega attack rather than allowing the story to remain centered solely on Bundy.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/karen-chandler.jpg',
                         ],
                         [
                             'name' => 'Kathy Kleiner',
@@ -426,7 +426,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 15, 1978',
                             'case_connection' => 'Kathy survived the attack on the Chi Omega sorority house while sharing a room with Karen Chandler. Both women were seriously injured during the attack.',
                             'legacy' => 'Kathy later became an advocate and public speaker focused on survivors and victims. She has spoken extensively about resisting the glamorization of Ted Bundy and published the memoir "A Light in the Dark: Surviving More Than Ted Bundy," which places greater emphasis on the lives and experiences of the women affected by his crimes.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/kathy-kleiner.jpg',
                         ],
                         [
                             'name' => 'Cheryl Thomas',
@@ -444,7 +444,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 15, 1978',
                             'case_connection' => 'Shortly after the Chi Omega attack, Bundy entered Cheryl\'s residence while she was asleep and attacked her. Neighbors heard noises coming from her home and contacted police. Cheryl survived the attack despite suffering serious injuries.',
                             'legacy' => 'Cheryl later spoke publicly about surviving the attack. Her case helped investigators reconstruct Bundy\'s movements through Tallahassee during the early morning of January 15, 1978.',
-                            'image' => null,
+                            'image' => 'images/victims/bundy/cheryl-thomas.jpg',
                         ]
                     ],
                 ])
