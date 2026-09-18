@@ -694,7 +694,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 3, 1972',
                             'case_connection' => 'Timothy encountered John Wayne Gacy while travelling through Chicago and was killed at Gacy\'s home. His remains were buried beneath the house and were recovered by investigators in December 1978. At the time of recovery, his identity was unknown.',
                             'legacy' => 'Timothy was the earliest known murder victim attributed to Gacy. His remains were identified years after their recovery through dental records, restoring his name to a victim who had initially been known only by a recovery number.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/timothy-jack-mccoy.jpg',
                         ],
                         [
                             'name' => 'John Butkovich',
@@ -710,7 +710,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 31, 1975',
                             'case_connection' => 'John disappeared after seeking wages that he believed Gacy owed him for construction work. His remains were later discovered beneath the concrete floor of Gacy\'s garage during the investigation of the property.',
                             'legacy' => 'John\'s family repeatedly sought answers after his disappearance and raised concerns about Gacy. His remains were among those identified soon after investigators searched Gacy\'s property in 1978.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/john-butkovich.jpg',
                         ],
                         [
                             'name' => 'Darrell Julius Samson',
@@ -726,7 +726,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'April 6, 1976',
                             'case_connection' => 'Darrell disappeared on April 6, 1976. His remains were later recovered from beneath Gacy\'s home during the extensive search of the property following Gacy\'s arrest.',
                             'legacy' => 'Darrell was identified after investigators recovered the victims buried at Gacy\'s property, allowing his family to receive confirmation of what had happened to him.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/darrell-julius-samson.jpeg',
                         ],
                         [
                             'name' => 'Randall Wayne Reffett',
@@ -742,7 +742,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 14, 1976',
                             'case_connection' => 'Randall disappeared on May 14, 1976 after leaving school. His remains were later recovered from the crawl space beneath Gacy\'s home. Samuel Stapleton also disappeared on the same day and was found buried nearby.',
                             'legacy' => 'Randall and Samuel were among the youngest identified victims recovered from Gacy\'s property.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/randall-wayne-reffett.jpg',
                         ],
                         [
                             'name' => 'Samuel G. Dodd Stapleton',
@@ -758,7 +758,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 14, 1976',
                             'case_connection' => 'Samuel disappeared on May 14, 1976 while returning home after visiting his sister. His remains were later recovered from the crawl space beneath Gacy\'s home, near those of his friend Randall Reffett.',
                             'legacy' => 'At 14, Samuel was one of the youngest identified victims recovered from Gacy\'s property. His identification restored his name to remains initially distinguished by investigators through recovery numbers.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/samuel-dodd-stapleton.jpeg',
                         ],
                         [
                             'name' => 'Michael Lawrence Bonnin',
@@ -774,7 +774,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 3, 1976',
                             'case_connection' => 'Michael disappeared while travelling from Waukegan toward Chicago. His remains were later recovered from the crawl space beneath John Wayne Gacy\'s home and identified through dental records.',
                             'legacy' => 'Michael was among the identified young men and boys recovered from Gacy\'s property, allowing investigators to return his identity to his family after his disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/michael-lawrence-bonnin.jpg',
                         ],
                         [
                             'name' => 'William Huey Carroll Jr.',
@@ -790,7 +790,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 13, 1976',
                             'case_connection' => 'William disappeared in June 1976. His remains were later recovered from the crawl space beneath Gacy\'s home during the investigation of the property.',
                             'legacy' => 'William was identified among the victims recovered from Gacy\'s property, restoring his name to remains that investigators initially documented by their burial location.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/william-huey-carroll-jr.jpeg',
                         ],
                         [
                             'name' => 'James Byron Haakenson',
@@ -806,7 +806,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'August 5, 1976',
                             'case_connection' => 'James was killed after travelling to Chicago in August 1976. His remains were recovered from beneath Gacy\'s home in December 1978, but investigators were unable to identify him at the time.',
                             'legacy' => 'For decades James was known only as Body 24. In 2017, DNA testing identified the remains as James Byron Haakenson, giving his family an answer more than forty years after his disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/james-byron-haakenson.jpg',
                         ],
                         [
                             'name' => 'Rick Louis Johnston',
@@ -822,7 +822,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'August 6, 1976',
                             'case_connection' => 'Rick disappeared in August 1976. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/gacy/rick-louis-johnston.jpeg',
                         ],
                         [
                             'name' => 'Kenneth Ray Parker',
@@ -838,7 +838,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 24, 1976',
                             'case_connection' => 'Kenneth and his friend Michael Marino disappeared together on October 24, 1976. Kenneth\'s remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/gacy/kenneth-ray-parker.jpg',
                         ],
                         [
                             'name' => 'Michael M. Marino',
@@ -854,7 +854,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 24, 1976',
                             'case_connection' => 'Michael and his friend Kenneth Parker disappeared together on October 24, 1976. Their remains were later recovered from a shared burial area in the crawl space beneath John Wayne Gacy\'s home and identified through dental and radiological records.',
                             'legacy' => 'Michael and Kenneth were identified in 1980, after Gacy\'s trial had already begun, restoring their names to remains that investigators had initially documented by recovery numbers.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/michael-marino.jpeg',
                         ],
                         [
                             'name' => 'William George Bundy',
@@ -870,7 +870,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 26, 1976',
                             'case_connection' => 'William disappeared after telling his family that he was going to a party. His remains were recovered from beneath Gacy\'s home in 1978, but investigators were unable to identify him at the time.',
                             'legacy' => 'William remained unidentified for more than three decades. After the Cook County Sheriff\'s Office reopened efforts to identify Gacy\'s unnamed victims, DNA provided by William\'s siblings led to his identification in 2011.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/william-george-bundy.jpg',
                         ],
                         [
                             'name' => 'Francis Wayne Alexander',
@@ -886,7 +886,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'Between early 1976 and early 1977',
                             'case_connection' => 'Francis was killed sometime between early 1976 and early 1977. His remains were recovered from the crawl space beneath Gacy\'s home in December 1978 and designated Victim #5 because investigators could not establish his identity.',
                             'legacy' => 'Francis remained unidentified for more than four decades. In 2021, genetic genealogy produced a lead that investigators confirmed using DNA from his mother and half-brother, officially restoring his identity as Francis Wayne Alexander.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/francis-wayne-alexander.jpg',
                         ],
                         [
                             'name' => 'Gregory John Godzik',
@@ -902,7 +902,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'December 12, 1976',
                             'case_connection' => 'Gregory disappeared after dropping a girl off following a date. When his family searched for answers, they contacted Gacy because Gregory had worked for him. Gregory\'s wallet was later discovered during the search of Gacy\'s home, and his remains were recovered from the crawl space.',
                             'legacy' => 'Gregory was identified among the victims recovered from Gacy\'s property in December 1978.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/gregory-john-godzik.jpeg',
                         ],
                         [
                             'name' => 'John Alan Szyc',
@@ -918,7 +918,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 20, 1977',
                             'case_connection' => 'John disappeared in January 1977. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation of the property.',
                             'legacy' => 'John was identified in December 1978 among the victims recovered from Gacy\'s home.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/john-alan-szyc.jpg',
                         ],
                         [
                             'name' => 'Jon Steven Prestidge',
@@ -934,7 +934,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'March 15, 1977',
                             'case_connection' => 'Jon disappeared in March 1977. His remains were later recovered from the crawl space beneath John Wayne Gacy\'s home during the investigation of the property and were subsequently identified.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/gacy/jon-steven-prestidge.jpeg',
                         ],
                         [
                             'name' => 'Matthew Walter Bowman',
@@ -950,7 +950,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 5, 1977',
                             'case_connection' => 'Matthew disappeared in July 1977. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
                             'legacy' => null,
-                            'image' => null,
+                            'image' => 'images/victims/gacy/matthew-walter-bowman.jpeg',
                         ],
                         [
                             'name' => 'Robert Edward Gilroy Jr.',
@@ -968,7 +968,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 15, 1977',
                             'case_connection' => 'Robert disappeared on September 15, 1977. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation of the property.',
                             'legacy' => 'Robert was identified among the victims recovered from Gacy\'s property, providing his family with confirmation of what had happened after his disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/robert-edward-gilory-jr.jpeg',
                         ],
                         [
                             'name' => 'John Anthony Mowery',
@@ -984,7 +984,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 25, 1977',
                             'case_connection' => 'John disappeared in September 1977 after spending time with friends. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
                             'legacy' => 'John was identified among the victims recovered from Gacy\'s property in 1978.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/john-anthony-mowery.jpeg',
                         ],
                         [
                             'name' => 'Russell Lloyd Nelson',
@@ -1000,7 +1000,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 17, 1977',
                             'case_connection' => 'Russell disappeared while visiting Chicago with friends. His companions lost contact with him during their trip and returned home without him. His remains were later recovered from beneath Gacy\'s home and identified during the investigation.',
                             'legacy' => 'Russell was identified among the victims recovered from Gacy\'s property, resolving the disappearance his family and friends had faced after his trip to Chicago.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/russell-lloyd-nelson.jpeg',
                         ],
                         [
                             'name' => 'Robert David Winch',
@@ -1010,87 +1010,63 @@ class VictimSeeder extends Seeder
                             'occupation' => null,
                             'education' => null,
                             'location' => 'Chicago, Illinois',
-
                             'interests' => [],
                             'aspirations' => null,
-
                             'about' => 'Robert was a 16-year-old originally from Kalamazoo, Michigan. He was in Chicago when he disappeared in November 1977. Reliable public records contain relatively little information about his education, interests and ambitions.',
-
                             'case_date' => 'November 10, 1977',
-
                             'case_connection' => 'Robert disappeared in Chicago on November 10, 1977. His remains were later recovered from the crawl space beneath John Wayne Gacy\'s home and identified in 1979.',
-
                             'legacy' => 'Robert was identified among the young men and boys recovered from Gacy\'s property, restoring his name to remains that investigators had initially documented by recovery number.',
-
-                            'image' => null,
+                            'image' => 'images/victims/gacy/robert-david-winch.jpeg',
                         ],
                         [
                             'name' => 'Tommy Joseph Boling',
                             'birth_date' => null,
                             'death_date' => 'November 18, 1977',
                             'age' => 20,
-
                             'occupation' => null,
                             'education' => null,
                             'location' => 'Chicago, Illinois',
-
                             'interests' => [],
                             'aspirations' => null,
-
                             'about' => 'Tommy was a 20-year-old young man and a father. Publicly available historical accounts preserve relatively little verified information about his employment, education and personal interests.',
-
                             'case_date' => 'November 18, 1977',
-
                             'case_connection' => 'Tommy disappeared in Chicago on November 18, 1977. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
-
                             'legacy' => 'Tommy was identified among the victims recovered from Gacy\'s property, providing his family with confirmation of what had happened after his disappearance.',
-
-                            'image' => null,
+                            'image' => 'images/victims/gacy/tommy-joseph-boling.jpeg',
                         ],
                         [
                             'name' => 'David Paul Talsma',
                             'birth_date' => null,
                             'death_date' => 'December 9, 1977',
                             'age' => 19,
-
                             'occupation' => 'U.S. Marine',
                             'education' => null,
                             'location' => 'Chicago, Illinois',
-
-                            'interests' => ['Music'],
+                            'interests' => [
+                                'Music'
+                            ],
                             'aspirations' => null,
-
                             'about' => 'David was a 19-year-old United States Marine. On the day he disappeared, he told his mother that he planned to attend a rock concert in Hammond, Indiana.',
-
                             'case_date' => 'December 9, 1977',
-
                             'case_connection' => 'David disappeared on December 9, 1977. His remains were later recovered from the crawl space beneath Gacy\'s home and identified during the investigation.',
-
                             'legacy' => 'David was identified in 1979, on what would have been his 21st birthday, returning his name to remains recovered from Gacy\'s property.',
-
-                            'image' => null,
+                            'image' => 'images/victims/gacy/david-paul-talsma.jpg',
                         ],
                         [
                             'name' => 'William Wayne Kindred',
                             'birth_date' => null,
                             'death_date' => 'February 16, 1978',
                             'age' => 19,
-
                             'occupation' => null,
                             'education' => null,
                             'location' => 'Chicago, Illinois',
-
                             'interests' => [],
                             'aspirations' => null,
-
                             'about' => 'William was a 19-year-old from the Chicago area. Reliable public records provide relatively little information about his education, employment, interests or future plans.',
-
                             'case_date' => 'February 16, 1978',
-
                             'case_connection' => 'William disappeared on February 16, 1978. His remains were later recovered from the crawl space beneath Gacy\'s home and identified in 1979.',
-
                             'legacy' => 'William is generally regarded as the last known victim buried in the crawl space beneath Gacy\'s home. Later victims were disposed of elsewhere after there was no longer sufficient space beneath the house.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/william-wayne-kindred.jpeg',
                         ],
                         [
                             'name' => 'Timothy David O\'Rourke',
@@ -1106,7 +1082,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 16-23, 1978',
                             'case_connection' => 'Timothy disappeared during June 1978. His body was recovered from the Des Plaines River on June 30, months before Gacy\'s arrest, but investigators initially had no reason to connect his death to Gacy. He was later identified through fingerprint records and a distinctive tattoo.',
                             'legacy' => 'After Gacy\'s arrest, investigators established Timothy as one of his victims. He was the first known victim Gacy disposed of in the Des Plaines River rather than burying on his property.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/timothy-david-orourke.jpg',
                         ],
                         [
                             'name' => 'Frank William Landingin',
@@ -1122,7 +1098,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 1978',
                             'case_connection' => 'Frank disappeared in Chicago in November 1978. His body was later recovered from the Des Plaines River and identified as one of John Wayne Gacy\'s victims.',
                             'legacy' => 'Frank was one of the later known victims whose bodies were recovered from the Des Plaines River rather than from Gacy\'s property.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/frank-william-landingin.jpeg',
                         ],
                         [
                             'name' => 'James Mazzara',
@@ -1138,7 +1114,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 24, 1978',
                             'case_connection' => 'James disappeared shortly after Thanksgiving in November 1978. His body was later recovered from the Des Plaines River and identified as one of Gacy\'s victims.',
                             'legacy' => 'James was among the final known victims before Gacy\'s arrest in December 1978. His body was recovered from the Des Plaines River after investigators began searching for victims outside Gacy\'s property.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/james-mazzara.jpg',
                         ],
                         [
                             'name' => 'Robert Jerome Piest',
@@ -1156,7 +1132,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'December 11, 1978',
                             'case_connection' => 'Robert disappeared after finishing his shift at Nisson Pharmacy. His mother was waiting to take him home for her birthday celebration when Robert told her he was going to speak briefly with a contractor about a possible job. The contractor was John Wayne Gacy. Robert did not return, and his family reported him missing that night. The investigation into his disappearance quickly led police to Gacy.',
                             'legacy' => 'Robert\'s disappearance triggered the investigation that exposed Gacy\'s crimes and led investigators to the victims buried at his property. Robert\'s own body was recovered from the Des Plaines River in April 1979 and identified through dental records.',
-                            'image' => null,
+                            'image' => 'images/victims/gacy/robert-jerome-piest.png',
                         ],
                         [
                             'name' => 'Unidentified Victim #28',
