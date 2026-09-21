@@ -1241,7 +1241,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 18, 1978',
                             'case_connection' => 'Steven was hitchhiking toward Chippewa Lake Park when Dahmer offered him a ride. He was killed at Dahmer\'s family home in Bath Township. Steven was reported missing several days later, but what had happened to him remained unknown until Dahmer confessed in 1991.',
                             'legacy' => 'Steven is recognized as Dahmer\'s first known murder victim. After Dahmer\'s confession, investigators recovered skeletal remains from the Bath Township property and used forensic examination to help establish Steven\'s identity, finally providing answers more than thirteen years after his disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/steven-mark-hicks.jpg',
                         ],
                         [
                             'name' => 'Steven Walter Tuomi',
@@ -1257,7 +1257,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September-November 1987',
                             'case_connection' => 'Steven disappeared in Milwaukee in 1987. Dahmer later confessed that he had killed Steven after the two went to the Ambassador Hotel. Steven\'s remains were never recovered, and investigators therefore could not independently confirm his identity through physical remains.',
                             'legacy' => 'Steven remained a missing person for years before Dahmer\'s 1991 confession connected his disappearance to the murders. His case remains unusual among Dahmer\'s known victims because no physical remains were recovered.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/steven-walter-tuomi.jpeg',
                         ],
                         [
                             'name' => 'James Edward Doxtator',
@@ -1273,7 +1273,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 16, 1988',
                             'case_connection' => 'James encountered Dahmer in Milwaukee and was taken to the West Allis home where Dahmer was living with his grandmother. Dahmer later confessed to killing James there. His remains were not recovered after Dahmer\'s arrest.',
                             'legacy' => 'James was formally added to the criminal case against Dahmer after investigators connected his disappearance with Dahmer\'s confession. FBI records identify him as 14 years old when he disappeared.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/james-edward-doxtator.jpg',
                         ],
                         [
                             'name' => 'Richard Guerrero',
@@ -1289,7 +1289,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'March 24, 1988',
                             'case_connection' => 'Richard disappeared in Milwaukee on March 24, 1988. Investigators later concluded that he encountered Dahmer that evening and went with him to the West Allis home of Dahmer\'s grandmother. Dahmer confessed to killing Richard there, although Richard\'s remains were never recovered.',
                             'legacy' => 'Richard\'s family searched for answers for years after his disappearance. Following Dahmer\'s arrest, investigators connected Richard to the case through missing-person records, photographs and Dahmer\'s confession.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/richard-guerrero.jpg',
                         ],
                         [
                             'name' => 'Anthony Lee Sears',
@@ -1309,7 +1309,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'March 25, 1989',
                             'case_connection' => 'Anthony disappeared after going out in Milwaukee in March 1989. He encountered Dahmer and went with him to the West Allis home where Dahmer was living with his grandmother. After Dahmer\'s arrest in 1991, some of Anthony\'s remains were recovered and identified.',
                             'legacy' => 'Anthony\'s identification after Dahmer\'s arrest finally gave his family an answer more than two years after he disappeared. His family held a funeral for him in August 1991, allowing them to formally mourn and remember him.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/anthony-lee-sears.jpg',
                         ],
                         [
                             'name' => 'Raymond Lamont Smith',
@@ -1325,7 +1325,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 20, 1990',
                             'case_connection' => 'Raymond encountered Jeffrey Dahmer in Milwaukee in May 1990 and went with him to Dahmer\'s apartment on North 25th Street. He became the first known victim killed after Dahmer moved into that apartment.',
                             'legacy' => 'Raymond was identified as one of Dahmer\'s victims following the 1991 investigation and confession. His murder marked the beginning of the series of killings committed at Dahmer\'s North 25th Street apartment.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/raymond-lamont-smith.png',
                         ],
                         [
                             'name' => 'Edward Warren Smith',
@@ -1341,7 +1341,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 14, 1990',
                             'case_connection' => 'Edward was last seen leaving the Phoenix Bar in Milwaukee on June 14, 1990. Investigators later connected his disappearance to Dahmer, who confessed to killing him. Edward\'s remains were never recovered.',
                             'legacy' => 'Edward\'s family searched for him after his disappearance. In 1991, his sister publicly described receiving a disturbing telephone call from a man claiming that Edward was dead. After Dahmer\'s arrest, investigators formally identified Edward as one of his victims despite the absence of recoverable remains.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/edward-warren-smith.jpeg',
                         ],
                         [
                             'name' => 'Ernest Marquez Miller',
@@ -1359,7 +1359,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 2-3, 1990',
                             'case_connection' => 'Ernest encountered Dahmer near a bookstore and accompanied him to his apartment after being offered money to pose for photographs. Ernest was killed there. His remains were later recovered during the 1991 investigation and identified through dental records.',
                             'legacy' => 'Ernest was formally identified among the victims recovered following Dahmer\'s arrest, allowing investigators to connect his disappearance with the crimes committed at the North 25th Street apartment.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/ernest-marquez-miller.jpg',
                         ],
                         [
                             'name' => 'David Courtney Thomas',
@@ -1375,7 +1375,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'September 24, 1990',
                             'case_connection' => 'David disappeared in Milwaukee on September 24, 1990. Dahmer later admitted killing him at his apartment. No physical remains belonging to David were recovered, but investigators found photographs taken by Dahmer and David\'s sister identified her brother from one of the images.',
                             'legacy' => 'Although no remains were recovered, David was formally identified as one of Dahmer\'s victims through the investigation, Dahmer\'s confession and photographs found in the apartment. His family\'s identification played an important role in establishing his case.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/david-courtney-thomas.jpg',
                         ],
                         [
                             'name' => 'Curtis Durrell Straughter',
@@ -1391,7 +1391,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'February 18, 1991',
                             'case_connection' => 'Curtis disappeared on February 18, 1991 after encountering Dahmer near Marquette University. He was taken to Dahmer\'s apartment and killed there. After Dahmer\'s arrest, investigators recovered remains that were identified as Curtis through comparison with his dental records.',
                             'legacy' => 'Curtis was one of the victims whose identity investigators were able to confirm through physical evidence recovered from Dahmer\'s apartment and existing dental records.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/curtis-durrell-straughter.jpg',
                         ],
                         [
                             'name' => 'Errol Lindsey',
@@ -1407,7 +1407,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'April 7, 1991',
                             'case_connection' => 'Errol disappeared in Milwaukee on April 7, 1991. His family searched for him after he failed to return home. Following Jeffrey Dahmer\'s arrest, investigators recovered remains from his apartment that were identified as Errol through dental records.',
                             'legacy' => 'Errol\'s family became outspoken about the loss they experienced and the treatment of Dahmer\'s victims. His sister, Rita Isbell, later became one of the most publicly recognized family members to speak about the pain caused by the murders.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/errol-lindsey.jpg',
                         ],
                         [
                             'name' => 'Anthony "Tony" Hughes',
@@ -1425,7 +1425,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 24, 1991',
                             'case_connection' => 'Tony disappeared in Milwaukee on May 24, 1991. He encountered Dahmer while out that evening and was offered money to pose for photographs. Following Dahmer\'s arrest, investigators recovered remains that were identified as Tony through dental records.',
                             'legacy' => 'Tony\'s family continued to speak publicly about him after his death, emphasizing the person he was beyond his association with Dahmer. His mother, Shirley Hughes, later spoke about the lasting grief experienced by families of the victims.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/anthony-hughes.jpg',
                         ],
                         [
                             'name' => 'Konerak Sinthasomphone',
@@ -1441,7 +1441,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'May 27, 1991',
                             'case_connection' => 'During the early morning of May 27, Konerak escaped from Dahmer\'s apartment in a severely impaired condition. Several women found him outside and called for help. Police responded, but Dahmer falsely claimed that Konerak was an adult and that the situation was a domestic dispute. Officers returned Konerak to Dahmer\'s apartment, where he was subsequently killed. His remains were recovered after Dahmer\'s arrest.',
                             'legacy' => 'The circumstances surrounding Konerak\'s death became one of the most heavily scrutinized aspects of the Dahmer case. The failure to protect him despite intervention by witnesses and police led to investigations, litigation and lasting criticism of the authorities\' response.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/konerak-sinthasomphone.jpeg',
                         ],
                         [
                             'name' => 'Matt Cleveland Turner',
@@ -1457,7 +1457,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'June 30, 1991',
                             'case_connection' => 'Matt encountered Dahmer in Chicago on June 30, 1991 and travelled with him to Milwaukee after being offered money to pose for photographs. He was killed at Dahmer\'s apartment. His remains were among those recovered by investigators after Dahmer\'s arrest in July.',
                             'legacy' => 'Matt was identified as one of Dahmer\'s victims through the investigation and physical evidence recovered from the apartment.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/matt-cleveland-turner.jpeg',
                         ],
                         [
                             'name' => 'Jeremiah Benjamin Weinberger',
@@ -1473,7 +1473,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 5-7, 1991',
                             'case_connection' => 'Jeremiah met Dahmer at a bar in Chicago in early July 1991 and travelled with him to Milwaukee. He remained at Dahmer\'s apartment for approximately two days before he was killed. His remains were recovered following Dahmer\'s arrest later that month.',
                             'legacy' => 'Jeremiah was among the final victims killed before Dahmer\'s arrest. His disappearance was connected to the case when investigators identified remains and other evidence recovered from Dahmer\'s apartment.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/jeremiah-benjamin-weinberger.jpg',
                         ],
                         [
                             'name' => 'Oliver Joseph Lacy',
@@ -1491,7 +1491,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 15, 1991',
                             'case_connection' => 'Oliver encountered Dahmer in Chicago and travelled with him by bus to Milwaukee after being offered money to pose for photographs. He was killed at Dahmer\'s apartment. Following Dahmer\'s arrest one week later, Oliver was among the first victims investigators were able to identify.',
                             'legacy' => 'Oliver was identified using personal identification found in Dahmer\'s apartment together with physical evidence recovered by investigators. His identification helped investigators begin establishing the identities of the people whose remains had been discovered in the apartment.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/oliver-joseph-lacy.jpg',
                         ],
                         [
                             'name' => 'Joseph Arthur Bradehoft',
@@ -1507,7 +1507,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'July 19, 1991',
                             'case_connection' => 'Joseph encountered Dahmer in Milwaukee in July 1991 and accompanied him to his apartment. He was killed there on July 19. His remains were still inside the apartment when police arrested Dahmer three days later.',
                             'legacy' => 'Joseph was the final known person murdered by Dahmer. Because his remains were recovered immediately after Dahmer\'s arrest, investigators were able to identify him during the initial investigation and return his identity to his family.',
-                            'image' => null,
+                            'image' => 'images/victims/dahmer/joseph-arthur-bradehoft.png',
                         ]
                     ],
 
@@ -1602,7 +1602,7 @@ class VictimSeeder extends Seeder
                             'legacy' => 'At only 12 years old, Dolly was the youngest confirmed victim of Bianchi and Buono. The disappearances and deaths of Dolly and Sonja drew significant public attention to the Hillside Strangler investigation and intensified fear across Los Angeles.',
                             'image' => null,
                         ],
-                                                [
+                        [
                             'name' => 'Sonja Johnson',
                             'birth_date' => null,
                             'death_date' => 'November 13, 1977',
@@ -1685,8 +1685,8 @@ class VictimSeeder extends Seeder
                             'legacy' => 'Cindy was the final confirmed Los Angeles victim of Bianchi and Buono. After her death in February 1978, the Hillside Strangler killings in Los Angeles stopped. Her case was later among the murders for which Buono was convicted.',
                             'image' => null,
                         ],
-                                                [
-                            'name' => 'Karen L. Mandic',
+                        [
+                            'name' => 'Karen Lauretta Mandic',
                             'birth_date' => null,
                             'death_date' => 'January 11, 1979',
                             'age' => 22,
