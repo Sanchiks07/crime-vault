@@ -1534,7 +1534,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 17, 1977',
                             'case_connection' => 'Yolanda was last seen in Hollywood on October 17, 1977. Her body was discovered the following morning near Forest Lawn Drive, close to Griffith Park. Her death became the first confirmed murder attributed to Kenneth Bianchi and Angelo Buono Jr. in the series later known as the Hillside Strangler murders.',
                             'legacy' => 'Yolanda is recognized as the first confirmed victim in the Hillside Strangler series. Her murder preceded the rapid succession of killings that led Los Angeles-area investigators to recognize that the deaths were connected.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/yolanda-washington.jpg',
                         ],
                         [
                             'name' => 'Judith Lynn Miller',
@@ -1550,7 +1550,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'October 31, 1977',
                             'case_connection' => 'Judith was last seen in Hollywood on October 31, 1977. Her body was discovered later that day in the La Crescenta area. Her murder became the second confirmed killing attributed to Bianchi and Buono.',
                             'legacy' => 'Judith was one of the youngest victims in the Hillside Strangler case. Her murder, following Yolanda Washington\'s death only two weeks earlier, became part of the emerging pattern investigators were attempting to understand.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/judith-lynn-miller.jpg',
                         ],
                         [
                             'name' => 'Lissa Teresa Kastin',
@@ -1566,7 +1566,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 5, 1977',
                             'case_connection' => 'Lissa disappeared in Los Angeles on November 5, 1977. Her body was discovered the following day in the Chevy Chase Canyon area of Glendale. Her death was the third confirmed murder attributed to Bianchi and Buono.',
                             'legacy' => 'After Lissa\'s death, investigators increasingly recognized similarities between the recent killings and began to understand that they were confronting a connected series of murders.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/lissa-teresa-kastin.jpg',
                         ],
                         [
                             'name' => 'Evelyn Jane King',
@@ -1584,7 +1584,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 9, 1977',
                             'case_connection' => 'Jane disappeared on November 9, 1977 while waiting for a bus. Her body was not discovered until November 23, when she was found near the Los Feliz Boulevard off-ramp of the Golden State Freeway. Investigators connected her death to the developing Hillside Strangler case.',
                             'legacy' => 'Jane\'s identification added another victim to the growing series of killings that had created widespread concern across Los Angeles. Her case also demonstrates why discovery dates and actual disappearance dates must be kept separate when documenting the murders.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/evelyn-jane-king.jpg',
                         ],
                         [
                             'name' => 'Dolores Ann "Dolly" Cepeda',
@@ -1600,7 +1600,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 13, 1977',
                             'case_connection' => 'Dolly and her friend Sonja Johnson disappeared together on November 13, 1977 after travelling by bus from Eagle Rock Plaza. They were last seen approaching a car occupied by two men. Their bodies were discovered together on a hillside near Dodger Stadium on November 20.',
                             'legacy' => 'At only 12 years old, Dolly was the youngest confirmed victim of Bianchi and Buono. The disappearances and deaths of Dolly and Sonja drew significant public attention to the Hillside Strangler investigation and intensified fear across Los Angeles.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/dolores-ann-cepeda.jpg',
                         ],
                         [
                             'name' => 'Sonja Johnson',
@@ -1616,7 +1616,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 13, 1977',
                             'case_connection' => 'Sonja and Dolly disappeared together after travelling by bus from Eagle Rock Plaza on November 13, 1977. Witnesses reported seeing the girls approach a large car occupied by two men. Their bodies were discovered together on a hillside near Dodger Stadium one week later.',
                             'legacy' => 'Sonja and Dolly were among the youngest victims in the Hillside Strangler case. Their disappearances and deaths intensified public concern about the series and became important to investigators\' growing belief that more than one offender may have been involved.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/sonja-johnson.jpg',
                         ],
                         [
                             'name' => 'Kristina Weckler',
@@ -1635,7 +1635,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 20, 1977',
                             'case_connection' => 'Kristina disappeared from the Glendale area in November 1977. Her body was discovered on November 20 on a hillside near Glendale. Investigators connected her death to the developing Hillside Strangler series.',
                             'legacy' => 'Kristina\'s life as a dedicated art student is documented through investigative records and accounts from those who examined her belongings and spoke with people who knew her. Her murder became one of the cases later used to establish the connection between Bianchi and the Los Angeles killings.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/kristina-weckler.jpg',
                         ],
                         [
                             'name' => 'Lauren Rae Wagner',
@@ -1651,7 +1651,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'November 29, 1977',
                             'case_connection' => 'Lauren disappeared while returning home during the night of November 28-29. Her car was later found parked across the street from her family\'s home with a door left open. A neighbor reported witnessing two men abducting her. Lauren was found dead later on November 29 in the Mount Washington area of Los Angeles.',
                             'legacy' => 'The eyewitness account of Lauren\'s abduction became particularly important because it supported investigators\' growing suspicion that two men, rather than a single "Hillside Strangler," were responsible for the murders.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/lauren-rae-wagner.jpg',
                         ],
                         [
                             'name' => 'Kimberly Diane Martin',
@@ -1667,7 +1667,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'December 13-14, 1977',
                             'case_connection' => 'Kimberly was working through an escort service when she was sent to meet a client at an apartment on Tamarind Avenue in Hollywood. The address was connected to Kenneth Bianchi. Her body was discovered the following day in the Silver Lake area of Los Angeles.',
                             'legacy' => 'The Tamarind Avenue address later became an important investigative connection to Bianchi. After his arrest in Washington, Los Angeles investigators recognized that he had previously lived at the address connected with Kimberly\'s disappearance.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/kimberly-diane-martin.jpg',
                         ],
                         [
                             'name' => 'Cindy Lee Hudspeth',
@@ -1683,7 +1683,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'February 16, 1978',
                             'case_connection' => 'Cindy encountered Angelo Buono while arranging upholstery work for her car. She was killed on February 16, 1978. The following day, her car was discovered after it had been pushed down a hillside off Angeles Crest Highway, with Cindy inside the vehicle.',
                             'legacy' => 'Cindy was the final confirmed Los Angeles victim of Bianchi and Buono. After her death in February 1978, the Hillside Strangler killings in Los Angeles stopped. Her case was later among the murders for which Buono was convicted.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/cindy-lee-hudspeth.jpeg',
                         ],
                         [
                             'name' => 'Karen Lauretta Mandic',
@@ -1699,7 +1699,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 11, 1979',
                             'case_connection' => 'Karen and her friend Diane Wilder were killed in Bellingham, Washington, on January 11, 1979. These murders were committed by Kenneth Bianchi alone after he had moved away from Los Angeles and ended his partnership with Angelo Buono Jr. Karen\'s car was later found with both women inside, and the investigation quickly focused on Bianchi.',
                             'legacy' => 'The investigation into Karen and Diane\'s murders led to Bianchi\'s arrest. Evidence gathered afterward ultimately connected him to the earlier Hillside Strangler murders in Los Angeles and exposed his partnership with Angelo Buono Jr.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/karen-lauretta-mandic.jpg',
                         ],
                         [
                             'name' => 'Diane Ann Wilder',
@@ -1715,7 +1715,7 @@ class VictimSeeder extends Seeder
                             'case_date' => 'January 11, 1979',
                             'case_connection' => 'Diane and Karen Mandic were killed in Bellingham on January 11, 1979. Kenneth Bianchi committed both murders without Angelo Buono Jr. After the women failed to return from their assignment, Karen\'s car was located with both victims inside and investigators began examining Bianchi\'s connection to them.',
                             'legacy' => 'Diane and Karen\'s murders brought Bianchi under police investigation and led to his arrest. The subsequent investigation helped authorities connect Bianchi to the unsolved Hillside Strangler murders in Los Angeles and eventually identify Angelo Buono Jr. as his accomplice in that earlier series.',
-                            'image' => null,
+                            'image' => 'images/victims/hillside-stranglers/diane-ann-wilder.png',
                         ]
                     ],
 
