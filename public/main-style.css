@@ -2546,6 +2546,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 999px;
     background: rgba(142, 22, 22, 0.15);
     color: var(--primary-light);
+    min-width: fit-content;
+    white-space: nowrap;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -2961,5 +2963,394 @@ h1, h2, h3, h4, h5, h6 {
     .archive-empty {
         margin: 2rem auto;
         padding: 2rem 1.25rem;
+    }
+
+    /* case details */
+    .details-card {
+        border-radius: 16px;
+    }
+
+    .details-header {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .details-header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .details-header p {
+        font-size: 1rem;
+    }
+
+    /* main case information */
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.25rem;
+    }
+
+    .details-image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .details-content {
+        gap: 1rem;
+    }
+
+    /* description / information panels */
+    .content-panel {
+        padding: 1.25rem;
+    }
+
+    .content-panel h2 {
+        font-size: 1.3rem;
+    }
+
+    /* statistics */
+    .details-stats,
+    .details-stats:has(.details-stat:nth-child(3)) {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+    }
+
+    .details-stat {
+        padding: 1rem;
+    }
+
+    /* victims / suspects lists */
+    .details-lists {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.25rem;
+    }
+
+    /* discussion board */
+    .discussion-board {
+        padding: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    /* header */
+    .discussion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+
+    .discussion-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .discussion-count {
+        align-self: flex-start;
+    }
+
+    /* comment form */
+    .discussion-form {
+        padding: 1rem;
+    }
+
+    .discussion-form textarea {
+        width: 100%;
+    }
+
+    .discussion-form-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: .75rem;
+    }
+
+    .discussion-form-footer button {
+        width: 100%;
+    }
+
+    /* comments */
+    .discussion-comment {
+        padding: 1rem;
+    }
+
+    .discussion-comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .75rem;
+    }
+
+    .discussion-author {
+        width: 100%;
+    }
+
+    /* comment actions */
+    .discussion-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: .5rem;
+    }
+
+    .discussion-actions form {
+        margin: 0;
+    }
+
+    /* admin moderation */
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .admin-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .admin-discussion-count {
+        align-self: flex-start;
+    }
+
+    /* discussion cards */
+    .admin-discussion-card {
+        padding: 1.25rem;
+    }
+
+    .admin-discussion-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .admin-discussion-info {
+        width: 100%;
+    }
+
+    /* moderation actions */
+    .admin-discussion-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .75rem;
+    }
+
+    .admin-discussion-actions form {
+        width: 100%;
+    }
+
+    /* resources */
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .resources-section {
+        padding: 1.25rem;
+    }
+
+    .resources-section-header {
+        margin-bottom: 1rem;
+    }
+
+    .resources-section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .resources-list {
+        gap: 1rem;
+    }
+
+    .resources-card {
+        padding: 1rem;
+    }
+
+    /* victims */
+    /* main victims layout */
+    .victims-content {
+        padding: 1.25rem;
+    }
+
+    .page-section {
+        margin-bottom: 2.5rem;
+    }
+
+    .page-card {
+        padding: 1.5rem;
+    }
+
+    /* information cards */
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .info-card {
+        padding: 1.25rem;
+    }
+
+    /* victim profiles */
+    .victim-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .victim-card {
+        grid-template-columns: 1fr;
+    }
+
+    /* victim images */
+    .victim-profile-image {
+        width: 100%;
+        min-height: 0;
+    }
+
+    .victim-profile-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+    }
+
+    .victim-image-placeholder {
+        width: 100%;
+        height: 220px;
+    }
+
+    /* victim information */
+    .victim-info {
+        padding: 1.25rem;
+    }
+
+    /* profile header */
+    .victim-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+
+    .victim-profile-header h3 {
+        font-size: 1.3rem;
+    }
+
+    /* profile details */
+    .victim-profile-details {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+    }
+
+    /* slider controls */
+    .victim-slider-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .75rem;
+    }
+
+    /* remembrance statistics */
+    .victim-remembrance-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* faovurites */
+    .favourites-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .favourites-section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .favourites-section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .favourite-form {
+        top: .75rem;
+        right: .75rem;
+    }
+
+    .favourite-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .archive-empty {
+        padding: 2rem 1.25rem;
+    }
+
+    /* login / register */
+    .auth-container {
+        padding: 1rem;
+    }
+
+    .auth-page {
+        width: 100%;
+        min-height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    /* hide decorative image on smaller screens */
+    .auth-image {
+        display: none;
+    }
+
+    /* form */
+    .auth-form {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-form h1 {
+        font-size: 2rem;
+    }
+
+    .auth-form p {
+        font-size: 0.95rem;
+    }
+
+    /* inputs */
+    .auth-form input {
+        width: 100%;
+    }
+
+    /* buttons */
+    .auth-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: .75rem;
+    }
+
+    .auth-form {
+        padding: 1.75rem 1rem;
+    }
+
+    .auth-form h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ---------- ADMIN TABLET ACTIONS ---------- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .admin-discussion-actions {
+        width: auto;
+        align-items: flex-end;
+    }
+
+    .admin-discussion-actions form {
+        width: auto;
+    }
+
+    .admin-discussion-actions button {
+        width: auto;
     }
 }
