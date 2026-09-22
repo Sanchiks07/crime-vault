@@ -28,7 +28,7 @@
             <!-- ====== QUICK NAVIGATION ====== -->
             <section class="psychology-navigation">
                 <a href="{{ route('psychology.introduction') }}" class="{{ request()->routeIs('psychology.introduction') ? 'active' : '' }}">➤ Introduction</a>
-                <a href="{{ route('psychology.fundamentals') }}">➤ fundamentals</a>
+                <a href="{{ route('psychology.fundamentals') }}">➤ Fundamentals</a>
                 <a href="{{ route('psychology.personality') }}">➤ Personality</a>
                 <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
                 <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>

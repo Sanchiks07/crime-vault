@@ -844,8 +844,317 @@
 
 /* mobile */
 @media (max-width: 768px) {
+    /* main layout */
     .psychology-container {
         width: 92%;
         padding: 40px 0;
+    }
+
+    /* hero */
+    .psychology-hero {
+        margin-bottom: 3rem;
+    }
+
+    .psychology-hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.15;
+    }
+
+    .hero-label {
+        font-size: 0.8rem;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* navigation */
+    .psychology-navigation {
+        gap: .75rem;
+        margin-bottom: 3rem;
+    }
+
+    .psychology-navigation a {
+        padding: .7rem 1rem;
+        font-size: .85rem;
+    }
+
+    /* sections */
+    .psychology-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .section-heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .section-tag {
+        font-size: .75rem;
+    }
+
+    /* introduction */
+    .psychology-introduction {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .psychology-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .info-box {
+        padding: 1.25rem;
+    }
+
+    /* basic cards */
+    .psychology-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .psychology-info-card {
+        padding: 1.25rem;
+    }
+
+    .museum-panel {
+        padding: 1.5rem;
+    }
+
+    /* split layout */
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .split-column {
+        padding: 1.25rem;
+    }
+
+    .split-divider {
+        width: 100%;
+        height: 1px;
+        margin: .5rem 0;
+    }
+
+    /* quotes */
+    .quote-card {
+        padding: 1.5rem;
+    }
+
+    .quote-card blockquote {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    /* development timeline */
+    .timeline-introduction {
+        margin-bottom: 2rem;
+    }
+
+    .development-timeline {
+        margin-top: 2rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    .timeline-marker {
+        width: 100%;
+    }
+
+    .timeline-year {
+        font-size: 1rem;
+    }
+
+    .timeline-content {
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    /* brain regions */
+    .brain-information {
+        margin-bottom: 2rem;
+    }
+
+    .brain-region-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .brain-region {
+        padding: 1.25rem;
+    }
+
+    /* comparison cards */
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comparison-card {
+        padding: 1.25rem;
+    }
+
+    .comparison-header {
+        gap: .75rem;
+    }
+
+    .comparison-number {
+        flex-shrink: 0;
+    }
+
+    /* large comparisons */
+    .comparison-large {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comparison-panel {
+        padding: 1.25rem;
+    }
+
+    /* warning box */
+    .myth-warning {
+        padding: 1.25rem;
+    }
+    
+    /* disorders */
+    .disorder-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .disorder-card {
+        padding: 1.25rem;
+    }
+
+    /* typologies */
+    .typology-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .typology-card {
+        padding: 1.25rem;
+    }
+
+    /* psychology cards */
+    .psychology-card {
+        padding: 1.25rem;
+    }
+
+    /* experiments */
+    .experiment-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .experiment-card {
+        padding: 1.25rem;
+    }
+
+    /* myth flip cards */
+    .myth-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .flip-card {
+        width: 100%;
+        height: 380px;
+    }
+
+    .flip-card-front, .flip-card-back {
+        padding: 1.5rem;
+    }
+
+    /* facts */
+    .fact-grid, .facts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .fact-card {
+        padding: 1.25rem;
+    }
+
+    .fact-highlight {
+        padding: 1.25rem;
+    }
+
+    /* faq */
+    .faq-container {
+        width: 100%;
+    }
+
+    .faq-item {
+        width: 100%;
+    }
+
+    .faq-question {
+        gap: 1rem;
+        padding: 1.25rem;
+        text-align: left;
+    }
+
+    .faq-answer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .faq-answer.active {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .psychology-container {
+        width: 94%;
+        padding: 30px 0;
+    }
+
+    .psychology-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .psychology-navigation {
+        gap: .5rem;
+    }
+
+    .psychology-navigation a {
+        padding: .6rem .8rem;
+        font-size: .8rem;
+    }
+
+    .museum-panel, .psychology-info-card, .split-column, .timeline-content,
+    .brain-region, .comparison-card, .comparison-panel, .disorder-card,
+    .typology-card, .psychology-card, .experiment-card, .fact-card {
+        padding: 1rem;
+    }
+
+    .quote-card {
+        padding: 1.25rem;
+    }
+
+    .quote-card blockquote {
+        font-size: 1.1rem;
+    }
+
+    .faq-question {
+        padding: 1rem;
     }
 }
