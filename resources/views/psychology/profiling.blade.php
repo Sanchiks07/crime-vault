@@ -8,21 +8,8 @@
         </div>
 
         <div class="psychology-container">
-            <!-- ====== QUICK NAVIGATION ====== -->
-            <section class="psychology-navigation">
-                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
-                <a href="{{ route('psychology.fundamentals') }}">➤ fundamentals</a>
-                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
-                <a href="{{ route('psychology.profiling') }}" class="{{ request()->routeIs('psychology.profiling') ? 'active' : '' }}">➤ Profiling</a>
-                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
-                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
-                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
-                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
-                <a href="{{ route('psychology.myths') }}">➤ Myths</a>
-                <a href="{{ route('psychology.resources') }}">➤ Resources</a>
-                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
-                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
-            </section>
+            <!-- ===== HERO & NAVIGATION ===== -->
+            <x-psychology-navigation></x-psychology-navigation>
 
             <!-- ====== PROFILING ====== -->
             <section id="profiling" class="psychology-section">

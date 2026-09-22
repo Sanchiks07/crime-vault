@@ -8,25 +8,12 @@
         </div>
 
         <div class="psychology-container">
-            <!-- ====== QUICK NAVIGATION ====== -->
-            <section class="psychology-navigation">
-                <a href="{{ route('psychology.introduction') }}">➤ Introduction</a>
-                <a href="{{ route('psychology.fundamentals') }}">➤ fundamentals</a>
-                <a href="{{ route('psychology.personality') }}">➤ Personality</a>
-                <a href="{{ route('psychology.profiling') }}">➤ Profiling</a>
-                <a href="{{ route('psychology.crimeScenes') }}">➤ Crime Scenes</a>
-                <a href="{{ route('psychology.investigativePsychology') }}">➤ Investigative Psychology</a>
-                <a href="{{ route('psychology.victimology') }}">➤ Victimology</a>
-                <a href="{{ route('psychology.experiments') }}">➤ Experiments</a>
-                <a href="{{ route('psychology.myths') }}">➤ Myths</a>
-                <a href="{{ route('psychology.resources') }}" class="{{ request()->routeIs('psychology.resources') ? 'active' : '' }}">➤ Resources</a>
-                <a href="{{ route('psychology.facts') }}">➤ Facts</a>
-                <a href="{{ route('psychology.faq') }}">➤ FAQ</a>
-            </section>
+            <!-- ===== HERO & NAVIGATION ===== -->
+            <x-psychology-navigation></x-psychology-navigation>
 
             <!-- ======= LEARN MORE ======= -->
             <section id="resources" class="psychology-section">
-                <div class="section-heading">
+                <!-- <div class="section-heading">
                     <span class="section-tag">Continue Learning</span>
                     <h2>Books, Podcasts & Research</h2>
                 </div>
@@ -90,7 +77,7 @@
                         </p>
                     </article>
                 </div>
-            </section>
+            </section> -->
 
             <!-- ===================================== -->
             <!-- Recommended Reading -->
@@ -100,7 +87,7 @@
                     <span class="section-tag">Museum Library</span>
                     <h2>Continue Your Exploration</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Every exhibit is only the beginning.
                         Criminal psychology is a constantly evolving discipline shaped by new research,
                         improved investigative methods, and a growing understanding of human behavior.
@@ -181,7 +168,7 @@
                     <span class="section-tag">Museum Exhibit XVII</span>
                     <h2>How Criminal Psychology Is Studied</h2>
 
-                    <p>
+                    <p class="psychology-card" style="margin-top:35px">
                         Modern criminal psychology relies on evidence gathered through many different
                         research methods.
                         No single technique provides all the answers.
