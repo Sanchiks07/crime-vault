@@ -2622,145 +2622,307 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media (max-width: 768px) {
+/* large screen */
+@media (min-width: 1441px) {
+    /* global layout */
+    .page-container {
+        max-width: 1500px;
+        padding: 0 2rem;
+    }
+
     /* navigation */
-    .navbar-menu {
-        display: flex;
-        align-items: center;
+    .navbar {
+        padding: 0 3rem;
+    }
+
+    .navbar-container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    /* home */
+    .home-layout {
+        gap: 4rem;
+    }
+
+    .home-grid {
         gap: 2rem;
     }
 
+    .home-info-grid {
+        gap: 2rem;
+    }
+
+    .home-hero {
+        padding: 3rem;
+    }
+
+    /* archive index */
+    .archive-grid {
+        gap: 2.5rem;
+    }
+
+    .archive-image {
+        height: 470px;
+    }
+
+    /* case details */
+    .details-grid {
+        grid-template-columns: minmax(320px, 0.9fr) minmax(0, 2fr);
+        gap: 2.5rem;
+        padding: 2rem;
+    }
+
+    .details-lists {
+        gap: 2.5rem;
+        padding: 2rem;
+    }
+
+    /* discussion board */
+    .discussion-board {
+        padding: 2rem;
+    }
+
+    /* resources */
+    .resources-grid {
+        gap: 2.5rem;
+    }
+
+    /* victims */
+    .victim-grid {
+        gap: 2rem;
+    }
+
+    .page-card {
+        padding: 3rem;
+    }
+
+    /* favourites */
+    .favourites-section {
+        padding: 2.5rem;
+    }
+
+    /* admin */
+    .admin-header {
+        padding: 2rem;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    /* global */
+    body a, body p {
+        font-size: 16px;
+    }
+
+    .page {
+        padding: 2.5rem 0;
+    }
+
+    .page-container {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .page-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    /* navigation */
     .navbar {
-        flex-direction: row;
+        height: 70px;
+        padding: 0 1rem;
+    }
+
+    .navbar-container {
+        position: relative;
         justify-content: space-between;
-        height: auto;
-        padding: 1rem;
+        gap: 1rem;
     }
 
+    /* logo */
     .home-link {
-        margin-right: 0;
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        order: 1;
     }
 
+    .home-link img {
+        height: 45px !important;
+    }
+
+    /* hamburger */
     .hamburger {
         display: block;
+        order: 2;
+        margin-left: auto;
+        padding: .4rem;
+        font-size: 1.8rem;
+        line-height: 1;
     }
 
+    /* dropdown closed */
     .navbar-menu {
         position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--surface);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 2rem;
+        top: calc(100% + 12px);
+        left: -1rem;
+        right: -1rem;
+        z-index: 1001;
         display: none;
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 0;
+        padding: 1rem;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 25px var(--shadow);
     }
 
+    /* dropdown open */
     .navbar-menu.active {
         display: flex;
     }
 
+    /* links */
     .navbar-links {
-        flex-direction: column;
         width: 100%;
+        flex-direction: column;
+        align-items: stretch;
         gap: 0;
     }
 
     .navbar-links a {
         width: 100%;
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--border);
+        padding: .9rem .5rem;
     }
 
+    .navbar-links a::after {
+        left: .5rem;
+        bottom: 5px;
+    }
+
+    .navbar-links a:hover::after,
+    .navbar-links a.active::after {
+        width: calc(100% - 1rem);
+    }
+
+    /* account / theme area */
     .navbar-end, .navbar-actions {
-        flex-direction: column;
         width: 100%;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .75rem;
         margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
     }
 
-    .btn-login, .btn-register, .btn-logout {
+    .navbar-end span {
+        text-align: center;
+    }
+
+    .navbar-end form {
+        width: 100%;
+    }
+
+    .btn-login, .btn-logout, .btn-theme {
         width: 100%;
         text-align: center;
     }
 
-    /* login & register */
-    .auth-container {
-        padding: 2.5rem 1.25rem;
+    /* home */
+    .home-layout {
+        gap: 2rem;
     }
 
-    .auth-page {
-        grid-template-columns: 1fr;
-        width: min(100%, 600px);
-        min-height: auto;
-    }
-
-    .auth-image {
-        min-width: 0;
-        width: 100%;
-        min-height: 220px;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        background-position: center 35%;
-    }
-
-    .auth-image::after {
-        top: auto;
-        right: 12%;
-        bottom: -1px;
-        width: 76%;
-        height: 1px;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            var(--primary),
-            var(--gold),
-            transparent
-        );
-    }
-
-    .auth-form {
-        padding: 3.5rem 2.5rem;
-    }
-
-    /* home blade */
-    .home-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-info-grid {
-        grid-template-columns: 1fr;
+    /* hero */
+    .home-hero {
+        padding: 2rem 1.25rem;
+        border-radius: 16px;
     }
 
     .home-hero h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
+        line-height: 1.15;
     }
 
-    .home-explore h2, .home-cta h2 {
+    .home-hero p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* about */
+    .home-about {
+        padding: 1.5rem;
+    }
+
+    .home-about h2 {
+        font-size: 1.4rem;
+    }
+
+    /* explore */
+    .home-explore h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.7rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .home-card {
+        padding: 1.25rem;
+    }
+
+    /* purpose + featured Case */
+    .home-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .home-purpose-card, .home-featured-card {
+        padding: 1.5rem;
+    }
+
+    /* call to action */
+    .home-cta {
+        padding: 2rem 1.25rem;
+    }
+
+    .home-cta h2 {
         font-size: 1.7rem;
     }
 
     .home-buttons {
         flex-direction: column;
-        align-items: center;
+        gap: .75rem;
     }
 
     .home-button {
         width: 100%;
-        max-width: 260px;
         text-align: center;
     }
 
-    /* serial killer & unsolved cases index blade */
+    /* archive index */
+    /* filters */
     .archive-filters {
         grid-template-columns: 1fr;
-        padding: 1rem;
+        gap: 1rem;
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
     }
 
     .filter-actions {
-        grid-column: auto;
+        width: 100%;
         flex-direction: column;
         align-items: stretch;
     }
@@ -2769,130 +2931,35 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 
+    .filter-results {
+        margin: 0 0 1.25rem;
+    }
+
+    /* case grid */
     .archive-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    /* serial killer & unsolved cases show blade */
-    .details-header h1 {
-        font-size: 2rem;
+    /* case cards */
+    .archive-image {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center;
     }
 
-    .details-stats {
-        grid-template-columns: 1fr !important;
+    .archive-content {
+        padding: 1.25rem;
     }
 
-    .details-lists {
-        grid-template-columns: 1fr;
+    .archive-content h2 {
+        font-size: 1.2rem;
     }
 
-    .details-image img {
-        height: 380px;
-    }
-
-    .discussion-board {
-        padding: 1rem;
-    }
-
-    .discussion-header {
-        flex-direction: column;
-    }
-
-    .discussion-form-footer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .discussion-form-footer button {
-        width: 100%;
-    }
-
-    .discussion-comment-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .4rem;
-    }
-
-    .discussion-actions {
-        justify-content: flex-start;
-    }
-
-    /* resources blade */
-    .resources-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* victims page */
-    .page-header h1 {
-        font-size: 2.3rem;
-    }
-
-    .page-card {
-        padding: 2rem;
-    }
-
-    .victim-card {
-        flex-direction: column;
-    }
-
-    .victim-image-placeholder {
-        width: 100%;
-        height: 260px;
-    }
-
-    .quote-card {
-        padding: 2rem;
-    }
-
-    .quote-card blockquote {
-        font-size: 1.25rem;
-    }
-
-    .victim-case-title h2 {
-        font-size: 1.45rem;
-    }
-
-    /* favourites */
-    .favourites-section {
-        padding: 1.3rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .favourites-section-header {
-        align-items: flex-start;
-    }
-
-    .favourites-section-header h2 {
-        font-size: 1.35rem;
-    }
-
-    .favourites-section-header span {
-        font-size: 0.7rem;
-    }
-
-    /* victims */
-    .victimes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .victim-card {
-        grid-template-columns: 1fr;
-    }
-
-    .victim-profile-image {
-        max-width: 240px;
-        min-height: 0;
-    }
-
-    .victim-profile-image img, .victim-image-placeholder {
-        height: 280px;
-    }
-
-    .victim-profile-details {
-        grid-template-columns: 1fr;
-    }
-
-    .victim-remembrance-stats {
-        gap: 0.75rem 1.25rem;
+    /* empty results */
+    .archive-empty {
+        margin: 2rem auto;
+        padding: 2rem 1.25rem;
     }
 }

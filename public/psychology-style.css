@@ -22,6 +22,12 @@
     background-size: 50px 50px;
 }
 
+[data-theme="light"] .grid-overlay {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
 .glow {
     position: absolute;
     width: 500px;
@@ -801,73 +807,45 @@
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media(max-width: 900px) {
-    /* introduction page */
-    .psychology-introduction {
-        grid-template-columns: 1fr;
+/* large screen */
+@media (min-width: 1441px) {
+    /* main layout */
+    .psychology-container {
+        width: min(1450px, 88%);
+        padding: 70px 0;
     }
 
-    .psychology-hero h1 {
-        font-size: 2.4rem;
+    /* hero */
+    .psychology-hero {
+        margin-bottom: 80px;
     }
 
-    /* fundimentals page */
-    .split-layout {
-        grid-template-columns: 1fr;
+    .hero-description {
+        max-width: 850px;
     }
 
-    .split-divider {
-        display: none;
+    /* navigation */
+    .psychology-navigation {
+        gap: 18px;
+        margin-bottom: 80px;
     }
 
-    .timeline-item {
-        flex-direction: column;
+    /* sections */
+    .psychology-section {
+        margin-bottom: 90px;
     }
 
-    .timeline-marker, .timeline-year {
-        width: 100%;
+    /* grids */
+    .psychology-grid, .brain-region-grid, .comparison-grid,
+    .comparison-large, .experiment-grid, .myth-grid, .fact-grid, .facts-grid {
+        gap: 30px;
     }
 }
 
-@media(max-width: 768px) {
-
-    .comparison-large {
-        grid-template-columns: 1fr;
-    }
-
-    .experiment-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .myth-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media(max-width: 600px) {
-    /* introduction page */
+/* mobile */
+@media (max-width: 768px) {
     .psychology-container {
         width: 92%;
-    }
-
-    .psychology-navigation {
-        flex-direction: column;
-    }
-
-    .psychology-navigation a {
-        text-align: center;
-    }
-
-    .psychology-hero h1 {
-        font-size: 2rem;
-    }
-
-    .section-heading h2 {
-        font-size: 1.6rem;
-    }
-
-    .museum-panel {
-        padding: 30px;
+        padding: 40px 0;
     }
 }

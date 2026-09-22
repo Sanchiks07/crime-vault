@@ -6,7 +6,7 @@
     <div class="auth-container">
         <div class="auth-page">
             <div class="auth-image">
-                <a href="{{ route('home') }}">Back to website →</a>
+                <a href="{{ route('home') }}">← Back to website</a>
             </div>
             
             <form action="{{ route('register.store') }}" method="POST" class="auth-form">
