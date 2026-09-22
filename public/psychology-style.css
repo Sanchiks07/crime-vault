@@ -1,11 +1,11 @@
 /* ---------- PSYCHOLOGY INTRODUCTION ---------- */
-.psychology-page{
+.psychology-page {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
 }
 
-.psychology-background{
+.psychology-background {
     position: fixed;
     inset: 0;
     z-index: 0;
@@ -13,16 +13,16 @@
     pointer-events: none;
 }
 
-.grid-overlay{
+.grid-overlay {
     position: absolute;
     inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
     background-size: 50px 50px;
 }
 
-.glow{
+.glow {
     position: absolute;
     width: 500px;
     height: 500px;
@@ -31,55 +31,55 @@
     opacity: .18;
 }
 
-.glow-left{
+.glow-left {
     top: -150px;
     left: -150px;
-    background: #8E1616;
+    background: var(--primary);
 }
 
-.glow-right{
+.glow-right {
     bottom: -150px;
     right: -150px;
-    background: #D84040;
+    background: var(--primary-light);
 }
 
-.psychology-container{
+.psychology-container {
     position: relative;
     z-index: 1;
-    width: min(1200px,90%);
+    width: min(1200px, 90%);
     margin: auto;
     padding: 60px 0;
 }
 
 /* ---------- INTRODUCTION HERO ---------- */
-.psychology-hero{
+.psychology-hero {
     text-align: center;
     margin-bottom: 70px;
 }
 
-.hero-label{
+.hero-label {
     display: inline-block;
-    color: #D84040;
+    color: var(--primary-light);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: .85rem;
     margin-bottom: 20px;
 }
 
-.psychology-hero h1{
+.psychology-hero h1 {
     font-size: 3rem;
     margin-bottom: 25px;
 }
 
-.hero-description{
+.hero-description {
     max-width: 760px;
     margin: auto;
     line-height: 1.8;
-    color: #cfcfcf;
+    color: var(--text-muted);
 }
 
 /* ---------- QUICK NAVIGATION ---------- */
-.psychology-navigation{
+.psychology-navigation {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -87,125 +87,127 @@
     margin-bottom: 70px;
 }
 
-.psychology-navigation a{
+.psychology-navigation a {
     text-decoration: none;
-    color: #eeeeee;
-    background: #2c1d1d;
+    color: var(--text);
+    background: var(--surface);
     padding: 12px 22px;
     border-radius: 8px;
     transition: .3s;
-    border: 1px solid rgba(216,64,64,.3);
+    border: 1px solid var(--border-accent);
 }
 
-.psychology-navigation a:hover{
-    background: #8E1616;
+.psychology-navigation a:hover {
+    background: var(--primary);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
 .psychology-navigation a.active {
-    background: #8E1616;
+    background: var(--primary);
+    color: #ffffff;
 }
 
 /* ---------- INTRODUCTION SECTIONS ---------- */
-.psychology-section{
+.psychology-section {
     margin-bottom: 80px;
 }
 
-.section-heading{
+.section-heading {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.section-tag{
-    color: #D84040;
+.section-tag {
+    color: var(--primary-light);
     text-transform: uppercase;
     font-size: .8rem;
     letter-spacing: 2px;
 }
 
-.section-heading h2{
+.section-heading h2 {
     margin-top: 20px;
     font-size: 2rem;
 }
 
 /* ---------- INTRODUCTION INTRODUCTION ---------- */
-.psychology-introduction{
+.psychology-introduction {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 35px;
 }
 
-.psychology-text p{
+.psychology-text p {
     margin-bottom: 20px;
     line-height: 1.8;
-    color: #d6d6d6;
+    color: var(--text-muted);
 }
 
-.info-box{
-    background: #2b1d1d;
-    border-left: 4px solid #D84040;
+.info-box {
+    background: var(--surface);
+    border-left: 4px solid var(--primary-light);
     padding: 25px;
     border-radius: 8px;
 }
 
-.info-box h3{
+.info-box h3 {
     margin-bottom: 15px;
 }
 
 /* ---------- INTRODUCTION GRID ---------- */
-.psychology-grid{
+.psychology-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
-.psychology-info-card{
-    background: #2b1d1d;
+.psychology-info-card {
+    background: var(--surface);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(216,64,64,.2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.psychology-info-card:hover{
+.psychology-info-card:hover {
     transform: translateY(-6px);
-    border-color: #D84040;
+    border-color: var(--primary-light);
 }
 
-.card-number{
-    color: #D84040;
+.card-number {
+    color: var(--primary-light);
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.psychology-info-card h3{
+.psychology-info-card h3 {
     margin-bottom: 15px;
 }
 
-.psychology-info-card p{
+.psychology-info-card p {
     line-height: 1.7;
-    color: #d3d3d3;
+    color: var(--text-muted);
 }
 
 /* ---------- INTRODUCTION QUOTE ---------- */
-.museum-panel{
-    background: #2b1d1d;
+.museum-panel {
+    background: var(--surface);
     padding: 50px;
     text-align: center;
     border-radius: 12px;
-    border-left: 5px solid #D84040;
+    border-left: 5px solid var(--primary-light);
 }
 
-.museum-panel blockquote{
+.museum-panel blockquote {
     font-size: 1.3rem;
     font-style: italic;
     line-height: 1.8;
-    color: #eeeeee;
+    color: var(--text);
 }
 
 /* ---------- FUNDIMENTAL PAGE ---------- */
-.split-layout{
+.split-layout {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 30px;
@@ -213,409 +215,411 @@
     margin-bottom: 40px;
 }
 
-.split-column{
-    background: #2b1d1d;
+.split-column {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
 }
 
-.split-column h3{
+.split-column h3 {
     margin-bottom: 20px;
-    color: #D84040;
+    color: var(--primary-light);
 }
 
-.split-column p{
+.split-column p {
     line-height: 1.8;
     margin-bottom: 15px;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
-.split-divider{
+.split-divider {
     width: 2px;
-    background: #8E1616;
+    background: var(--primary);
 }
 
-.quote-card{
-    background: #2b1d1d;
+.quote-card {
+    background: var(--surface);
     padding: 35px;
-    border-left: 5px solid #D84040;
+    border-left: 5px solid var(--primary-light);
     border-radius: 10px;
     text-align: center;
 }
 
-.quote-card blockquote{
+.quote-card blockquote {
     font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 15px;
 }
 
-.quote-card span{
-    color: #bbbbbb;
+.quote-card span {
+    color: var(--text-muted);
     font-size: .9rem;
 }
 
 /* ---------- FUNDIMENTAL TIMELINES ---------- */
-.timeline-introduction{
-    background: #2b1d1d;
+.timeline-introduction {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 40px;
     line-height: 1.8;
 }
 
-.development-timeline, .timeline-container{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
+.development-timeline, .timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.timeline-item{
-    display:flex;
-    gap:25px;
-    align-items:flex-start;
+.timeline-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
 }
 
-.timeline-marker, .timeline-year{
+.timeline-marker, .timeline-year {
     min-width: 90px;
     padding: 12px;
     text-align: center;
-    background: #8E1616;
+    background: var(--primary);
     border-radius: 8px;
     font-weight: bold;
+    color: #ffffff;
 }
 
-.timeline-content{
+.timeline-content {
     flex: 1;
-    background: #2b1d1d;
+    background: var(--surface);
     padding: 25px;
     border-radius: 10px;
 }
 
-.timeline-content h3{
+.timeline-content h3 {
     margin-bottom: 15px;
 }
 
-.timeline-content p{
+.timeline-content p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
 /* Hide decorative line */
-.timeline-line{
+.timeline-line {
     display: none;
 }
 
 /* ---------- FUNDIMENTAL BRAIN ---------- */
-.brain-information{
-    background: #2b1d1d;
+.brain-information {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 35px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
 }
 
-.brain-information p{
+.brain-information p {
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
-.brain-region-grid{
+.brain-region-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
-.brain-region{
-    background: #2b1d1d;
+.brain-region {
+    background: var(--surface);
     padding: 25px;
     border-radius: 10px;
-    border: 1px solid rgba(216,64,64,.2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.brain-region:hover{
-    border-color: #D84040;
+.brain-region:hover {
+    border-color: var(--primary-light);
     transform: translateY(-5px);
 }
 
-.brain-region h3{
-    color: #D84040;
+.brain-region h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.brain-region p{
+.brain-region p {
     line-height: 1.7;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
 /* ---------- PSYCOPATHY & SOCIOPATHY ---------- */
-.comparison-grid{
+.comparison-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
     margin: 35px 0;
 }
 
-.comparison-card{
-    background: #2b1d1d;
+.comparison-card {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
 }
 
-.comparison-header{
+.comparison-header {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.comparison-number{
+.comparison-number {
     width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #8E1616;
+    background: var(--primary);
+    color: #ffffff;
     border-radius: 50%;
     font-weight: bold;
 }
 
-.comparison-card h3{
+.comparison-card h3 {
     margin: 0;
 }
 
-.comparison-card ul{
+.comparison-card ul {
     padding-left: 20px;
     line-height: 1.8;
 }
 
-.comparison-card li{
+.comparison-card li {
     margin-bottom: 10px;
 }
 
-.myth-warning{
+.myth-warning {
     margin-top: 35px;
-    background: #2b1d1d;
-    border-left: 5px solid #D84040;
+    background: var(--surface);
+    border-left: 5px solid var(--primary-light);
     padding: 30px;
     border-radius: 10px;
 }
 
-.myth-warning h3{
-    color: #D84040;
+.myth-warning h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.myth-warning p{
+.myth-warning p {
     line-height: 1.8;
 }
 
 /* ---------- PEROSNALITY DISORDER ---------- */
-.disorder-grid{
+.disorder-grid {
     margin-top: 35px;
 }
 
-.disorder-card{
-    background: #2b1d1d;
+.disorder-card {
+    background: var(--surface);
     padding: 25px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.disorder-card:hover{
-    border-color: #D84040;
+.disorder-card:hover {
+    border-color: var(--primary-light);
     transform: translateY(-5px);
 }
 
-.disorder-card h3{
-    color: #D84040;
+.disorder-card h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.disorder-card p{
+.disorder-card p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
 /* ---------- SERIAL KILLER TYPOLOGIES ---------- */
-.typology-grid{
+.typology-grid {
     margin-top: 35px;
 }
 
-.typology-card{
-    background: #2b1d1d;
+.typology-card {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.typology-card:hover{
+.typology-card:hover {
     transform: translateY(-5px);
-    border-color: #D84040;
+    border-color: var(--primary-light);
 }
 
-.typology-number{
+.typology-number {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #D84040;
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.typology-card h3{
+.typology-card h3 {
     margin-bottom: 15px;
 }
 
-.typology-card p{
+.typology-card p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
 /* ---------- GENEREAL CARD ---------- */
-.psychology-card{
-    background: #2b1d1d;
+.psychology-card {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
     margin-bottom: 35px;
 }
 
-.psychology-card h3{
-    color: #D84040;
+.psychology-card h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.psychology-card p{
+.psychology-card p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
-.psychology-card ul{
+.psychology-card ul {
     padding-left: 20px;
     line-height: 1.8;
 }
 
-.psychology-card li{
+.psychology-card li {
     margin-bottom: 10px;
 }
 
 /* ---------- MO vs SIGNATURE ---------- */
-.comparison-large{
+.comparison-large {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
     margin-bottom: 35px;
 }
 
-.comparison-panel{
-    background: #2b1d1d;
+.comparison-panel {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.comparison-panel:hover{
-    border-color: #D84040;
+.comparison-panel:hover {
+    border-color: var(--primary-light);
     transform: translateY(-5px);
 }
 
-.comparison-panel h3{
-    color: #D84040;
+.comparison-panel h3 {
+    color: var(--primary-light);
     margin-bottom: 18px;
 }
 
-.comparison-panel p{
+.comparison-panel p {
     line-height: 1.8;
     margin-bottom: 18px;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
-.comparison-panel ul{
+.comparison-panel ul {
     padding-left: 20px;
     line-height: 1.8;
 }
 
-.comparison-panel li{
+.comparison-panel li {
     margin-bottom: 10px;
 }
 
 /* ---------- EXPERIMENTS ---------- */
-.experiment-grid{
+.experiment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
     margin-top: 35px;
 }
 
-.experiment-card{
-    background: #2b1d1d;
+.experiment-card {
+    background: var(--surface);
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(216, 64, 64, .2);
+    border: 1px solid var(--border-accent);
     transition: .3s;
 }
 
-.experiment-card:hover{
-    border-color: #D84040;
+.experiment-card:hover {
+    border-color: var(--primary-light);
     transform: translateY(-5px);
 }
 
-.experiment-year{
+.experiment-year {
     display: inline-block;
-    background: #8E1616;
-    color: #eeeeee;
+    background: var(--primary);
+    color: #ffffff;
     padding: 6px 14px;
     border-radius: 6px;
     font-weight: bold;
     margin-bottom: 18px;
 }
 
-.experiment-card h3{
-    color: #D84040;
+.experiment-card h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.experiment-card p{
+.experiment-card p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
-.experiment-footer{
+.experiment-footer {
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 1px solid rgba(216, 64, 64, .2);
+    border-top: 1px solid var(--border-accent);
 }
 
-.experiment-footer span{
+.experiment-footer span {
     display: block;
-    color: #D84040;
+    color: var(--primary-light);
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-.experiment-footer p{
+.experiment-footer p {
     margin: 0;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
 /* ---------- MYTHS ---------- */
-.myth-grid{
+.myth-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     margin-top: 35px;
 }
 
-.flip-card{
+.flip-card {
     perspective: 1000px;
     height: 420px;
 }
 
-.flip-card-inner{
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -623,15 +627,15 @@
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner{
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back{
+.flip-card-front, .flip-card-back {
     position: absolute;
     inset: 0;
-    background: #2b1d1d;
-    border: 1px solid rgba(216, 64, 64, .2);
+    background: var(--surface);
+    border: 1px solid var(--border-accent);
     border-radius: 10px;
     padding: 30px;
     backface-visibility: hidden;
@@ -639,15 +643,15 @@
     flex-direction: column;
 }
 
-.flip-card-front{
+.flip-card-front {
     justify-content: space-between;
 }
 
-.flip-card-back{
+.flip-card-back {
     transform: rotateY(180deg);
 }
 
-.card-label{
+.card-label {
     display: inline-block;
     width: fit-content;
     padding: 6px 12px;
@@ -657,61 +661,61 @@
     margin-bottom: 20px;
 }
 
-.myth-label{
-    background: #8E1616;
-    color: #eeeeee;
+.myth-label {
+    background: var(--primary);
+    color: #ffffff;
 }
 
-.fact-label{
-    background: #D84040;
-    color: #eeeeee;
+.fact-label {
+    background: var(--primary-light);
+    color: #ffffff;
 }
 
-.flip-card h3{
-    color: #D84040;
+.flip-card h3 {
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
-.flip-card p{
+.flip-card p {
     line-height: 1.8;
-    color: #d8d8d8;
+    color: var(--text-muted);
 }
 
-.flip-icon{
+.flip-icon {
     margin-top: auto;
     font-size: 1.6rem;
-    color: #D84040;
+    color: var(--primary-light);
     align-self: flex-end;
 }
 
-.myth-card hr{
+.myth-card hr {
     border: none;
-    border-top: 1px solid rgba(216, 64, 64, .2);
+    border-top: 1px solid var(--border-accent);
     margin: 20px 0;
 }
 
 /* ---------- FACTS ---------- */
-.fact-grid, .facts-grid{
+.fact-grid, .facts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
     margin-top: 35px;
 }
 
-.fact-card, .fact-highlight{
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.fact-card, .fact-highlight {
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 28px;
     transition: .3s;
 }
 
-.fact-card:hover, .fact-highlight:hover{
+.fact-card:hover, .fact-highlight:hover {
     transform: translateY(-5px);
-    border-color: #8E1616;
+    border-color: var(--primary);
 }
 
-.fact-icon{
+.fact-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -723,37 +727,37 @@
     border-radius: 50%;
 }
 
-.fact-card h3, .fact-highlight h3{
+.fact-card h3, .fact-highlight h3 {
     margin-bottom: 15px;
-    color: #EEEEEE;
+    color: var(--text);
     font-size: 1.3rem;
 }
 
-.fact-card p, .fact-highlight p{
-    color: rgba(238, 238, 238, 0.8);
+.fact-card p, .fact-highlight p {
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
 /* ---------- FAQ ---------- */
-.faq-container{
+.faq-container {
     display: flex;
     flex-direction: column;
     gap: 18px;
     margin-top: 35px;
 }
 
-.faq-item{
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
 }
 
-.faq-question{
+.faq-question {
     width: 100%;
     background: transparent;
     border: none;
-    color: #EEEEEE;
+    color: var(--text);
     padding: 22px 26px;
     display: flex;
     justify-content: space-between;
@@ -765,105 +769,105 @@
     transition: .3s;
 }
 
-.faq-question:hover{
+.faq-question:hover {
     background: rgba(142, 22, 22, 0.15);
 }
 
-.faq-icon{
+.faq-icon {
     font-size: 1.5rem;
-    color: #D84040;
+    color: var(--primary-light);
     transition: .3s;
 }
 
-.faq-item.active .faq-icon{
+.faq-item.active .faq-icon {
     transform: rotate(45deg);
 }
 
-.faq-answer{
+.faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height .35s ease;
 }
 
-.faq-item.active .faq-answer{
+.faq-item.active .faq-answer {
     max-height: 250px;
 }
 
-.faq-answer p{
+.faq-answer p {
     padding: 0 26px 22px;
-    color: rgba(238, 238, 238, 0.904);
+    color: var(--text-muted);
     line-height: 1.7;
     margin-top: 20px;
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
-@media(max-width: 900px){
+@media(max-width: 900px) {
     /* introduction page */
-    .psychology-introduction{
+    .psychology-introduction {
         grid-template-columns: 1fr;
     }
 
-    .psychology-hero h1{
+    .psychology-hero h1 {
         font-size: 2.4rem;
     }
 
     /* fundimentals page */
-    .split-layout{
+    .split-layout {
         grid-template-columns: 1fr;
     }
 
-    .split-divider{
+    .split-divider {
         display: none;
     }
 
-    .timeline-item{
+    .timeline-item {
         flex-direction: column;
     }
 
-    .timeline-marker, .timeline-year{
+    .timeline-marker, .timeline-year {
         width: 100%;
     }
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
 
-    .comparison-large{
+    .comparison-large {
         grid-template-columns: 1fr;
     }
 
-    .experiment-grid{
+    .experiment-grid {
         grid-template-columns: 1fr;
     }
 
-    .myth-grid{
+    .myth-grid {
         grid-template-columns: 1fr;
     }
 
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px) {
     /* introduction page */
-    .psychology-container{
+    .psychology-container {
         width: 92%;
     }
 
-    .psychology-navigation{
+    .psychology-navigation {
         flex-direction: column;
     }
 
-    .psychology-navigation a{
+    .psychology-navigation a {
         text-align: center;
     }
 
-    .psychology-hero h1{
+    .psychology-hero h1 {
         font-size: 2rem;
     }
 
-    .section-heading h2{
+    .section-heading h2 {
         font-size: 1.6rem;
     }
 
-    .museum-panel{
+    .museum-panel {
         padding: 30px;
     }
 }
