@@ -2910,17 +2910,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #case-map {
-    min-height: 520px;
+    height: 520px;
     border: 1px solid var(--border);
     border-radius: 18px;
     background: var(--surface);
     overflow: hidden;
-}
-
-#case-map > p {
-    padding: 60px 20px;
-    text-align: center;
-    color: var(--text-muted);
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */
@@ -3673,7 +3667,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     #case-map {
-        min-height: 420px;
+        height: 420px;
     }
 }
 

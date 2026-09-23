@@ -120,11 +120,33 @@
                 </div>
             </section>
 
-            <!-- ===== MAP PLACEHOLDER =====  -->
+            <!-- ===== MAP ===== -->
+            @php
+                $mapEvents = $events
+                    ->filter(fn ($event) => $event->latitude && $event->longitude)
+                    ->map(function ($event) {
+                        return [
+                            'title' => $event->title,
+                            'event_type' => $event->event_type,
+                            'date' => $event->event_date->format('M d, Y'),
+                            'location' => $event->location,
+                            'latitude' => $event->latitude,
+                            'longitude' => $event->longitude,
+
+                            'case_type' => $event->eventable instanceof \App\Models\SerialKiller
+                                ? 'serial-killer'
+                                : 'unsolved-case',
+
+                            'case_name' => $event->eventable instanceof \App\Models\SerialKiller
+                                ? ($event->eventable->nickname ?: $event->eventable->name)
+                                : $event->eventable->name,
+                        ];
+                    })
+                    ->values();
+            @endphp
+
             <section class="map-view" id="map-view" hidden>
-                <div id="case-map">
-                    <p>Interactive map coming next.</p>
-                </div>
+                <div id="case-map" data-events="{{ $mapEvents->toJson(JSON_HEX_APOS | JSON_HEX_QUOT) }}"></div>
             </section>
         </div>
     </div>

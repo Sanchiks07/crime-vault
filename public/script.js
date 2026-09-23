@@ -142,12 +142,233 @@ if (explorePage) {
 
     const filterButtons = explorePage.querySelectorAll('.explore-filter-btn');
     const eventTypeFilter = explorePage.querySelector('#event-type-filter');
+
     const timelineEvents = explorePage.querySelectorAll('.timeline-event');
     const timelineYears = explorePage.querySelectorAll('.timeline-year');
 
-    let activeCaseFilter = 'all';
+    const mapElement = explorePage.querySelector('#case-map');
 
-    // timeline / map switcher
+    let activeCaseFilter = 'all';
+    let map = null;
+    let mapMarkers = [];
+
+
+    // ========================================
+    // TIMELINE FILTERING
+    // ========================================
+
+    function filterTimeline() {
+        const selectedEventType = eventTypeFilter.value;
+
+        timelineEvents.forEach(event => {
+            const caseType = event.dataset.caseType;
+            const eventType = event.dataset.eventType;
+
+            const matchesCase =
+                activeCaseFilter === 'all' ||
+                caseType === activeCaseFilter;
+
+            const matchesEvent =
+                selectedEventType === 'all' ||
+                eventType === selectedEventType;
+
+            event.hidden = !(matchesCase && matchesEvent);
+        });
+
+        updateTimelineYears();
+    }
+
+
+    // ========================================
+    // HIDE EMPTY YEARS
+    // ========================================
+
+    function updateTimelineYears() {
+        timelineYears.forEach(year => {
+            let nextElement = year.nextElementSibling;
+            let hasVisibleEvent = false;
+
+            while (
+                nextElement &&
+                !nextElement.classList.contains('timeline-year')
+            ) {
+                if (
+                    nextElement.classList.contains('timeline-event') &&
+                    !nextElement.hidden
+                ) {
+                    hasVisibleEvent = true;
+                    break;
+                }
+
+                nextElement = nextElement.nextElementSibling;
+            }
+
+            year.hidden = !hasVisibleEvent;
+        });
+    }
+
+
+    // ========================================
+    // MAP FILTERING
+    // ========================================
+
+    function filterMap() {
+        if (!map) {
+            return;
+        }
+
+        const selectedEventType = eventTypeFilter.value;
+
+        mapMarkers.forEach(item => {
+            const matchesCase =
+                activeCaseFilter === 'all' ||
+                item.caseType === activeCaseFilter;
+
+            const matchesEvent =
+                selectedEventType === 'all' ||
+                item.eventType === selectedEventType;
+
+            const shouldShow = matchesCase && matchesEvent;
+
+            if (shouldShow) {
+                if (!map.hasLayer(item.marker)) {
+                    item.marker.addTo(map);
+                }
+            } else {
+                if (map.hasLayer(item.marker)) {
+                    map.removeLayer(item.marker);
+                }
+            }
+
+            fitMapToVisibleMarkers();
+        });
+    }
+
+    function fitMapToVisibleMarkers() {
+        if (!map) {
+            return;
+        }
+
+        const visibleMarkers = mapMarkers
+            .filter(item => map.hasLayer(item.marker))
+            .map(item => item.marker);
+
+        if (visibleMarkers.length === 0) {
+            return;
+        }
+
+        if (visibleMarkers.length === 1) {
+            map.setView(
+                visibleMarkers[0].getLatLng(),
+                8
+            );
+
+            return;
+        }
+
+        const group = L.featureGroup(visibleMarkers);
+
+        map.fitBounds(group.getBounds(), {
+            padding: [40, 40],
+            maxZoom: 8
+        });
+    }
+
+
+    // ========================================
+    // CASE TYPE FILTER BUTTONS
+    // ========================================
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            activeCaseFilter = button.dataset.filter;
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            filterTimeline();
+            filterMap();
+        });
+    });
+
+
+    // ========================================
+    // EVENT TYPE FILTER
+    // ========================================
+
+    eventTypeFilter.addEventListener('change', () => {
+        filterTimeline();
+        filterMap();
+    });
+
+
+    // ========================================
+    // INTERACTIVE MAP
+    // ========================================
+
+    if (mapElement && typeof L !== 'undefined') {
+        const mapEvents = JSON.parse(mapElement.dataset.events);
+
+        map = L.map('case-map').setView([39.5, -98.35], 4);
+
+        L.tileLayer(
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                attribution: '&copy; OpenStreetMap contributors'
+            }
+        ).addTo(map);
+
+
+        // CREATE MARKERS
+        mapEvents.forEach(event => {
+            const latitude = parseFloat(event.latitude);
+            const longitude = parseFloat(event.longitude);
+
+            if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+                return;
+            }
+
+            const marker = L.marker([
+                latitude,
+                longitude
+            ]).addTo(map);
+
+            marker.bindPopup(`
+                <div class="case-map-popup">
+                    <span class="map-popup-type">
+                        ${event.event_type}
+                    </span>
+
+                    <h3>${event.title}</h3>
+
+                    <strong>${event.case_name}</strong>
+
+                    <p>${event.date}</p>
+
+                    ${
+                        event.location
+                            ? `<p>${event.location}</p>`
+                            : ''
+                    }
+                </div>
+            `);
+
+            mapMarkers.push({
+                marker: marker,
+                caseType: event.case_type,
+                eventType: event.event_type
+            });
+        });
+    }
+
+
+    // ========================================
+    // TIMELINE / MAP SWITCHER
+    // ========================================
+
     viewButtons.forEach(button => {
         button.addEventListener('click', () => {
             const selectedView = button.dataset.view;
@@ -164,61 +385,14 @@ if (explorePage) {
             } else {
                 timelineView.hidden = true;
                 mapView.hidden = false;
-            }
-        });
-    });
 
-    // timeline filters
-    function filterTimeline() {
-        const selectedEventType = eventTypeFilter.value;
-
-        timelineEvents.forEach(event => {
-            const caseType = event.dataset.caseType;
-            const eventType = event.dataset.eventType;
-
-            const matchesCase = activeCaseFilter === 'all' || caseType === activeCaseFilter;
-            const matchesEvent = selectedEventType === 'all' || eventType === selectedEventType;
-
-            event.hidden = !(matchesCase && matchesEvent);
-        });
-
-        updateTimelineYears();
-    }
-
-    // hide empty years
-    function updateTimelineYears() {
-        timelineYears.forEach(year => {
-            let nextElement = year.nextElementSibling;
-            let hasVisibleEvent = false;
-
-            while (nextElement && !nextElement.classList.contains('timeline-year')) {
-                if (nextElement.classList.contains('timeline-event') && !nextElement.hidden) {
-                    hasVisibleEvent = true;
-                    break;
+                if (map) {
+                    setTimeout(() => {
+                        map.invalidateSize();
+                        fitMapToVisibleMarkers();
+                    }, 100);
                 }
-
-                nextElement = nextElement.nextElementSibling;
             }
-
-            year.hidden = !hasVisibleEvent;
-        });
-    }
-
-    // case type buttons
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            activeCaseFilter = button.dataset.filter;
-
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            button.classList.add('active');
-
-            filterTimeline();
         });
     });
-
-    // event type dropdown
-    eventTypeFilter.addEventListener('change', filterTimeline);
 }
