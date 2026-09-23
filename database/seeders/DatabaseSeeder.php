@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             VictimSeeder::class,
             UnsolvedCaseSeeder::class,
             ResourceSeeder::class,
-            DiscussionSeeder::class
+            DiscussionSeeder::class,
+            CaseEventSeeder::class
         ]);
     }
 }

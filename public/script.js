@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearInterval(victimSliderInterval);
         victimSliderInterval = setInterval(() => {
             nextVictimSlide();
-        }, 40000);
+        }, 60000);
     }
 
     document.querySelectorAll('.victim-next').forEach((button) => {

@@ -27,4 +27,8 @@ class UnsolvedCase extends Model
     public function discussions() {
         return $this->morphMany(Discussion::class, 'discussable');
     }
+
+    public function events() {
+        return $this->morphMany(CaseEvent::class, 'eventable');
+    }
 }

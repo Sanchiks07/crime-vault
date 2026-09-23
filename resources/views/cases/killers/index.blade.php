@@ -99,10 +99,12 @@
 
                     <article class="archive-card">
                         @auth
-                            <form action="{{ route('favourites.toggle', ['type' => 'serial-killer', 'id' => $serial_killer->id]) }}" method="POST" class="favourite-form">
+                            <form action="{{ route('favourites.toggle', ['type' => 'serial-killer', 'id' => $serial_killer->id]) }}"
+                                  method="POST" class="favourite-form">
                                 @csrf
 
-                                <button type="submit" class="favourite-button {{ $isFavourite ? 'active' : '' }}" title="{{ $isFavourite ? 'Remove from favourites' : 'Add to favourites' }}">
+                                <button type="submit" class="favourite-button {{ $isFavourite ? 'active' : '' }}"
+                                        title="{{ $isFavourite ? 'Remove from favourites' : 'Add to favourites' }}">
                                     {{ $isFavourite ? '♥' : '♡' }}
                                 </button>
                             </form>
