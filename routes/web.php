@@ -12,6 +12,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\AdminDiscussionController;
+use App\Http\Controllers\CaseEventController;
 use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -61,3 +62,6 @@ Route::patch('/discussions/{discussion}', [DiscussionController::class, 'update'
 Route::delete('/discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy')->middleware('auth');
 // Admin discussions
 Route::get('/admin/discussions', [AdminDiscussionController::class, 'index'])->name('admin.discussions')->middleware(['auth', AdminMiddleware::class]);
+
+// Interactive timeline / map
+Route::get('/explore', [CaseEventController::class, 'index']) ->name('caseEvents');

@@ -1,4 +1,4 @@
-// featured cases rotation
+// ===== FEATURED CASES ROTATION =====
 document.addEventListener("DOMContentLoaded", () => {
     const cases = window.featuredCases || [];
     let active = 0;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// light/dark mode theme switch
+// ===== LIGHT / DARK MODE THEME SWITCH =====
 function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -44,7 +44,7 @@ function toggleTheme() {
 })();
 
 
-// faq button dropdown
+// ===== FAQ BUTTON DROPDOWN =====
 document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", () => {
         button.parentElement.classList.toggle("active");
@@ -52,7 +52,7 @@ document.querySelectorAll(".faq-question").forEach(button => {
 });
 
 
-// discussion character count
+// ===== DISCUSSION CHARACTER COUNT =====
 // finds each discussion textarea
 document.querySelectorAll('.discussion-form textarea').forEach(textarea => {
     const counter = textarea
@@ -69,7 +69,7 @@ document.querySelectorAll('.discussion-form textarea').forEach(textarea => {
 });
 
 
-// victims slider controls
+// ===== vICTIMS SLIDER CONTROLS & TIMER =====
 document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.victim-slide');
 
@@ -130,3 +130,95 @@ document.addEventListener('DOMContentLoaded', function () {
     showVictimSlide(0);
     startVictimSlider();
 });
+
+
+// ===== EXPLORE PAGE =====
+const explorePage = document.querySelector('.explore-page');
+
+if (explorePage) {
+    const viewButtons = explorePage.querySelectorAll('.explore-view-btn');
+    const timelineView = explorePage.querySelector('#timeline-view');
+    const mapView = explorePage.querySelector('#map-view');
+
+    const filterButtons = explorePage.querySelectorAll('.explore-filter-btn');
+    const eventTypeFilter = explorePage.querySelector('#event-type-filter');
+    const timelineEvents = explorePage.querySelectorAll('.timeline-event');
+    const timelineYears = explorePage.querySelectorAll('.timeline-year');
+
+    let activeCaseFilter = 'all';
+
+    // timeline / map switcher
+    viewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedView = button.dataset.view;
+
+            viewButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            if (selectedView === 'timeline') {
+                timelineView.hidden = false;
+                mapView.hidden = true;
+            } else {
+                timelineView.hidden = true;
+                mapView.hidden = false;
+            }
+        });
+    });
+
+    // timeline filters
+    function filterTimeline() {
+        const selectedEventType = eventTypeFilter.value;
+
+        timelineEvents.forEach(event => {
+            const caseType = event.dataset.caseType;
+            const eventType = event.dataset.eventType;
+
+            const matchesCase = activeCaseFilter === 'all' || caseType === activeCaseFilter;
+            const matchesEvent = selectedEventType === 'all' || eventType === selectedEventType;
+
+            event.hidden = !(matchesCase && matchesEvent);
+        });
+
+        updateTimelineYears();
+    }
+
+    // hide empty years
+    function updateTimelineYears() {
+        timelineYears.forEach(year => {
+            let nextElement = year.nextElementSibling;
+            let hasVisibleEvent = false;
+
+            while (nextElement && !nextElement.classList.contains('timeline-year')) {
+                if (nextElement.classList.contains('timeline-event') && !nextElement.hidden) {
+                    hasVisibleEvent = true;
+                    break;
+                }
+
+                nextElement = nextElement.nextElementSibling;
+            }
+
+            year.hidden = !hasVisibleEvent;
+        });
+    }
+
+    // case type buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            activeCaseFilter = button.dataset.filter;
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            filterTimeline();
+        });
+    });
+
+    // event type dropdown
+    eventTypeFilter.addEventListener('change', filterTimeline);
+}

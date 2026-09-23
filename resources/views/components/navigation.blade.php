@@ -38,6 +38,10 @@
                     Resources
                 </a>
 
+                <a href="{{ route('caseEvents') }}" class="{{ request()->routeIs('caseEvents') ? 'active' : '' }}">
+                    Explore
+                </a>
+
                 @auth
                     <a href="{{ route('favourites') }}" class="{{ request()->routeIs('favourites') ? 'active' : '' }}">
                         Favourites
