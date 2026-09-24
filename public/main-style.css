@@ -2702,14 +2702,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .explore-view-btn:hover {
     color: var(--text);
-    border-color: var(--primary-light);
+    border-color: var(--border-accent);
     transform: translateY(-1px);
 }
 
 .explore-view-btn.active {
-    background: var(--primary-light);
-    border-color: var(--primary-light);
-    color: var(--text);
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
 }
 
 
@@ -2745,13 +2745,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .explore-filter-btn:hover,
 #event-type-filter:hover {
-    border-color: var(--primary-light);
+    border-color: var(--primary);
 }
 
 .explore-filter-btn.active {
-    border-color: var(--primary-light);
-    background: var(--primary-light);
-    color: var(--text);
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
 }
 
 #event-type-filter {
@@ -2760,7 +2760,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #event-type-filter:focus {
-    border-color: var(--primary-light);
+    border-color: var(--primary);
 }
 
 /* ---------- TIMELINE ---------- */
@@ -2788,7 +2788,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: flex;
     align-items: center;
-
     margin: 55px 0 28px;
     min-height: 40px;
 }
@@ -2802,7 +2801,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.06em;
-    color: var(--primary-light);
+    color: #ffffff;
 }
 
 /* event */
@@ -2810,20 +2809,13 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: grid;
     grid-template-columns: 82px 1fr;
-    gap: 58px;
+    column-gap: 58px;
     margin-bottom: 24px;
 }
 
 .timeline-marker {
-    position: absolute;
-    left: 103px;
-    top: 25px;
-    width: 16px;
-    height: 16px;
-    border: 3px solid var(--primary-light);
-    border-radius: 50%;
-    background: var(--background);
-    z-index: 2;
+    left: 8px;
+    top: 24px;
 }
 
 /* event card */
@@ -2924,6 +2916,28 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+.explore-page .timeline-event > .timeline-marker {
+    display: block;
+    position: absolute;
+    left: 104px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    max-width: 14px;
+    min-height: 14px;
+    max-height: 14px;
+    margin: 0;
+    padding: 0;
+    flex: none;
+    background: var(--primary-light);
+    border: 3px solid var(--background);
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px var(--primary-light);
+    z-index: 3;
 }
 
 /* ---------- LEAFLET MAP STYLING ---------- */
@@ -3797,6 +3811,11 @@ h1, h2, h3, h4, h5, h6 {
 
     .timeline-event-card {
         width: 100%;
+    }
+
+    .explore-page .timeline-event > .timeline-marker {
+        left: 8px;
+        top: 24px;
     }
 
     .explore-view-switcher {
