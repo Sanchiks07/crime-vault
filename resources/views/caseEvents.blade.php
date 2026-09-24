@@ -51,8 +51,10 @@
                     <option value="attack">Attack</option>
                     <option value="disappearance">Disappearance</option>
                     <option value="discovery">Discovery</option>
+                    <option value="escape">Escape</option>
                     <option value="arrest">Arrest</option>
                     <option value="investigation">Investigation</option>
+                    <option value="conviction">Conviction</option>
                 </select>
             </section>
 

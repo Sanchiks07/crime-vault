@@ -30,16 +30,16 @@
                     Victims
                 </a>
 
+                <a href="{{ route('caseEvents') }}" class="{{ request()->routeIs('caseEvents') ? 'active' : '' }}">
+                    Explore
+                </a>
+
                 <a href="{{ route('psychology.introduction') }}" class="{{ request()->routeIs('psychology.*') ? 'active' : '' }}">
                     Psychology
                 </a>
 
                 <a href="{{ route('resources') }}" class="{{ request()->routeIs('resources') ? 'active' : '' }}">
                     Resources
-                </a>
-
-                <a href="{{ route('caseEvents') }}" class="{{ request()->routeIs('caseEvents') ? 'active' : '' }}">
-                    Explore
                 </a>
 
                 @auth
