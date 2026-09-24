@@ -27,10 +27,12 @@ class DiscussionController extends Controller
         };
 
         // automatically fills the polymorphic fields: discussable_id, discussable_type
-        $discussable->discussions()->create([
-            'user_id' => auth()->id(),
+        $discussion = new Discussion([
             'content' => $validated['content'],
         ]);
+
+        $discussion->user_id = auth()->id();
+        $discussable->discussions()->save($discussion);
 
         return back()->with('success', 'Comment posted successfully.');
     }

@@ -25,6 +25,18 @@
                     </div>
                 @endif
 
+                @if (session('login_lockout_seconds'))
+                    <div class="login-lockout error-messages" id="login-lockout" data-seconds="{{ session('login_lockout_seconds') }}">
+                        Too many login attempts. Please try again in
+                        <strong>
+                            <span id="login-countdown">
+                                {{ session('login_lockout_seconds') }}
+                            </span>
+                            seconds.
+                        </strong>
+                    </div>
+                @endif
+
                 <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                 <input type="password" name="password" placeholder="Password" required>
 

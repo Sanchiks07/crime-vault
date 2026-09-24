@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Discussion extends Model
 {
     protected $fillable = [
-        'user_id',
-        'discussable_id',
-        'discussable_type',
-        'content',
+        'content'
     ];
 
     public function user() {

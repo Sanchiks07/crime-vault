@@ -10,6 +10,13 @@ class SerialKillerController extends Controller
     public function index(Request $request) {
         $query = SerialKiller::query();
 
+        $request->validate([
+            'search' => ['nullable', 'string', 'max:100'],
+            'country' => ['nullable', 'string', 'max:100'],
+            'victims' => ['nullable', 'string'],
+            'sort' => ['nullable', 'string'],
+        ]);
+
         $allowedVictimFilters = [
             '0-5',
             '6-10',

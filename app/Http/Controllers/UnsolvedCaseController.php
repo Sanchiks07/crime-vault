@@ -10,6 +10,14 @@ class UnsolvedCaseController extends Controller
     public function index(Request $request) {
         $query = UnsolvedCase::query();
 
+        $request->validate([
+            'search' => ['nullable', 'string', 'max:100'],
+            'country' => ['nullable', 'string', 'max:100'],
+            'victims' => ['nullable', 'string'],
+            'suspects' => ['nullable', 'string'],
+            'sort' => ['nullable', 'string'],
+        ]);
+
         $allowedVictimFilters = [
             '1',
             '2-5',

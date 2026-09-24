@@ -132,6 +132,29 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// ===== LOGIN RATE LIMIT COUNTDOWN =====
+const loginLockout = document.querySelector('#login-lockout');
+
+if (loginLockout) {
+    const countdown = document.querySelector('#login-countdown');
+
+    let seconds = parseInt(loginLockout.dataset.seconds, 10);
+
+    const timer = setInterval(() => {
+        seconds--;
+
+        if (seconds <= 0) {
+            clearInterval(timer);
+
+            loginLockout.textContent = 'You can try logging in again now.';
+            return;
+        }
+
+        countdown.textContent = seconds;
+    }, 1000);
+}
+
+
 // ===== EXPLORE PAGE =====
 const explorePage = document.querySelector('.explore-page');
 
@@ -305,12 +328,9 @@ if (explorePage) {
 
         map = L.map('case-map').setView([39.5, -98.35], 4);
 
-        L.tileLayer(
-            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            {
-                attribution: '&copy; OpenStreetMap contributors'
-            }
-        ).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
 
 
         // create markers
