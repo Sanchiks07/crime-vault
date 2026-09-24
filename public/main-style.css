@@ -2903,6 +2903,29 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-muted);
 }
 
+/* no filter results */
+.timeline-no-results {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.timeline-no-results h2 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.timeline-no-results p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
 /* ---------- LEAFLET MAP STYLING ---------- */
 .map-view {
     max-width: 1000px;
@@ -3011,6 +3034,29 @@ h1, h2, h3, h4, h5, h6 {
 
 #case-map .leaflet-control-attribution a {
     color: var(--primary-light);
+}
+
+/* no filter results */
+.map-no-results {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 24px 30px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.map-no-results h2 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 1.15rem;
+}
+
+.map-no-results p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* ---------- RESPONSIVE DESIGN ---------- */

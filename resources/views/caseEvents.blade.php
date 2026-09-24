@@ -120,6 +120,14 @@
                         </div>
                     @endforelse
                 </div>
+
+                <div class="timeline-no-results" id="timeline-no-results" hidden>
+                    <h2>No matching events</h2>
+                    <p>
+                        No case events match the selected filters.
+                        Try choosing a different case or event type.
+                    </p>
+                </div>
             </section>
 
             <!-- ===== MAP ===== -->
@@ -148,6 +156,15 @@
             @endphp
 
             <section class="map-view" id="map-view" hidden>
+                <div class="map-no-results" id="map-no-results" hidden>
+                    <h2>No matching events</h2>
+
+                    <p>
+                        No mapped case events match the selected filters.
+                        Try choosing a different case or event type.
+                    </p>
+                </div>
+                
                 <div id="case-map" data-events="{{ $mapEvents->toJson(JSON_HEX_APOS | JSON_HEX_QUOT) }}"></div>
             </section>
         </div>

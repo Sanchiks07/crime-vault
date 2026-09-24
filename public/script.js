@@ -145,44 +145,43 @@ if (explorePage) {
 
     const timelineEvents = explorePage.querySelectorAll('.timeline-event');
     const timelineYears = explorePage.querySelectorAll('.timeline-year');
+    const timelineNoResults = explorePage.querySelector('#timeline-no-results');
 
     const mapElement = explorePage.querySelector('#case-map');
+    const mapNoResults = explorePage.querySelector('#map-no-results');
 
     let activeCaseFilter = 'all';
     let map = null;
     let mapMarkers = [];
 
-
-    // ========================================
-    // TIMELINE FILTERING
-    // ========================================
-
+    // timeline filtering
     function filterTimeline() {
         const selectedEventType = eventTypeFilter.value;
+
+        let visibleEventCount = 0;
 
         timelineEvents.forEach(event => {
             const caseType = event.dataset.caseType;
             const eventType = event.dataset.eventType;
 
-            const matchesCase =
-                activeCaseFilter === 'all' ||
-                caseType === activeCaseFilter;
+            const matchesCase = activeCaseFilter === 'all' || caseType === activeCaseFilter;
+            const matchesEvent = selectedEventType === 'all' || eventType === selectedEventType;
 
-            const matchesEvent =
-                selectedEventType === 'all' ||
-                eventType === selectedEventType;
+            const shouldShow = matchesCase && matchesEvent;
 
-            event.hidden = !(matchesCase && matchesEvent);
+            event.hidden = !shouldShow;
+
+            if (shouldShow) {
+                visibleEventCount++;
+            }
         });
 
         updateTimelineYears();
+
+        timelineNoResults.hidden = visibleEventCount !== 0;
     }
 
-
-    // ========================================
-    // HIDE EMPTY YEARS
-    // ========================================
-
+    // hide empty years
     function updateTimelineYears() {
         timelineYears.forEach(year => {
             let nextElement = year.nextElementSibling;
@@ -207,17 +206,15 @@ if (explorePage) {
         });
     }
 
-
-    // ========================================
-    // MAP FILTERING
-    // ========================================
-
+    // map filtering
     function filterMap() {
         if (!map) {
             return;
         }
 
         const selectedEventType = eventTypeFilter.value;
+
+        let visibleMarkerCount = 0;
 
         mapMarkers.forEach(item => {
             const matchesCase =
@@ -231,6 +228,8 @@ if (explorePage) {
             const shouldShow = matchesCase && matchesEvent;
 
             if (shouldShow) {
+                visibleMarkerCount++;
+
                 if (!map.hasLayer(item.marker)) {
                     item.marker.addTo(map);
                 }
@@ -239,9 +238,13 @@ if (explorePage) {
                     map.removeLayer(item.marker);
                 }
             }
-
-            fitMapToVisibleMarkers();
         });
+
+        mapNoResults.hidden = visibleMarkerCount !== 0;
+
+        if (visibleMarkerCount > 0) {
+            fitMapToVisibleMarkers();
+        }
     }
 
     function fitMapToVisibleMarkers() {
@@ -274,11 +277,7 @@ if (explorePage) {
         });
     }
 
-
-    // ========================================
-    // CASE TYPE FILTER BUTTONS
-    // ========================================
-
+    // case type filter buttons
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             activeCaseFilter = button.dataset.filter;
@@ -294,21 +293,13 @@ if (explorePage) {
         });
     });
 
-
-    // ========================================
-    // EVENT TYPE FILTER
-    // ========================================
-
+    // event type filter
     eventTypeFilter.addEventListener('change', () => {
         filterTimeline();
         filterMap();
     });
 
-
-    // ========================================
-    // INTERACTIVE MAP
-    // ========================================
-
+    // interactive map
     if (mapElement && typeof L !== 'undefined') {
         const mapEvents = JSON.parse(mapElement.dataset.events);
 
@@ -322,7 +313,7 @@ if (explorePage) {
         ).addTo(map);
 
 
-        // CREATE MARKERS
+        // create markers
         mapEvents.forEach(event => {
             const latitude = parseFloat(event.latitude);
             const longitude = parseFloat(event.longitude);
@@ -348,11 +339,7 @@ if (explorePage) {
 
                     <p>${event.date}</p>
 
-                    ${
-                        event.location
-                            ? `<p>${event.location}</p>`
-                            : ''
-                    }
+                    ${event.location ? `<p>${event.location}</p>` : ''}
                 </div>
             `);
 
@@ -364,11 +351,7 @@ if (explorePage) {
         });
     }
 
-
-    // ========================================
-    // TIMELINE / MAP SWITCHER
-    // ========================================
-
+    // timeline / map switcher
     viewButtons.forEach(button => {
         button.addEventListener('click', () => {
             const selectedView = button.dataset.view;
