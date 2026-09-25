@@ -127,8 +127,8 @@ class SerialKillerController extends Controller
             $favouriteKillerIds = auth()
                 ->user()
                 ->favourites()
-                ->where('favouritetable_type', SerialKiller::class)
-                ->pluck('favouritetable_id');
+                ->where('favouritable_type', SerialKiller::class)
+                ->pluck('favouritable_id');
         }
 
         return view('cases.killers.index', compact('serial_killers', 'favouriteKillerIds', 'countries'));

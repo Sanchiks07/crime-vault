@@ -127,8 +127,8 @@ class UnsolvedCaseController extends Controller
             $favouriteUnsolvedIds = auth()
                 ->user()
                 ->favourites()
-                ->where('favouritetable_type', UnsolvedCase::class)
-                ->pluck('favouritetable_id');
+                ->where('favouritable_type', UnsolvedCase::class)
+                ->pluck('favouritable_id');
         }
 
         return view('cases.unsolved.index', compact('unsolved_cases', 'favouriteUnsolvedIds', 'countries'));

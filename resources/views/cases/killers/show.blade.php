@@ -218,9 +218,7 @@
                                 </span>
                             </div>
 
-                            <p class="discussion-content">
-                                {{ $discussion->content }}
-                            </p>
+                            <p class="discussion-content">{{ $discussion->content }}</p>
 
                             @auth
                                 @if(auth()->id() === $discussion->user_id)

@@ -8,7 +8,7 @@
 
         <!-- Logo -->
         <a href="{{ route('home') }}" class="home-link">
-            <img src="{{ asset('images/vault-logo.png') }}" alt="Crime Vault Logo" style="height:50px; width:auto;">
+            <img src="{{ asset('images/vault-logo.png') }}" alt="Crime Vault Logo" style="height:45px; width:auto; display:block">
         </a>
 
         <!-- Navigation -->

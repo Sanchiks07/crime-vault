@@ -17,11 +17,11 @@
             <!-- separates favourites into serial killers and unsolved cases based on their model type -->
             @php
                 $serialKillers = $favourites->filter(
-                    fn ($favourite) => $favourite->favouritetable instanceof \App\Models\SerialKiller
+                    fn ($favourite) => $favourite->favouritable instanceof \App\Models\SerialKiller
                 );
 
                 $unsolvedCases = $favourites->filter(
-                    fn ($favourite) => $favourite->favouritetable instanceof \App\Models\UnsolvedCase
+                    fn ($favourite) => $favourite->favouritable instanceof \App\Models\UnsolvedCase
                 );
             @endphp
 
@@ -45,7 +45,7 @@
                         <div class="archive-grid">
                             @foreach ($serialKillers as $favourite)
                                 @php
-                                    $serial_killer = $favourite->favouritetable;
+                                    $serial_killer = $favourite->favouritable;
                                 @endphp
 
                                 <article class="archive-card">
@@ -94,7 +94,7 @@
                         <div class="archive-grid">
                             @foreach ($unsolvedCases as $favourite)
                                 @php
-                                    $unsolved_case = $favourite->favouritetable;
+                                    $unsolved_case = $favourite->favouritable;
                                 @endphp
 
                                 <article class="archive-card">

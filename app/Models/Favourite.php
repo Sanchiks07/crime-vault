@@ -8,11 +8,11 @@ class Favourite extends Model
 {
     protected $fillable = [
         'user_id',
-        'favouritetable_id',
-        'favouritetable_type'
+        'favouritable_id',
+        'favouritable_type'
     ];
 
-    public function favouritetable() {
+    public function favouritable() {
         return $this->morphTo();
     }
 

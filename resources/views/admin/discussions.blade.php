@@ -48,9 +48,7 @@
                             </span>
                         </div>
 
-                        <p class="admin-discussion-content">
-                            {{ $discussion->content }}
-                        </p>
+                        <p class="admin-discussion-content">{{ $discussion->content }}</p>
 
                         <div class="admin-discussion-info">
                             <div>

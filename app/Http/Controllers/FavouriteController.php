@@ -13,7 +13,7 @@ class FavouriteController extends Controller
         $favourites = auth()
             ->user()
             ->favourites()
-            ->with('favouritetable')
+            ->with('favouritable')
             ->latest()
             ->get();
 
@@ -33,16 +33,16 @@ class FavouriteController extends Controller
 
         $existingFavourite = $user
             ->favourites()
-            ->where('favouritetable_id', $model->id)
-            ->where('favouritetable_type', $model::class)
+            ->where('favouritable_id', $model->id)
+            ->where('favouritable_type', $model::class)
             ->first();
 
         if ($existingFavourite) {
             $existingFavourite->delete();
         } else {
             $user->favourites()->create([
-                'favouritetable_id' => $model->id,
-                'favouritetable_type' => $model::class,
+                'favouritable_id' => $model->id,
+                'favouritable_type' => $model::class,
             ]);
         }
 
