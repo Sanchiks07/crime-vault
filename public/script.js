@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
+    updateThemeIcon(theme);
+}
+
+function updateThemeIcon(theme) {
+    const icons = document.querySelectorAll(".theme-icon");
+    icons.forEach(icon => {
+        icon.src = theme === "dark" ? "/images/sun.png" : "/images/moon.png";
+    });
 }
 
 function toggleTheme() {

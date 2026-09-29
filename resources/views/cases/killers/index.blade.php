@@ -9,6 +9,7 @@
 
         <div class="page-container">
             <div class="page-header">
+                <span class="hero-label">Crime Vault • Criminal Profiles Archive</span>
                 <h1>Serial Killers</h1>
                 <p>Documented profiles, patterns, and histories.</p>
             </div>

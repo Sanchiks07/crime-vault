@@ -700,6 +700,295 @@
     margin: 20px 0;
 }
 
+/* ---------- PSYCHOLOGY RESOURCES ---------- */
+/* intro */
+.psychology-resource-intro {
+    text-align: center;
+}
+
+.psychology-resource-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.psychology-resource-categories span, .psychology-resource-type {
+    display: inline-block;
+    padding: 6px 11px;
+    border: 1px solid var(--border-accent);
+    border-radius: 20px;
+    color: var(--primary-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* featured resources */
+.psychology-featured-resources {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.psychology-featured-resource {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 330px;
+    padding: 28px;
+    background:
+        linear-gradient(
+            145deg,
+            var(--surface-light),
+            var(--surface)
+        );
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--text);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.psychology-featured-resource::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-light);
+}
+
+.psychology-featured-resource:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-accent);
+    box-shadow: 0 18px 35px var(--shadow);
+}
+
+.featured-resource-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 45px;
+}
+
+.featured-resource-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    transition: transform 0.2s ease;
+}
+
+.psychology-featured-resource:hover .featured-resource-arrow {
+    transform: translate(3px, -3px);
+}
+
+.psychology-featured-resource h3 {
+    margin-bottom: 8px;
+    font-size: 1.35rem;
+}
+
+.psychology-featured-resource p {
+    color: var(--text-muted);
+}
+
+.featured-resource-action {
+    margin-top: 30px;
+    color: var(--primary-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+/* research list */
+.psychology-resource-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+}
+
+.psychology-resource-row {
+    display: grid;
+    grid-template-columns: 65px 1fr 40px;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+.psychology-resource-row:hover {
+    padding-left: 20px;
+    background: var(--surface-light);
+}
+
+.resource-row-number {
+    color: var(--primary-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    opacity: 0.65;
+}
+
+.resource-row-content h3 {
+    margin: 8px 0 4px;
+}
+
+.resource-row-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.resource-row-arrow {
+    color: var(--primary-light);
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+}
+
+.psychology-resource-row:hover .resource-row-arrow {
+    transform: translate(4px, -4px);
+}
+
+/* bookshelf */
+.psychology-book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.psychology-book-card {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    min-height: 220px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.psychology-book-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-accent);
+}
+
+.book-spine {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 18px 0;
+    background: var(--primary);
+    border-right: 1px solid var(--border-accent);
+}
+
+.book-spine span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.book-content {
+    padding: 24px;
+}
+
+.book-content h3 {
+    margin: 12px 0 5px;
+}
+
+.book-content > p:not(.card-subtitle) {
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+/* publications */
+.psychology-publication-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.psychology-publication-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 270px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.psychology-publication-card:hover {
+    transform: translateY(-5px);
+    background: var(--surface-light);
+    border-color: var(--border-accent);
+}
+
+.publication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 35px;
+    color: var(--primary-light);
+}
+
+.psychology-publication-card h3 {
+    margin-bottom: 12px;
+}
+
+.psychology-publication-card p {
+    color: var(--text-muted);
+}
+
+.publication-source {
+    display: block;
+    margin-top: auto;
+    padding-top: 25px;
+    color: var(--primary-light);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* normal resource link */
+.psychology-resource-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--primary-light);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.psychology-resource-link:hover {
+    transform: translateX(4px);
+    opacity: 0.8;
+}
+
 /* ---------- FACTS ---------- */
 .fact-grid, .facts-grid {
     display: grid;
@@ -839,6 +1128,16 @@
     .psychology-grid, .brain-region-grid, .comparison-grid,
     .comparison-large, .experiment-grid, .myth-grid, .fact-grid, .facts-grid {
         gap: 30px;
+    }
+
+    .psychology-featured-resources,
+    .psychology-publication-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .psychology-featured-resource:last-child,
+    .psychology-publication-card:last-child {
+        grid-column: 1 / -1;
     }
 }
 
@@ -1076,6 +1375,27 @@
 
     .flip-card-front, .flip-card-back {
         padding: 1.5rem;
+    }
+
+    /* resources */
+    .psychology-featured-resources,
+    .psychology-publication-grid,
+    .psychology-book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .psychology-featured-resource:last-child,
+    .psychology-publication-card:last-child {
+        grid-column: auto;
+    }
+
+    .psychology-resource-row {
+        grid-template-columns: 45px 1fr 25px;
+        gap: 10px;
+    }
+
+    .psychology-book-card {
+        grid-template-columns: 42px 1fr;
     }
 
     /* facts */

@@ -9,14 +9,15 @@
 
         <div class="page-container">
             <div class="page-header">
+                <span class="hero-label">Crime Vault • Research Sources Archive</span>
                 <h1>Resources</h1>
 
                 <p>
                     This page collects the websites, books, videos, and other reference material I used while researching the cases featured on this site.
                     If you have any suggestions of what I should add to this collection, feel free to contact me.
-                </p><br>
-
-                <small>Psychology-specific resources are available on the Psychology page.</small>
+                    <br>
+                    Psychology-specific resources are available on the Psychology page.
+                </p>
             </div>
 
             <div class="resources-grid">

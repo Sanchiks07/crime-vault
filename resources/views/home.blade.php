@@ -33,14 +33,17 @@
                         <p class="home-featured-description" id="fc-description"></p>
                         <a id="fc-link" href="#" class="home-featured-link">Open case file <span aria-hidden="true">↗</span></a>
                     </div>
-                    <div class="home-featured-footer"><span>Selected case file</span><span>Rotates every 10 seconds</span></div>
+                    <div class="home-featured-footer">Selected case file rotates every 10 seconds</div>
                 </div>
             </section>
 
             <!-- explore -->
             <section class="home-explore" aria-labelledby="home-explore-heading">
                 <div class="home-section-heading">
-                    <div><span class="home-section-kicker">Choose your path</span><h2 id="home-explore-heading">Inside the vault</h2></div>
+                    <div>
+                        <span class="home-section-kicker">Choose your path</span>
+                        <h2 id="home-explore-heading" style="margin-bottom:0;">Inside the vault</h2>
+                    </div>
                     <p>Start with a case, follow a question, or meet the lives behind the record.</p>
                 </div>
                 <div class="home-grid">

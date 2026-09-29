@@ -64,13 +64,17 @@
                         <button type="submit" class="btn-logout">Logout</button>
                     </form>
 
-                    <button onclick="toggleTheme()" class="btn-theme">Switch Mood</button>
+                    <button onclick="toggleTheme()" class="btn-theme">
+                        <img src="{{ asset('images/sun.png') }}" alt="" class="theme-icon">
+                    </button>
                 </div>
             @else
                 <div class="navbar-actions">
                     <a href="{{ route('login') }}" class="btn-login">Login</a>
 
-                    <button onclick="toggleTheme()" class="btn-theme">Switch Mood</button>
+                    <button onclick="toggleTheme()" class="btn-theme">
+                        <img src="{{ asset('images/sun.png') }}" alt="" class="theme-icon">
+                    </button>
                 </div>
             @endauth
         </div>

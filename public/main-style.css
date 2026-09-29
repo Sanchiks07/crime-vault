@@ -228,6 +228,17 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 20px rgba(216,64,64,.2);
 }
 
+.btn-theme {
+    display: flex;
+    align-items: center;
+}
+
+.theme-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
 /* hamburger */
 .hamburger {
     display: none;
@@ -731,7 +742,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
     margin-bottom: .5rem;
 }
 
@@ -2656,9 +2666,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+.explore-hero-content h1 {
+    font-size: 3rem;
+}
+
 .explore-hero h1 {
     margin: 12px 0 16px;
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
     line-height: 1;
 }
 

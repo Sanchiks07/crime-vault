@@ -9,6 +9,7 @@
 
         <div class="page-container">
             <div class="page-header">
+                <span class="hero-label">Crime Vault • Unresolved Investigations Archive</span>
                 <h1>Unsolved Cases</h1>
                 <p>Explore cold cases, mysteries, and unresolved investigations.</p>
             </div>

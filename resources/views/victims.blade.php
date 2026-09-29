@@ -10,6 +10,7 @@
         <div class="page-container">
             <!-- ====== HERO ====== -->
             <div class="page-header">
+                <span class="hero-label">Crime Vault • Lives & Remembrance Archive</span>
                 <h1>Victims</h1>
                 <p>
                     Behind every criminal case was a real person with dreams, ambitions,
