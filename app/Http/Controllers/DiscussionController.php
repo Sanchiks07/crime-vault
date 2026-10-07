@@ -9,7 +9,7 @@ use App\Models\UnsolvedCase;
 
 class DiscussionController extends Controller
 {
-    // So later a request can identify whether the comment belongs to: serial-killer or unsolved-case
+    // so later a request can identify whether the comment belongs to: serial-killer or unsolved-case
     public function store(Request $request, string $type, int $id) {
         $validated = $request->validate(
             ['content' => ['required', 'string', 'max:2000']],
