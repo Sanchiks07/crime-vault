@@ -27,8 +27,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'max:255', 'confirmed'],
         ]);
 
-        $attributes['password'] = bcrypt($attributes['password']);
-
         $user = User::create($attributes);
 
         event(new Registered($user));

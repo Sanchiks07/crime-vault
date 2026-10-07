@@ -78,15 +78,15 @@ Route::get('/psychology/faq', [PsychologyController::class, 'faq'])->name('psych
 Route::get('/resources', [ResourceController::class, 'index'])->name('resources');
 
 // Favourites
-Route::get('/favourites', [FavouriteController::class, 'index'])->name('favourites')->middleWare('auth');
-Route::post('/favourites/{type}/{id}', [FavouriteController::class, 'toggle'])->name('favourites.toggle')->middleWare('auth');
+Route::get('/favourites', [FavouriteController::class, 'index'])->name('favourites')->middleWare('auth', 'verified');
+Route::post('/favourites/{type}/{id}', [FavouriteController::class, 'toggle'])->name('favourites.toggle')->middleWare('auth', 'verified');
 
 // Discussions
-Route::post('/discussions/{type}/{id}', [DiscussionController::class, 'store'])->name('discussions.store')->middleware('auth');
-Route::patch('/discussions/{discussion}', [DiscussionController::class, 'update'])->name('discussions.update')->middleware('auth');
-Route::delete('/discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy')->middleware('auth');
+Route::post('/discussions/{type}/{id}', [DiscussionController::class, 'store'])->name('discussions.store')->middleware('auth', 'verified');
+Route::patch('/discussions/{discussion}', [DiscussionController::class, 'update'])->name('discussions.update')->middleware('auth', 'verified');
+Route::delete('/discussions/{discussion}', [DiscussionController::class, 'destroy'])->name('discussions.destroy')->middleware('auth', 'verified');
 // Admin discussions
-Route::get('/admin/discussions', [AdminDiscussionController::class, 'index'])->name('admin.discussions')->middleware(['auth', AdminMiddleware::class]);
+Route::get('/admin/discussions', [AdminDiscussionController::class, 'index'])->name('admin.discussions')->middleware(['auth', 'verified', AdminMiddleware::class]);
 
 // Interactive timeline / map
 Route::get('/explore', [CaseEventController::class, 'index']) ->name('caseEvents');
