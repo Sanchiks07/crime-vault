@@ -1,4 +1,4 @@
-@unless (request()->routeIs('login') || request()->routeIs('register'))
+@unless (request()->routeIs('login') || request()->routeIs('register') || request()->routeIs('verification.notice'))
 <nav class="navbar">
     <div class="navbar-container">
         <!-- Hamburger -->

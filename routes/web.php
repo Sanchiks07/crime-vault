@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
@@ -23,6 +25,29 @@ Route::post('/login', [LoginController::class, 'store'])->name('login.store')->m
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleWare('guest');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store')->middleWare('guest');
 Route::post('/logout', [LoginController::class, 'destroy'])->name('logout')->middleWare('auth');
+
+// verify email
+Route::get('/email/verify', function (Request $request) {
+    if ($request->user()->hasVerifiedEmail()) {
+        return redirect()->route('home');
+    }
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect()->route('home')->with('status', 'email-verified');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// resend
+Route::post('/email/verification-notification', function (Request $request) {
+    if ($request->user()->hasVerifiedEmail()) {
+        return redirect()->route('home');
+    }
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
 
 // Unsolved cases
 Route::get('/cases/unsolved-cases', [UnsolvedCaseController::class, 'index'])->name('cases.unsolved.index');

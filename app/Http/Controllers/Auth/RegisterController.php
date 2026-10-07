@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -19,8 +20,7 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $attributes = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
@@ -28,10 +28,13 @@ class RegisterController extends Controller
         ]);
 
         $attributes['password'] = bcrypt($attributes['password']);
-        
+
         $user = User::create($attributes);
+
+        event(new Registered($user));
+
         Auth::login($user);
 
-        return redirect()->intended(route('home'));
+        return redirect()->route('verification.notice');
     }
 }
