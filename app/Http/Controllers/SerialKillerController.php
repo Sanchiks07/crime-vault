@@ -82,27 +82,45 @@ class SerialKillerController extends Controller
                 break;
 
             case 'victims-asc':
-                $query
-                    ->orderByRaw("
+                if ($query->getConnection()->getDriverName() === 'sqlite') {
+                    $query->orderByRaw("
+                        CAST(
+                            json_extract(victim_count, '$.killed.confirmed')
+                            AS INTEGER
+                        ) ASC
+                    ");
+                } else {
+                    $query->orderByRaw("
                         CAST(
                             JSON_UNQUOTE(
                                 JSON_EXTRACT(victim_count, '$.killed.confirmed')
                             ) AS UNSIGNED
                         ) ASC
-                    ")
-                    ->orderBy('nickname', 'asc');
+                    ");
+                }
+
+                $query->orderBy('nickname', 'asc');
                 break;
 
             case 'victims-desc':
-                $query
-                    ->orderByRaw("
+                if ($query->getConnection()->getDriverName() === 'sqlite') {
+                    $query->orderByRaw("
+                        CAST(
+                            json_extract(victim_count, '$.killed.confirmed')
+                            AS INTEGER
+                        ) DESC
+                    ");
+                } else {
+                    $query->orderByRaw("
                         CAST(
                             JSON_UNQUOTE(
                                 JSON_EXTRACT(victim_count, '$.killed.confirmed')
                             ) AS UNSIGNED
                         ) DESC
-                    ")
-                    ->orderBy('nickname', 'asc');
+                    ");
+                }
+
+                $query->orderBy('nickname', 'asc');
                 break;
 
             case 'name-asc':

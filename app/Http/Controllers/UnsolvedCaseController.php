@@ -53,16 +53,45 @@ class UnsolvedCaseController extends Controller
         if ($request->filled('victims') && in_array($request->input('victims'), $allowedVictimFilters, true)) {
             switch ($request->input('victims')) {
                 case '1':
-                    $query->whereJsonLength('count', 1);
+                    if ($query->getConnection()->getDriverName() === 'sqlite') {
+                        $query->whereRaw("
+                            CAST(json_extract(count, '$.killed') AS INTEGER) +
+                            CAST(json_extract(count, '$.wounded') AS INTEGER) = 1
+                        ");
+                    } else {
+                        $query->whereRaw("
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.killed')) AS UNSIGNED) +
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.wounded')) AS UNSIGNED) = 1
+                        ");
+                    }
                     break;
 
                 case '2-5':
-                    $query->whereJsonLength('count', '>=', 2)
-                        ->whereJsonLength('count', '<=', 5);
+                    if ($query->getConnection()->getDriverName() === 'sqlite') {
+                        $query->whereRaw("
+                            CAST(json_extract(count, '$.killed') AS INTEGER) +
+                            CAST(json_extract(count, '$.wounded') AS INTEGER) BETWEEN 2 AND 5
+                        ");
+                    } else {
+                        $query->whereRaw("
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.killed')) AS UNSIGNED) +
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.wounded')) AS UNSIGNED) BETWEEN 2 AND 5
+                        ");
+                    }
                     break;
 
                 case '6-plus':
-                    $query->whereJsonLength('count', '>=', 6);
+                    if ($query->getConnection()->getDriverName() === 'sqlite') {
+                        $query->whereRaw("
+                            CAST(json_extract(count, '$.killed') AS INTEGER) +
+                            CAST(json_extract(count, '$.wounded') AS INTEGER) >= 6
+                        ");
+                    } else {
+                        $query->whereRaw("
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.killed')) AS UNSIGNED) +
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.wounded')) AS UNSIGNED) >= 6
+                        ");
+                    }
                     break;
             }
         }
@@ -94,15 +123,26 @@ class UnsolvedCaseController extends Controller
                 break;
 
             case 'victims-asc':
-                $query
-                    ->orderByRaw('JSON_LENGTH(count) ASC')
-                    ->orderBy('name', 'asc');
-                break;
-
             case 'victims-desc':
-                $query
-                    ->orderByRaw('JSON_LENGTH(count) DESC')
-                    ->orderBy('name', 'asc');
+                $direction = $sort === 'victims-asc' ? 'ASC' : 'DESC';
+
+                if ($query->getConnection()->getDriverName() === 'sqlite') {
+                    $query->orderByRaw("
+                        (
+                            CAST(json_extract(count, '$.killed') AS INTEGER) +
+                            CAST(json_extract(count, '$.wounded') AS INTEGER)
+                        ) {$direction}
+                    ");
+                } else {
+                    $query->orderByRaw("
+                        (
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.killed')) AS UNSIGNED) +
+                            CAST(JSON_UNQUOTE(JSON_EXTRACT(count, '$.wounded')) AS UNSIGNED)
+                        ) {$direction}
+                    ");
+                }
+
+                $query->orderBy('name', 'asc');
                 break;
 
             case 'name-asc':
