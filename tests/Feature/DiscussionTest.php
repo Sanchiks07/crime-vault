@@ -490,7 +490,6 @@ class DiscussionTest extends TestCase
         }
     }
 
-    
     public function test_discussion_rate_limit_is_separate_for_each_user(): void {
         $firstUser = User::factory()->create();
         $secondUser = User::factory()->create();
@@ -558,5 +557,106 @@ class DiscussionTest extends TestCase
             RateLimiter::clear($firstKey);
             RateLimiter::clear($secondKey);
         }
+    }
+    
+    public function test_serial_killer_discussion_pagination(): void {
+        $user = User::factory()->create();
+
+        $killer = SerialKiller::create([
+            'name' => 'Test Killer',
+            'nickname' => 'The Test Killer',
+            'ages' => [
+                'born' => '1980-01-01',
+                'died' => null,
+            ],
+            'country' => 'United States',
+            'victim_count' => [
+                'killed' => [
+                    'claimed' => 5,
+                    'confirmed' => 3,
+                ],
+                'wounded' => 1,
+            ],
+            'description' => 'Test serial killer used for pagination testing.',
+            'image' => 'test.jpg',
+        ]);
+
+        for ($i = 1; $i <= 15; $i++) {
+            $discussion = new Discussion();
+            $discussion->user_id = $user->id;
+            $discussion->content = sprintf('Pagination comment %02d', $i);
+
+            $killer->discussions()->save($discussion);
+        }
+
+        $this->get(route('cases.killers.show', $killer))
+            ->assertOk()
+            ->assertViewHas('discussions', function ($discussions) {
+                return $discussions->count() === 10
+                    && $discussions->total() === 15
+                    && $discussions->currentPage() === 1
+                    && $discussions->getPageName() === 'comments_page';
+            })
+            ->assertSee('Page 1 of 2');
+
+        $this->get(route('cases.killers.show', [
+            'serial_killer' => $killer->id,
+            'comments_page' => 2,
+        ]))
+            ->assertOk()
+            ->assertViewHas('discussions', function ($discussions) {
+                return $discussions->count() === 5
+                    && $discussions->total() === 15
+                    && $discussions->currentPage() === 2
+                    && $discussions->getPageName() === 'comments_page';
+            })
+            ->assertSee('Page 2 of 2');
+    }
+    
+    public function test_unsolved_case_discussion_pagination(): void {
+        $user = User::factory()->create();
+
+        $case = UnsolvedCase::create([
+            'name' => 'Test Unsolved Case',
+            'country' => 'United States',
+            'count' => [
+                'killed' => 2,
+                'wounded' => 0,
+            ],
+            'suspects' => [],
+            'description' => 'Test unsolved case used for pagination testing.',
+            'image' => 'test.jpg',
+        ]);
+
+        for ($i = 1; $i <= 15; $i++) {
+            $discussion = new Discussion();
+            $discussion->user_id = $user->id;
+            $discussion->content = sprintf('Pagination comment %02d', $i);
+
+            $case->discussions()->save($discussion);
+        }
+
+        $this->get(route('cases.unsolved.show', $case))
+            ->assertOk()
+            ->assertViewHas('discussions', function ($discussions) {
+                return $discussions->count() === 10
+                    && $discussions->total() === 15
+                    && $discussions->currentPage() === 1
+                    && $discussions->getPageName() === 'comments_page';
+            })
+            ->assertSee('Page 1 of 2');
+
+        $this->get(route('cases.unsolved.show', [
+            'unsolved_case' => $case->id,
+            'comments_page' => 2,
+        ]))
+            ->assertOk()
+            ->assertViewHas('discussions', function ($discussions) {
+                return $discussions->count() === 5
+                    && $discussions->total() === 15
+                    && $discussions->currentPage() === 2
+                    && $discussions->getPageName() === 'comments_page';
+            })
+            ->assertSee('Page 2 of 2');
     }
 }
