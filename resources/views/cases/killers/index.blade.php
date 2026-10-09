@@ -86,8 +86,8 @@
 
             <div class="filter-results">
                 <p>
-                    {{ $serial_killers->count() }}
-                    {{ $serial_killers->count() === 1 ? 'case found' : 'cases found' }}
+                    {{ $serial_killers->total() }}
+                    {{ $serial_killers->total() === 1 ? 'case found' : 'cases found' }}
                 </p>
             </div>
 
@@ -140,8 +140,33 @@
                             <p>No serial killer data available.</p>
                         @endif
                     </div>
+                
                 @endforelse
             </div>
+
+            @if($serial_killers->hasPages())
+                <nav class="discussion-pagination" aria-label="Archive pages">
+                    @if($serial_killers->onFirstPage())
+                        <span class="pagination-disabled">← Previous</span>
+                    @else
+                        <a href="{{ $serial_killers->previousPageUrl() }}">
+                            ← Previous
+                        </a>
+                    @endif
+
+                    <span class="pagination-current">
+                        Page {{ $serial_killers->currentPage() }} of {{ $serial_killers->lastPage() }}
+                    </span>
+
+                    @if($serial_killers->hasMorePages())
+                        <a href="{{ $serial_killers->nextPageUrl() }}">
+                            Next →
+                        </a>
+                    @else
+                        <span class="pagination-disabled">Next →</span>
+                    @endif
+                </nav>
+            @endif
         </div>
     </div>
 </x-layout>

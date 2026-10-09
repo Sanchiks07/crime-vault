@@ -151,7 +151,7 @@ class UnsolvedCaseController extends Controller
                 break;
         }
 
-        $unsolved_cases = $query->get();
+        $unsolved_cases = $query->paginate(12)->withQueryString();
 
         // gets all unique countries for the filter dropdown
         $countries = UnsolvedCase::query()

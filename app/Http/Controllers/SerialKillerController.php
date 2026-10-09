@@ -129,7 +129,7 @@ class SerialKillerController extends Controller
                 break;
         }
 
-        $serial_killers = $query->get();
+        $serial_killers = $query->paginate(12)->withQueryString();
 
         // gets all unique countries for the filter dropdown
         $countries = SerialKiller::query()

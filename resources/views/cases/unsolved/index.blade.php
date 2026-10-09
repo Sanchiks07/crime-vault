@@ -98,8 +98,8 @@
 
             <div class="filter-results">
                 <p>
-                    {{ $unsolved_cases->count() }}
-                    {{ $unsolved_cases->count() === 1 ? 'case found' : 'cases found' }}
+                    {{ $unsolved_cases->total() }}
+                    {{ $unsolved_cases->total() === 1 ? 'case found' : 'cases found' }}
                 </p>
             </div>
 
@@ -148,8 +148,33 @@
                             <p>No unsolved case data available.</p>
                         @endif
                     </div>
+                
                 @endforelse
             </div>
+
+            @if($unsolved_cases->hasPages())
+                <nav class="discussion-pagination" aria-label="Archive pages">
+                    @if($unsolved_cases->onFirstPage())
+                        <span class="pagination-disabled">← Previous</span>
+                    @else
+                        <a href="{{ $unsolved_cases->previousPageUrl() }}">
+                            ← Previous
+                        </a>
+                    @endif
+
+                    <span class="pagination-current">
+                        Page {{ $unsolved_cases->currentPage() }} of {{ $unsolved_cases->lastPage() }}
+                    </span>
+
+                    @if($unsolved_cases->hasMorePages())
+                        <a href="{{ $unsolved_cases->nextPageUrl() }}">
+                            Next →
+                        </a>
+                    @else
+                        <span class="pagination-disabled">Next →</span>
+                    @endif
+                </nav>
+            @endif
         </div>
     </div>
 </x-layout>
