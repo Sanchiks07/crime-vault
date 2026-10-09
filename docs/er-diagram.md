@@ -168,7 +168,7 @@ erDiagram
 
 ## Relationship notes
 
-- `serial_killers.killer_id` is a concrete foreign key to `serial_killers.id`. Eloquent exposes it as `SerialKiller::victimRecord()` and `Victim::killer()`.
+- `victims.killer_id` is a concrete foreign key to `serial_killers.id`. Eloquent exposes it as `SerialKiller::victimRecord()` and `Victim::killer()`.
 - `favourites`, `discussions`, and `case_events` use Laravel polymorphic relations. Their `*_id` and `*_type` columns are paired values, not database-enforced foreign keys.
 - The current models expose `SerialKiller` and `UnsolvedCase` as targets for all three polymorphic relations. `Resource` and `Victim` are standalone apart from the killer relationship shown above.
 - `sessions.user_id` is indexed and nullable in the Laravel migration, but it is not declared as a database foreign key. The diagram shows the application-level association as a dashed-style conceptual relationship label.

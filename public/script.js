@@ -339,14 +339,20 @@ if (explorePage) {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-
-
+        
         // create markers
         mapEvents.forEach(event => {
-            const latitude = parseFloat(event.latitude);
-            const longitude = parseFloat(event.longitude);
+            const latitude = Number(event.latitude);
+            const longitude = Number(event.longitude);
 
-            if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+            if (
+                !Number.isFinite(latitude) ||
+                !Number.isFinite(longitude) ||
+                latitude < -90 ||
+                latitude > 90 ||
+                longitude < -180 ||
+                longitude > 180
+            ) {
                 return;
             }
 
@@ -355,21 +361,34 @@ if (explorePage) {
                 longitude
             ]).addTo(map);
 
-            marker.bindPopup(`
-                <div class="case-map-popup">
-                    <span class="map-popup-type">
-                        ${event.event_type}
-                    </span>
+            // Create popup elements safely
+            const popup = document.createElement('div');
+            popup.className = 'case-map-popup';
 
-                    <h3>${event.title}</h3>
+            const type = document.createElement('span');
+            type.className = 'map-popup-type';
+            type.textContent = event.event_type ?? '';
+            popup.appendChild(type);
 
-                    <strong>${event.case_name}</strong>
+            const title = document.createElement('h3');
+            title.textContent = event.title ?? '';
+            popup.appendChild(title);
 
-                    <p>${event.date}</p>
+            const caseName = document.createElement('strong');
+            caseName.textContent = event.case_name ?? '';
+            popup.appendChild(caseName);
 
-                    ${event.location ? `<p>${event.location}</p>` : ''}
-                </div>
-            `);
+            const date = document.createElement('p');
+            date.textContent = event.date ?? '';
+            popup.appendChild(date);
+
+            if (event.location) {
+                const location = document.createElement('p');
+                location.textContent = event.location;
+                popup.appendChild(location);
+            }
+
+            marker.bindPopup(popup);
 
             mapMarkers.push({
                 marker: marker,

@@ -137,7 +137,7 @@
             </div>
 
             <!-- Discussion Board -->
-            <section class="discussion-board">
+            <section class="discussion-board" id="discussion-board">
                 <div class="discussion-header">
                     <div>
                         <h2>Case Discussion</h2>
@@ -145,8 +145,8 @@
                     </div>
 
                     <span class="discussion-count">
-                        {{ $serial_killer->discussions->count() }}
-                        {{ $serial_killer->discussions->count() === 1 ? 'comment' : 'comments' }}
+                        {{ $discussions->total() }}
+                        {{ $discussions->total() === 1 ? 'comment' : 'comments' }}
                     </span>
                 </div>
 
@@ -197,7 +197,7 @@
 
                 <!-- Comments -->
                 <div class="discussion-comments">
-                    @forelse($serial_killer->discussions->sortByDesc('created_at') as $discussion)
+                    @forelse($discussions as $discussion)
                         <article class="discussion-comment">
                             <div class="discussion-comment-header">
                                 <div class="discussion-author">
@@ -258,6 +258,30 @@
                         </div>
                     @endforelse
                 </div>
+
+                @if($discussions->hasPages())
+                    <nav class="discussion-pagination" aria-label="Comment pages">
+                        @if($discussions->onFirstPage())
+                            <span class="pagination-disabled">← Previous</span>
+                        @else
+                            <a href="{{ $discussions->previousPageUrl() }}#discussion-board">
+                                ← Previous
+                            </a>
+                        @endif
+
+                        <span class="pagination-current">
+                            Page {{ $discussions->currentPage() }} of {{ $discussions->lastPage() }}
+                        </span>
+
+                        @if($discussions->hasMorePages())
+                            <a href="{{ $discussions->nextPageUrl() }}#discussion-board">
+                                Next →
+                            </a>
+                        @else
+                            <span class="pagination-disabled">Next →</span>
+                        @endif
+                    </nav>
+                @endif
             </section>
         </div>
     </div>

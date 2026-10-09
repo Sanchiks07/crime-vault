@@ -135,8 +135,8 @@
                     </div>
 
                     <span class="discussion-count">
-                        {{ $unsolved_case->discussions->count() }}
-                        {{ $unsolved_case->discussions->count() === 1 ? 'comment' : 'comments' }}
+                        {{ $discussions->total() }}
+                        {{ $discussions->total() === 1 ? 'comment' : 'comments' }}
                     </span>
                 </div>
 
@@ -187,7 +187,7 @@
 
                 <!-- Comments -->
                 <div class="discussion-comments">
-                    @forelse($unsolved_case->discussions->sortByDesc('created_at') as $discussion)
+                    @forelse($discussions as $discussion)
                         <article class="discussion-comment">
                             <div class="discussion-comment-header">
                                 <div class="discussion-author">
@@ -248,6 +248,30 @@
                         </div>
                     @endforelse
                 </div>
+
+                @if($discussions->hasPages())
+                    <nav class="discussion-pagination" aria-label="Comment pages">
+                        @if($discussions->onFirstPage())
+                            <span class="pagination-disabled">← Previous</span>
+                        @else
+                            <a href="{{ $discussions->previousPageUrl() }}#discussion-board">
+                                ← Previous
+                            </a>
+                        @endif
+
+                        <span class="pagination-current">
+                            Page {{ $discussions->currentPage() }} of {{ $discussions->lastPage() }}
+                        </span>
+
+                        @if($discussions->hasMorePages())
+                            <a href="{{ $discussions->nextPageUrl() }}#discussion-board">
+                                Next →
+                            </a>
+                        @else
+                            <span class="pagination-disabled">Next →</span>
+                        @endif
+                    </nav>
+                @endif
             </section>
         </div>
     </div>

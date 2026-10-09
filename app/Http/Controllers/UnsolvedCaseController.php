@@ -174,11 +174,13 @@ class UnsolvedCaseController extends Controller
         return view('cases.unsolved.index', compact('unsolved_cases', 'favouriteUnsolvedIds', 'countries'));
     }
 
+    
     public function show(UnsolvedCase $unsolved_case) {
-        $unsolved_case->load([
-            'discussions.user'
-        ]);
+        $discussions = $unsolved_case->discussions()
+            ->with('user')
+            ->latest()
+            ->paginate(10, ['*'], 'comments_page');
 
-        return view('cases.unsolved.show', compact('unsolved_case'));
+        return view('cases.unsolved.show', compact('unsolved_case', 'discussions'));
     }
 }

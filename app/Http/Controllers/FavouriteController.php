@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Favourite;
 use App\Models\SerialKiller;
 use App\Models\UnsolvedCase;
+use Illuminate\Support\Facades\DB;
 
 class FavouriteController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $favourites = auth()
             ->user()
             ->favourites()
@@ -20,31 +20,38 @@ class FavouriteController extends Controller
         return view('favourites', compact('favourites'));
     }
 
-    // add or remove an item from favourites
-    public function toggle(string $type, int $id) {
-        $user = auth()->user();
-
+    // Add or remove an item from favourites.
+    public function toggle(string $type, int $id)
+    {
         $model = match ($type) {
             'serial-killer' => SerialKiller::findOrFail($id),
             'unsolved-case' => UnsolvedCase::findOrFail($id),
-
             default => abort(404),
         };
 
-        $existingFavourite = $user
-            ->favourites()
-            ->where('favouritable_id', $model->id)
-            ->where('favouritable_type', $model::class)
-            ->first();
+        DB::transaction(function () use ($model) {
+            $user = auth()->user();
 
-        if ($existingFavourite) {
-            $existingFavourite->delete();
-        } else {
-            $user->favourites()->create([
-                'favouritable_id' => $model->id,
-                'favouritable_type' => $model::class,
-            ]);
-        }
+            // Lock the user row to serialize favourite toggles.
+            $user = $user->newQuery()
+                ->whereKey($user->getKey())
+                ->lockForUpdate()
+                ->firstOrFail();
+
+            $favourite = $user->favourites()
+                ->where('favouritable_id', $model->getKey())
+                ->where('favouritable_type', $model->getMorphClass())
+                ->first();
+
+            if ($favourite) {
+                $favourite->delete();
+            } else {
+                $user->favourites()->create([
+                    'favouritable_id' => $model->getKey(),
+                    'favouritable_type' => $model->getMorphClass(),
+                ]);
+            }
+        });
 
         return back();
     }

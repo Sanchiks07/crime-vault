@@ -152,9 +152,15 @@ class SerialKillerController extends Controller
         return view('cases.killers.index', compact('serial_killers', 'favouriteKillerIds', 'countries'));
     }
 
-    public function show(SerialKiller $serial_killer) {
-        $serial_killer->load(['victimRecord', 'discussions.user']);
 
-        return view('cases.killers.show', compact('serial_killer'));
+    public function show(SerialKiller $serial_killer) {
+        $serial_killer->load('victimRecord');
+
+        $discussions = $serial_killer->discussions()
+            ->with('user')
+            ->latest()
+            ->paginate(10, ['*'], 'comments_page');
+
+        return view('cases.killers.show', compact('serial_killer', 'discussions'));
     }
 }

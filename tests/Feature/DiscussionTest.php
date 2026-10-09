@@ -7,6 +7,7 @@ use App\Models\SerialKiller;
 use App\Models\UnsolvedCase;
 use App\Models\Discussion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\RateLimiter;
 use Tests\TestCase;
 
 class DiscussionTest extends TestCase
@@ -424,5 +425,138 @@ class DiscussionTest extends TestCase
         $response->assertNotFound();
 
         $this->assertDatabaseCount('discussions', 0);
+    }
+
+    
+    public function test_user_cannot_post_more_than_five_comments_per_minute(): void {
+        $user = User::factory()->create();
+
+        $killer = SerialKiller::create([
+            'name' => 'Test Killer',
+            'nickname' => 'The Test Killer',
+            'ages' => [
+                'born' => '1980-01-01',
+                'died' => null,
+            ],
+            'country' => 'United States',
+            'victim_count' => [
+                'killed' => [
+                    'claimed' => 5,
+                    'confirmed' => 3,
+                ],
+                'wounded' => 1,
+            ],
+            'description' => 'Test serial killer used for automated testing.',
+            'image' => 'test.jpg',
+        ]);
+
+        $key = 'discussion-store:' . $user->id;
+
+        // reset the rate limiter before testing
+        RateLimiter::clear($key);
+
+        try {
+            // the first five comments should be accepted
+            for ($i = 1; $i <= 5; $i++) {
+                $response = $this
+                    ->actingAs($user)
+                    ->post("/discussions/serial-killer/{$killer->id}", [
+                        'content' => "Test comment {$i}",
+                    ]);
+
+                $response->assertSessionHasNoErrors();
+            }
+
+            $this->assertDatabaseCount('discussions', 5);
+
+            // the sixth comment should be rejected
+            $response = $this
+                ->actingAs($user)
+                ->post("/discussions/serial-killer/{$killer->id}", [
+                    'content' => 'This comment should be blocked.',
+                ]);
+
+            $response->assertSessionHasErrors('content');
+
+            // the rejected comment must not be saved
+            $this->assertDatabaseCount('discussions', 5);
+
+            $this->assertDatabaseMissing('discussions', [
+                'content' => 'This comment should be blocked.',
+            ]);
+        } finally {
+            // prevent the limiter from affecting other tests
+            RateLimiter::clear($key);
+        }
+    }
+
+    
+    public function test_discussion_rate_limit_is_separate_for_each_user(): void {
+        $firstUser = User::factory()->create();
+        $secondUser = User::factory()->create();
+
+        $killer = SerialKiller::create([
+            'name' => 'Test Killer',
+            'nickname' => 'The Test Killer',
+            'ages' => [
+                'born' => '1980-01-01',
+                'died' => null,
+            ],
+            'country' => 'United States',
+            'victim_count' => [
+                'killed' => [
+                    'claimed' => 5,
+                    'confirmed' => 3,
+                ],
+                'wounded' => 1,
+            ],
+            'description' => 'Test serial killer used for automated testing.',
+            'image' => 'test.jpg',
+        ]);
+
+        $firstKey = 'discussion-store:' . $firstUser->id;
+        $secondKey = 'discussion-store:' . $secondUser->id;
+
+        RateLimiter::clear($firstKey);
+        RateLimiter::clear($secondKey);
+
+        try {
+            // first user reaches the limit
+            for ($i = 1; $i <= 5; $i++) {
+                $this->actingAs($firstUser)
+                    ->post("/discussions/serial-killer/{$killer->id}", [
+                        'content' => "First user comment {$i}",
+                    ])
+                    ->assertSessionHasNoErrors();
+            }
+
+            // first user cannot post another comment
+            $this->actingAs($firstUser)
+                ->post("/discussions/serial-killer/{$killer->id}", [
+                    'content' => 'Blocked comment',
+                ])
+                ->assertSessionHasErrors('content');
+
+            // second user must still be able to post
+            $this->actingAs($secondUser)
+                ->post("/discussions/serial-killer/{$killer->id}", [
+                    'content' => 'Second user comment',
+                ])
+                ->assertSessionHasNoErrors();
+
+            $this->assertDatabaseCount('discussions', 6);
+
+            $this->assertDatabaseHas('discussions', [
+                'user_id' => $secondUser->id,
+                'content' => 'Second user comment',
+            ]);
+
+            $this->assertDatabaseMissing('discussions', [
+                'content' => 'Blocked comment',
+            ]);
+        } finally {
+            RateLimiter::clear($firstKey);
+            RateLimiter::clear($secondKey);
+        }
     }
 }
